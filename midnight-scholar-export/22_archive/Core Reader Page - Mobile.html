@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Midnight Scholar - Reader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-fixed-dim": "#ffb95f",
+                "on-tertiary": "#472a00",
+                "tertiary-container": "#ca8100",
+                "primary-fixed": "#ffdcc3",
+                "primary-container": "#d97707",
+                "primary": "#ffb77d",
+                "error-container": "#93000a",
+                "surface-tint": "#ffb77d",
+                "surface-container-low": "#1d1b1a",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#3c3837",
+                "outline-variant": "#554336",
+                "on-error": "#690005",
+                "outline": "#a38c7c",
+                "on-surface": "#e8e1df",
+                "tertiary": "#ffb95f",
+                "secondary": "#d2bbff",
+                "on-primary-fixed-variant": "#6e3900",
+                "on-surface-variant": "#dbc2b0",
+                "on-secondary-container": "#c9aeff",
+                "on-background": "#e8e1df",
+                "surface-container-high": "#2c2928",
+                "secondary-fixed-dim": "#d2bbff",
+                "surface-container": "#221f1e",
+                "primary-fixed-dim": "#ffb77d",
+                "on-primary-container": "#432100",
+                "on-secondary-fixed": "#25005a",
+                "surface-container-highest": "#373433",
+                "inverse-primary": "#904d00",
+                "secondary-fixed": "#eaddff",
+                "background": "#151312",
+                "tertiary-fixed": "#ffddb8",
+                "surface-variant": "#373433",
+                "surface-dim": "#151312",
+                "error": "#ffb4ab",
+                "secondary-container": "#6001d1",
+                "on-primary": "#4d2600",
+                "on-tertiary-fixed": "#2a1700",
+                "on-tertiary-fixed-variant": "#653e00",
+                "on-secondary": "#3f008e",
+                "on-tertiary-container": "#3e2400",
+                "surface-container-lowest": "#100e0d",
+                "on-secondary-fixed-variant": "#5a00c6",
+                "surface": "#151312",
+                "inverse-surface": "#e8e1df",
+                "on-primary-fixed": "#2f1500",
+                "inverse-on-surface": "#33302e"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "fontFamily": {
+                "headline": ["Newsreader", "serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #14120F; color: #E8E3DB; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass { background: rgba(21, 19, 18, 0.6); backdrop-filter: blur(20px); }
+        .reading-area { font-family: 'Newsreader', serif; font-size: 18px; line-height: 1.85; max-width: 680px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass text-on-surface px-4 h-12 flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden whitespace-nowrap">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<div class="flex flex-col">
+<span class="text-xs font-headline italic truncate opacity-80">The Midnight Scholar</span>
+<span class="text-[10px] uppercase tracking-tighter opacity-50">Chapter IV: The Void</span>
+</div>
+</div>
+<div class="absolute inset-x-0 bottom-0 h-[2px] bg-surface-container-highest">
+<div class="h-full bg-primary w-[42%] shadow-[0_0_8px_rgba(255,183,125,0.5)]"></div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-bold text-primary">42%</span>
+<span class="text-[9px] opacity-60">12m left</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform" data-icon="dark_mode">dark_mode</button>
+<button class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</button>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="pt-20 pb-28 px-6 flex flex-col md:flex-row md:gap-8 justify-center min-h-screen">
+<!-- Reading Canvas -->
+<article class="reading-area mx-auto text-[#E8E3DB] space-y-8 relative">
+<p>
+                The digital realm, much like the physical libraries of old, requires a certain stillness to truly inhabit. One does not simply browse; one must dwell. As the ink of the screen glows with a soft amber hue, the concepts of focus and flow begin to merge into a singular experience of intellectual transcendence.
+            </p>
+<!-- Selection Mini-Toolbar (Mockup) -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 bg-surface-container-highest rounded-full shadow-2xl py-2 px-4 flex items-center gap-4 z-40">
+<button class="text-primary text-xs font-bold uppercase tracking-widest">Highlight</button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+<span class="material-symbols-outlined text-sm" data-icon="dictionary">dictionary</span>
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</div>
+<p>
+                In this sanctuary of knowledge, AI acts not as a disruptor, but as a silent librarian, weaving summaries and insights into the periphery of our consciousness. It is the <span class="bg-primary/20 border-b border-primary italic">Habit Loop</span> that keeps us tethered to the text, a cycle of cue, craving, response, and reward that defines the modern scholar's journey through the infinite stacks of the void.
+            </p>
+<p>
+                When the midnight hour strikes, the clarity of thought intensifies. The blue light of the day fades, replaced by the warm obsidian of our interface. Here, we are curators of our own wisdom, meticulously tagging and annotating the fragments of truth we find scattered across the digital landscape.
+            </p>
+<!-- TTS Player - Mobile Floating -->
+<div class="fixed bottom-20 right-4 z-40">
+<button class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center shadow-xl border border-primary/20">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+</article>
+</main>
+<!-- Bottom Navigation (Shell) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 glass flex flex-col px-4 pb-4 pt-2">
+<div class="flex justify-between items-center mb-2 px-2">
+<button class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_back_ios">arrow_back_ios</button>
+<div class="flex items-center gap-1">
+<span class="text-xs font-bold text-on-surface">Page 47</span>
+<span class="text-xs opacity-50">of 312</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_forward_ios">arrow_forward_ios</button>
+</div>
+<div class="flex justify-around items-center">
+<div class="flex flex-col items-center opacity-50">
+<span class="material-symbols-outlined text-xl" data-icon="list">list</span>
+<span class="text-[8px] uppercase tracking-widest font-bold">Chapters</span>
+</div>
+<div class="flex flex-col items-center text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[8px] uppercase tracking-widest font-bold">AI Tools</span>
+</div>
+<div class="flex flex-col items-center opacity-50">
+<span class="material-symbols-outlined text-xl" data-icon="edit_square">edit_square</span>
+<span class="text-[8px] uppercase tracking-widest font-bold">Notes</span>
+</div>
+<div class="flex flex-col items-center opacity-50">
+<span class="material-symbols-outlined text-xl" data-icon="bookmark">bookmark</span>
+<span class="text-[8px] uppercase tracking-widest font-bold">Saved</span>
+</div>
+</div>
+</nav>
+<!-- Focus Mode Overlay (Hidden by default, shown for structure) -->
+<div class="hidden fixed inset-0 z-[100] bg-background/80 backdrop-blur-xl flex flex-col items-center justify-center p-8">
+<button class="absolute top-6 right-6 material-symbols-outlined text-on-surface-variant" data-icon="close">close</button>
+<div class="text-center space-y-6">
+<div class="text-6xl font-headline italic text-primary tabular-nums">25:00</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container text-xs font-bold">25 min</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant text-xs">45 min</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant text-xs">Custom</button>
+</div>
+<p class="text-on-surface-variant/60 font-headline italic text-lg">"Deep work is the superpower of the 21st century."</p>
+</div>
+</div>
+<!-- AI Sidebar (Slide up for Mobile) -->
+<div class="fixed inset-x-0 bottom-0 h-[707px] bg-surface-container-lowest z-[60] rounded-t-[2rem] shadow-2xl border-t border-outline-variant/10 flex flex-col overflow-hidden translate-y-full transform transition-transform duration-500 ease-out">
+<div class="w-12 h-1 bg-surface-container-highest rounded-full mx-auto my-3"></div>
+<!-- Tab Bar Grid (3x3) -->
+<div class="grid grid-cols-3 gap-1 p-2 bg-surface-container-low mx-4 rounded-xl">
+<button class="flex flex-col items-center py-2 text-primary bg-surface-container-highest rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="toc">toc</span>
+<span class="text-[8px] uppercase">Contents</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[8px] uppercase">Summary</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="quiz">quiz</span>
+<span class="text-[8px] uppercase">Quiz</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="style">style</span>
+<span class="text-[8px] uppercase">Flashcards</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="psychology">psychology</span>
+<span class="text-[8px] uppercase">Q&amp;A</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="label">label</span>
+<span class="text-[8px] uppercase">Keywords</span>
+</button>
+<button class="flex flex-col items-center py-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="history_edu">history_edu</span>
+<span class="text-[8px] uppercase">Notes</span>
+</button>
+<button class="flex flex-col items-center py-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="bookmarks">bookmarks</span>
+<span class="text-[8px] uppercase">Bookmarks</span>
+</button>
+<button class="flex flex-col items-center py-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="tips_and_updates">tips_and_updates</span>
+<span class="text-[8px] uppercase">Revision</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto px-6 py-6 space-y-8 no-scrollbar">
+<!-- AI QUIZ CONTENT EXAMPLE -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="quiz">quiz</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-secondary">Knowledge Check</h3>
+</div>
+<div class="bg-surface-container rounded-2xl p-6 space-y-4 shadow-lg">
+<p class="font-headline italic text-lg leading-snug">Which component of the Habit Loop creates the neuro-chemical craving?</p>
+<div class="space-y-2">
+<button class="w-full text-left p-4 rounded-xl border border-outline-variant/30 hover:border-primary text-sm">A. The Cue</button>
+<button class="w-full text-left p-4 rounded-xl border border-primary bg-primary/5 text-sm flex justify-between items-center">
+<span>B. The Response</span>
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+</button>
+<button class="w-full text-left p-4 rounded-xl border border-outline-variant/30 text-sm flex justify-between items-center">
+<span>C. The Reward</span>
+<span class="material-symbols-outlined text-green-500" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-center py-8">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="48" cy="48" fill="transparent" r="40" stroke="#373433" stroke-width="8"></circle>
+<circle cx="48" cy="48" fill="transparent" r="40" stroke="#ffb77d" stroke-dasharray="251.2" stroke-dashoffset="50.24" stroke-width="8"></circle>
+</svg>
+<span class="absolute text-xl font-bold">80%</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest mt-2 opacity-50">Current Mastery</span>
+</div>
+</section>
+<!-- FLASHCARDS SECTION -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="style">style</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-secondary">Flashcards</h3>
+</div>
+<div class="aspect-[3/2] bg-surface-container-highest rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl border border-outline-variant/10 relative">
+<div class="absolute top-4 right-6 bg-green-900/30 text-green-400 text-[8px] font-bold px-2 py-1 rounded-full border border-green-500/20 uppercase">Next: Tomorrow</div>
+<p class="font-headline italic text-xl">"What is the 'Habit Loop' as defined by Duhigg?"</p>
+<p class="mt-8 text-[10px] uppercase tracking-[0.2em] text-primary/50">Tap to Reveal</p>
+</div>
+</section>
+<!-- Q&A CHAT SECTION -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<h3 class="text-sm font-bold uppercase tracking-widest text-secondary">AI Assistant</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-end">
+<div class="bg-primary-container/20 text-primary text-sm p-3 rounded-2xl rounded-tr-none max-w-[80%]">
+                            How does focus mode improve retention?
+                        </div>
+</div>
+<div class="flex justify-start">
+<div class="bg-secondary-container/20 text-secondary text-sm p-3 rounded-2xl rounded-tl-none max-w-[80%]">
+                            Focus mode reduces cognitive load by eliminating peripheral stimuli, allowing the prefrontal cortex to prioritize deep encoding of new semantic data.
+                        </div>
+</div>
+</div>
+<div class="relative mt-4">
+<input class="w-full bg-surface-container-low border-none rounded-full px-6 py-3 text-sm focus:ring-1 focus:ring-secondary" placeholder="Ask the Scholar..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="mic">mic</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+<!-- Background Image Deco -->
+<div class="fixed inset-0 -z-10 opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="atmospheric dark library interior at night with subtle warm glowing light between bookshelves and dusty air particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1GINLkQnfa6l8RT6F35fKL-rYkZiTefMhI8hGHyoIFPkhjFFTgK-QKj5YkiAbKyonD7Nhxi2WZtOVfzAj6hY3qDXibJLAanl-LhcJPBBtYZobvx34n4aQWVKFyVHhXs0zhbFQH_AZkzrQA-m9ydG7TPySTh8DbR-ygnwOmserKSSd90Wz3LpppqP7lVmoMxw8IsSZ1LCREAGPUy72ZjPsEmuGOkiM8rmS7zvCs0b0UKOnkq_B5m_JeCUpPDJNL84AFyr1RisUug"/>
+</div>
+</body></html>

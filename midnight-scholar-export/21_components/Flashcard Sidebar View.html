@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#eaddff",
+                        "surface-bright": "#3c3935",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#4a4643",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ccc5c1",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "tertiary-fixed": "#e8e1dd",
+                        "surface-container-low": "#1d1b18",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-container-highest": "#373431",
+                        "primary-container": "#d97707",
+                        "inverse-surface": "#e8e1dc",
+                        "on-surface-variant": "#dbc2b0",
+                        "primary": "#ffb77d",
+                        "secondary-container": "#6001d1",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e8e1dc",
+                        "tertiary": "#ccc5c1",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-tertiary": "#33302d",
+                        "surface-tint": "#ffb77d",
+                        "secondary": "#d2bbff",
+                        "surface-dim": "#151310",
+                        "outline": "#a38c7c",
+                        "on-tertiary-container": "#2c2926",
+                        "on-background": "#e8e1dc",
+                        "on-primary-container": "#432100",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container-high": "#2c2a26",
+                        "surface-container-lowest": "#100e0b",
+                        "on-primary": "#4d2600",
+                        "inverse-on-surface": "#33302c",
+                        "on-tertiary-fixed": "#1e1b19",
+                        "surface": "#151310",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#3f008e",
+                        "surface-variant": "#373431",
+                        "surface-container": "#221f1c",
+                        "inverse-primary": "#904d00",
+                        "background": "#151310",
+                        "outline-variant": "#554336",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-secondary-fixed": "#25005a",
+                        "on-secondary-container": "#c9aeff",
+                        "tertiary-container": "#95908c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Newsreader"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #14120F; color: #e8e1dc; overflow: hidden; }
+        .glass-sidebar { background: rgba(44, 42, 38, 0.6); backdrop-filter: blur(24px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .text-reading { font-size: 18px; line-height: 1.8; letter-spacing: -0.01em; }
+        .vignette { pointer-events: none; position: fixed; inset: 0; box-shadow: inset 0 0 150px rgba(0,0,0,0.9); opacity: 0; transition: opacity 0.5s ease; }
+        .focus-mode .vignette { opacity: 1; }
+        .focus-mode .sidebar-shell, .focus-mode .top-app-bar { transform: translateX(-100%); opacity: 0; }
+        .focus-mode .timer-overlay { opacity: 1; display: block; }
+        .timer-overlay { display: none; }
+        .neumorphic-card {
+            background: #1C1917;
+            box-shadow: 6px 6px 12px #0a0908, -2px -2px 6px #2e2a27;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body selection:bg-primary-container/30 selection:text-primary">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#2c2a26] transition-all duration-500 top-app-bar">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-600" data-icon="menu_book">menu_book</span>
+<h1 class="font-headline italic text-amber-600 text-lg tracking-tight">The Midnight Scholar</h1>
+</div>
+<div class="flex items-center space-x-8">
+<span class="font-label text-sm uppercase tracking-widest text-on-surface-variant/60">Chapter 1</span>
+<div class="flex items-center gap-6">
+<button class="hover:text-amber-500 transition-colors"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<button class="hover:text-amber-500 transition-colors"><span class="material-symbols-outlined" data-icon="nights_stay">nights_stay</span></button>
+</div>
+</div>
+</header>
+<!-- Side Navigation Shell -->
+<div class="fixed left-0 top-0 h-full flex z-40 sidebar-shell transition-all duration-500">
+<!-- Icon Strip (60px) -->
+<nav class="w-[60px] h-full bg-[#2c2a26]/60 backdrop-blur-3xl flex flex-col items-center py-20 space-y-8 border-r border-white/5">
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="psychology">psychology</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="quiz">quiz</span></button>
+<button class="text-secondary bg-secondary/10 rounded-lg p-2 group relative">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="absolute left-full ml-4 px-2 py-1 bg-surface-container-highest text-[10px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap rounded">Flashcards</span>
+</button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="forum">forum</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="key">key</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="history_edu">history_edu</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="edit_note">edit_note</span></button>
+<button class="text-[#e8e1dc]/40 hover:text-amber-500 transition-colors p-2"><span class="material-symbols-outlined" data-icon="bookmarks">bookmarks</span></button>
+</nav>
+<!-- Content Pane (300px) -->
+<aside class="w-[300px] h-full bg-[#1C1917] pt-20 px-6 overflow-y-auto no-scrollbar border-r border-white/5">
+<div class="space-y-6 flex flex-col h-full pb-8">
+<!-- Header -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="auto_awesome">auto_awesome</span>
+<h2 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">Flashcards</h2>
+</div>
+</div>
+<div class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/20">
+<span class="text-[9px] font-label text-secondary uppercase tracking-tighter">Next review: Tomorrow</span>
+</div>
+</div>
+<!-- The Card Container -->
+<div class="flex-grow py-4 flex flex-col justify-center">
+<div class="neumorphic-card rounded-2xl p-6 min-h-[320px] flex flex-col relative group cursor-pointer transition-transform hover:scale-[1.02]">
+<!-- Front State (Question) -->
+<div class="flex-grow flex items-center justify-center text-center">
+<p class="font-headline text-lg leading-relaxed text-on-surface">
+                            What is the first lesson of the sanctuary according to the Midnight Observer?
+                        </p>
+</div>
+<!-- Back State (Answer) - Visualized stacked -->
+<div class="mt-8 pt-6 border-t border-white/5 bg-green-500/5 -mx-6 px-6 pb-2">
+<p class="font-label text-sm text-green-400/90 leading-relaxed italic">
+                            Knowledge is not a light to be shone, but a void to be entered.
+                        </p>
+</div>
+<div class="mt-4 text-center">
+<span class="font-label text-[9px] text-on-surface-variant/40 uppercase tracking-widest">Tap to flip</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="grid grid-cols-2 gap-3 mt-4">
+<button class="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-[#D97706] text-white text-[10px] font-label uppercase tracking-widest hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-xs" data-icon="refresh">refresh</span>
+                        Again
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-green-700/80 text-white text-[10px] font-label uppercase tracking-widest hover:bg-green-700 transition-all">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+                        Got it
+                    </button>
+</div>
+<!-- Card Navigation -->
+<div class="flex items-center justify-between mt-6 text-on-surface-variant/40">
+<button class="flex items-center gap-1 text-[9px] font-label uppercase hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="chevron_left">chevron_left</span> Previous
+                    </button>
+<span class="text-[10px] font-label font-medium tracking-widest">3 OF 12</span>
+<button class="flex items-center gap-1 text-[9px] font-label uppercase hover:text-secondary transition-colors">
+                        Next <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+<!-- Main Content Canvas -->
+<main class="ml-[360px] mt-16 h-[calc(100vh-108px)] overflow-y-auto no-scrollbar transition-all duration-700 px-12 focus-mode:ml-0 focus-mode:px-[20%]">
+<div class="max-w-3xl mx-auto py-24 relative">
+<!-- Focus Mode Timer -->
+<div class="timer-overlay absolute top-0 left-1/2 -translate-x-1/2 text-center py-10">
+<span class="text-5xl font-headline font-light tracking-tighter text-amber-600/40">25:00</span>
+<p class="text-[10px] font-label uppercase tracking-widest text-amber-600/20 mt-2">Scholar's Focus Active</p>
+</div>
+<article class="space-y-12">
+<header class="space-y-4 mb-20">
+<h2 class="text-5xl font-headline font-semibold text-amber-600 leading-tight">I. The Architecture of Silence</h2>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant/40">Duration: 12 Minute Read</p>
+</header>
+<div class="text-reading text-on-surface space-y-8 first-letter:text-7xl first-letter:font-headline first-letter:float-left first-letter:mr-3 first-letter:text-amber-600 first-letter:mt-2">
+<p>It was in the winter of the great stillness that the archives were first opened. The air within the vault was not stale, but rather charged with a specific, crystalline density that suggested the thoughts contained within the manuscripts were still active—still vibrating at a frequency just beyond the threshold of human hearing.</p>
+<p>The Scholar, known only as the Midnight Observer, took his place at the central desk. Before him lay the Codex of Echoes. Its leather binding was cool to the touch, seemingly absorbing the dim lamplight rather than reflecting it. This was the first lesson of the sanctuary: that knowledge is not a light to be shone, but a void to be entered.</p>
+<blockquote class="pl-8 py-4 border-l border-amber-600/30 italic text-on-surface-variant font-light">
+                        "In the absence of noise, the structure of truth reveals itself not as a solid form, but as the space between notes."
+                    </blockquote>
+<p>As he turned the first page, the vellum crackled like dry leaves underfoot in an ancient forest. The text was written in a hand so precise it appeared printed by some celestial machine. Here were the calculations for the soul's refraction—the way intent bends as it passes through the medium of time.</p>
+<div class="aspect-[16/9] w-full my-12 bg-surface-container-highest rounded overflow-hidden group">
+<img alt="Old book in dark library" class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-80 group-hover:grayscale-0 transition-all duration-1000" data-alt="Dark dramatic close-up of an ancient leather-bound open book on a wooden table in a candlelit archive study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFdlU2Si4IM-vYp0GlwyMEm62UzR6JC0T38xfDoL5y8Ux4ovCmvi8-PisPRLcnSwmuNzU3S0lVCgx_o8Ky4CEe0FHEs8xmj4oYK9zNZsoLxWXX-8ihJFnSQP812356r10DLDraJLYqti8lu_hrb7LgU36y8-HTw9H1WiZ1Mz9vaSoIyvQMFBbnyi1G9BHa1McX83kLCqe3kA_ikK7O2CkfaOlVIZQXErwTjnl7MNOnxjs0YyoMOdVoRtoSkX0lE4jczNina08g_cc"/>
+</div>
+<p>To study here was to accept a transformation of the senses. One did not simply 'read' the Midnight Scholar; one tuned themselves to its rhythm. Each paragraph was a weighted anchor, pulling the reader deeper into the silent foundations of the digital sanctuary.</p>
+</div>
+</article>
+</div>
+</main>
+<!-- Text Selection Pill (Floating) -->
+<div class="fixed left-1/2 top-[40%] -translate-x-1/2 bg-[#151310] border border-amber-600/20 px-4 py-2 rounded-full shadow-2xl flex items-center space-x-6 z-[60]">
+<button class="flex items-center gap-1.5 text-xs font-label text-amber-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="ink_highlighter">ink_highlighter</span> Highlight
+        </button>
+<button class="flex items-center gap-1.5 text-xs font-label text-amber-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="sticky_note_2">sticky_note_2</span> Note
+        </button>
+<button class="flex items-center gap-1.5 text-xs font-label text-amber-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="dictionary">dictionary</span> Define
+        </button>
+<div class="h-4 w-px bg-white/10"></div>
+<button class="text-on-surface-variant/60 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-40 bg-[#100e0b]">
+<div class="h-1 w-full bg-white/5">
+<div class="h-full bg-amber-600 w-1/4"></div>
+</div>
+<div class="flex justify-between items-center px-12 h-14">
+<button class="flex items-center gap-2 text-[10px] font-label uppercase tracking-widest text-on-surface-variant/40 hover:text-amber-600 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back_ios">arrow_back_ios</span>
+                Previous
+            </button>
+<span class="text-[10px] font-label text-on-surface-variant/40 uppercase tracking-[0.2em]">12 / 480</span>
+<button class="flex items-center gap-2 text-[10px] font-label uppercase tracking-widest text-on-surface-variant/40 hover:text-amber-600 transition-colors">
+                Next
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+</footer>
+<!-- TTS Player (Bottom Right) -->
+<div class="fixed bottom-20 right-8 z-[70] flex flex-col items-end">
+<div class="mb-4 bg-[#2c2a26] rounded-xl p-4 shadow-2xl border border-white/5 flex items-center gap-6">
+<div class="flex items-center gap-1">
+<span class="w-1 h-3 bg-amber-600 rounded-full animate-pulse"></span>
+<span class="w-1 h-5 bg-amber-600 rounded-full animate-pulse delay-75"></span>
+<span class="w-1 h-4 bg-amber-600 rounded-full animate-pulse delay-150"></span>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-on-surface-variant/60 hover:text-on-surface" data-icon="skip_previous">skip_previous</button>
+<button class="material-symbols-outlined text-amber-600 text-3xl" data-icon="pause_circle">pause_circle</button>
+<button class="material-symbols-outlined text-on-surface-variant/60 hover:text-on-surface" data-icon="skip_next">skip_next</button>
+</div>
+<div class="px-2 py-0.5 bg-green-500/10 text-green-500 text-[8px] font-label rounded border border-green-500/20 uppercase tracking-widest">
+                Synced
+            </div>
+</div>
+<button class="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-on-primary shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+<!-- Vignette Effect Layer -->
+<div class="vignette"></div>
+</body></html>

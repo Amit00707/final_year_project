@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Midnight Scholar | Achievements</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#3c3837",
+                    "surface": "#151312",
+                    "primary": "#ffb77d",
+                    "on-primary": "#4d2600",
+                    "surface-dim": "#151312",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#3f008e",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-container-low": "#1d1b1a",
+                    "surface-container": "#221f1e",
+                    "on-secondary-fixed": "#25005a",
+                    "inverse-primary": "#904d00",
+                    "secondary": "#d2bbff",
+                    "on-primary-container": "#432100",
+                    "on-surface-variant": "#dbc2b0",
+                    "on-secondary-container": "#c9aeff",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-background": "#e8e1df",
+                    "tertiary-container": "#ca8100",
+                    "on-tertiary-container": "#3e2400",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-error": "#690005",
+                    "primary-container": "#d97707",
+                    "surface-container-highest": "#373433",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#ffdcc3",
+                    "outline-variant": "#554336",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-surface": "#e8e1df",
+                    "inverse-surface": "#e8e1df",
+                    "secondary-container": "#6001d1",
+                    "background": "#151312",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline": "#a38c7c",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#100e0d",
+                    "inverse-on-surface": "#33302e",
+                    "secondary-fixed": "#eaddff",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "tertiary": "#ffb95f",
+                    "surface-container-high": "#2c2928",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "surface-tint": "#ffb77d",
+                    "surface-variant": "#373433"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "Lora", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neumorphic-card {
+            box-shadow: 4px 4px 15px #00000066, -4px -4px 15px rgba(85, 67, 54, 0.05);
+        }
+        body {
+            background-color: #151312;
+            color: #e8e1df;
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-text {
+            font-family: 'Newsreader', serif;
+        }
+        .glass-nav {
+            background: rgba(21, 19, 18, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-full bg-[#151312]/60 backdrop-blur-md">
+<div class="text-2xl font-semibold text-[#ffb77d] italic font-['Newsreader'] tracking-tight">The Midnight Scholar</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-400 hover:text-[#ffb77d] transition-colors duration-300 font-medium" href="#">Library</a>
+<a class="text-stone-400 hover:text-[#ffb77d] transition-colors duration-300 font-medium" href="#">Deep Dive</a>
+<a class="text-[#ffb77d] border-b-2 border-[#ffb77d] pb-1 font-medium" href="#">Scholarship</a>
+<a class="text-stone-400 hover:text-[#ffb77d] transition-colors duration-300 font-medium" href="#">Sanctuary</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffb77d] cursor-pointer hover:scale-95 duration-200">auto_awesome</span>
+<span class="material-symbols-outlined text-[#ffb77d] cursor-pointer hover:scale-95 duration-200">account_circle</span>
+</div>
+</nav>
+<!-- Side Navigation Shell (Desktop) -->
+<aside class="hidden lg:flex h-screen w-72 fixed left-0 top-0 bg-[#100e0d] flex-col p-6 gap-y-8 z-40 shadow-[4px_0px_15px_rgba(0,0,0,0.4)] pt-24">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="close up portrait of an elegant intellectual man with spectacles in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApoEBHZmG5oldXU8jNOG5JdYMwIeiK40yONIuzTBMWd0fGBPe23uTXETDclMjfyy63iD4jpmROyTULEBL1UkIJ681POhxyh56ZWGYTWz8wGoMZOtbbPH5mfch5Euqz17NHR8CDqQgLWWO5CEL2eO7gH8-g6qM3JWkJ2DJA-XTVqPAEUKsou35T5uzwVeMlBBYD4NG-uR9ChPwfpgCeHBJgobZYGMG59SaVpzPbow6yKfaEOt4Gajdpd3ain1DlnCQVWNHOy5UIfws"/>
+<div>
+<p class="text-[#ffb77d] font-bold text-lg">Scholar Profile</p>
+<p class="text-stone-500 text-xs">Master Curator</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 text-stone-500 font-medium hover:bg-[#373433]/50 hover:text-[#ffb77d] transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">menu_book</span> Library
+            </a>
+<a class="flex items-center gap-3 p-3 text-stone-500 font-medium hover:bg-[#373433]/50 hover:text-[#ffb77d] transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">storm</span> Deep Dive
+            </a>
+<a class="flex items-center gap-3 p-3 text-[#ffb77d] font-bold bg-[#373433]/30 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span> Scholarship
+            </a>
+<a class="flex items-center gap-3 p-3 text-stone-500 font-medium hover:bg-[#373433]/50 hover:text-[#ffb77d] transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">workspace_premium</span> Achievements
+            </a>
+<a class="flex items-center gap-3 p-3 text-stone-500 font-medium hover:bg-[#373433]/50 hover:text-[#ffb77d] transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">castle</span> Sanctuary
+            </a>
+</nav>
+<button class="mt-auto bg-gradient-to-br from-[#ffb77d] to-[#d97707] text-[#4d2600] py-3 px-4 rounded-full font-bold flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">colors_spark</span> Summon AI Insight
+        </button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-72 pt-24 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Points Overview Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl neumorphic-card flex flex-col justify-center">
+<h2 class="text-stone-400 uppercase tracking-widest text-xs font-bold mb-4">Total Scholarship</h2>
+<div class="flex items-baseline gap-4">
+<span class="serif-text text-8xl font-medium text-primary">1,950</span>
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% this week
+                    </span>
+</div>
+<div class="grid grid-cols-3 gap-6 mt-8">
+<div class="border-l-2 border-outline-variant pl-4">
+<p class="text-xs text-stone-500 uppercase tracking-tighter">Reading</p>
+<p class="text-xl font-semibold">1,200</p>
+</div>
+<div class="border-l-2 border-outline-variant pl-4">
+<p class="text-xs text-stone-500 uppercase tracking-tighter">AI Quizzes</p>
+<p class="text-xl font-semibold text-secondary">450</p>
+</div>
+<div class="border-l-2 border-outline-variant pl-4">
+<p class="text-xs text-stone-500 uppercase tracking-tighter">Annotations</p>
+<p class="text-xl font-semibold">300</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl neumorphic-card flex flex-col items-center justify-center text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">local_fire_department</span>
+</div>
+<span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<p class="serif-text text-3xl font-bold mb-1">14 Day Streak</p>
+<p class="text-stone-400 text-sm mb-6">You're in the top 5% of scholars</p>
+<button class="bg-surface-container-lowest text-primary border border-outline-variant/30 px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">ac_unit</span> Use a freeze — 1 remaining
+                </button>
+</div>
+</section>
+<!-- Daily Goals & Heatmap Section -->
+<section class="grid grid-cols-1 xl:grid-cols-5 gap-8 mb-12">
+<div class="xl:col-span-2 space-y-6">
+<h3 class="serif-text text-2xl font-medium mb-6">Daily Curations</h3>
+<div class="bg-surface-container p-6 rounded-xl space-y-4">
+<div class="flex justify-between items-end">
+<p class="text-sm font-medium">60 minutes reading</p>
+<p class="text-xs text-primary">45 / 60 min</p>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full w-[75%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl space-y-4">
+<div class="flex justify-between items-end">
+<p class="text-sm font-medium">3 AI summaries read</p>
+<p class="text-xs text-secondary">2 / 3 read</p>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[66%] rounded-full shadow-[0_0_10px_rgba(210,187,255,0.3)]"></div>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl space-y-4">
+<div class="flex justify-between items-end">
+<p class="text-sm font-medium">Write 5 annotations</p>
+<p class="text-xs text-primary">5 / 5 complete</p>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-3 bg-surface-container-low p-8 rounded-xl neumorphic-card">
+<div class="flex justify-between items-center mb-8">
+<h3 class="serif-text text-2xl font-medium">Reading Heatmap</h3>
+<div class="flex gap-2 items-center text-[10px] text-stone-500 uppercase tracking-widest">
+<span>Less</span>
+<div class="w-3 h-3 bg-surface-container-highest rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container/30 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container/60 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+<span>More</span>
+</div>
+</div>
+<!-- Mock Heatmap Grid -->
+<div class="grid grid-flow-col grid-rows-7 gap-1.5 overflow-x-auto pb-4">
+<!-- Generating a representative sample of cells -->
+<script>
+                        const gridContainer = document.currentScript.parentElement;
+                        const intensities = ['bg-surface-container-highest', 'bg-primary-container/30', 'bg-primary-container/60', 'bg-primary'];
+                        for(let i = 0; i < 364; i++) {
+                            const div = document.createElement('div');
+                            const intensity = Math.random() > 0.7 ? intensities[Math.floor(Math.random() * 4)] : intensities[0];
+                            div.className = `w-3 h-3 rounded-sm ${intensity}`;
+                            gridContainer.appendChild(div);
+                        }
+                    </script>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-stone-500 uppercase">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+</div>
+</div>
+</section>
+<!-- Badge Collection Masonry -->
+<section class="mb-12">
+<h3 class="serif-text text-2xl font-medium mb-8">Trophy Room</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Achievement 1 -->
+<div class="group relative bg-surface-container p-6 rounded-2xl flex flex-col items-center text-center transition-all hover:-translate-y-2 neumorphic-card">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Night Owl</p>
+<p class="text-[10px] text-stone-500">Read 50 hours after midnight</p>
+</div>
+<!-- Achievement 2 -->
+<div class="group relative bg-surface-container p-6 rounded-2xl flex flex-col items-center text-center transition-all hover:-translate-y-2 neumorphic-card">
+<div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(210,187,255,0.2)]">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-secondary mb-1">The Alchemist</p>
+<p class="text-[10px] text-stone-500">Generate 100 AI Deep Dives</p>
+</div>
+<!-- Achievement 3 -->
+<div class="group relative bg-surface-container p-6 rounded-2xl flex flex-col items-center text-center transition-all hover:-translate-y-2 neumorphic-card">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">book_2</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Bookworm</p>
+<p class="text-[10px] text-stone-500">Finish 10 books in a month</p>
+</div>
+<!-- Locked Achievements -->
+<div class="group relative bg-surface-container/50 p-6 rounded-2xl flex flex-col items-center text-center grayscale opacity-40">
+<div class="w-16 h-16 bg-stone-800 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-stone-400 text-3xl">castle</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-1">Gatekeeper</p>
+<p class="text-[10px] text-stone-600">Unlock the Sanctuary floor</p>
+</div>
+<div class="group relative bg-surface-container/50 p-6 rounded-2xl flex flex-col items-center text-center grayscale opacity-40">
+<div class="w-16 h-16 bg-stone-800 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-stone-400 text-3xl">history_edu</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-1">Polymath</p>
+<p class="text-[10px] text-stone-600">Read in 5 different genres</p>
+</div>
+<div class="group relative bg-surface-container/50 p-6 rounded-2xl flex flex-col items-center text-center grayscale opacity-40">
+<div class="w-16 h-16 bg-stone-800 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-stone-400 text-3xl">storm</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-1">Philosopher</p>
+<p class="text-[10px] text-stone-600">Annotate 500 unique pages</p>
+</div>
+</div>
+</section>
+<!-- Leaderboard Section -->
+<section>
+<h3 class="serif-text text-2xl font-medium mb-8">The Great Registry</h3>
+<div class="overflow-x-auto rounded-2xl neumorphic-card bg-surface-container-low">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-stone-500 text-xs uppercase tracking-widest">
+<th class="px-8 py-6 font-semibold">Rank</th>
+<th class="px-8 py-6 font-semibold">Scholar</th>
+<th class="px-8 py-6 font-semibold">Points</th>
+<th class="px-8 py-6 font-semibold">Streak</th>
+<th class="px-8 py-6 font-semibold text-right">Activity</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<!-- Top 1 -->
+<tr class="bg-primary/5 group">
+<td class="px-8 py-4 font-bold text-primary">#01</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="portrait of a sophisticated woman with sharp features reading by candlelight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4hZo6e03sS16Xx19fdvrv_qdRMRq-N2fUUwo4HqTbN4o060OHQB55n2qJ4YPkcj0l6NmJvkUvP2jqrKD9FCBZcJ1OLxbMUPapPTO4v2ePvLC6zrScHY7TV50tZjmmW_fv6hTzNSKpARqDNdt06kW2WhNuQZPZw4cLT5Ym6vtoRjtkojEOIOnSi8qFl_JG9BL2MyGmtewlPbeErW05Qm6vB1I4dHC0fJcxMskqzokq-rM2LC53CK3Tzfxv5MFxHCwpcLyU4aoDtCI"/>
+<div>
+<p class="font-bold text-primary">Elena Vance</p>
+<p class="text-[10px] text-stone-500">Grand Librarian</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 font-medium">4,820</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> 142
+                                </span>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="h-1.5 w-24 bg-surface-container-highest rounded-full inline-block overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</td>
+</tr>
+<!-- Top 2 -->
+<tr class="bg-primary/5 group">
+<td class="px-8 py-4 font-bold text-primary">#02</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full border-2 border-primary/60 object-cover" data-alt="gentle focused young scholar with curly hair in a dark room illuminated by a tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcQILaF0K_SE2z6Zsx8IZCt3ChRPHbrG53Vk4kwBjFSsxtpm5NlTA5uTf8Bs0KpQeRFrgszOxfDhWgWHGEKaLiM3KR33u3tYyY7ttfO0bUkUueHIQak1Le_J7Ny0fDHiFvnGc1e_vG3PBdzmVF2AZg4hOG8BHWyVG1yqO_O0sq1-p-2DvDjjn_UOLq72bso0MkRHWc37GQldw7YA1exlUAI7Lvsoc6x-UA6bdpUzxR-pLqG7edUke3jB-zAXN9V4Hn4e5dljx3J08"/>
+<div>
+<p class="font-bold text-primary/80">Julian Thorne</p>
+<p class="text-[10px] text-stone-500">Sage Architect</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 font-medium">4,150</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1 text-primary/80">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> 89
+                                </span>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="h-1.5 w-24 bg-surface-container-highest rounded-full inline-block overflow-hidden">
+<div class="h-full bg-primary/80 w-[90%]"></div>
+</div>
+</td>
+</tr>
+<!-- Current User Row -->
+<tr class="bg-surface-container-highest/40 border-y border-primary/20">
+<td class="px-8 py-4 font-bold">#24</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full border-2 border-secondary object-cover" data-alt="close up portrait of an elegant intellectual man with spectacles in a dimly lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPftHm3ozbH1CbpeATkwXNFjg1Vn8zvyKVfV4mrpZDegafoHYBqifFFbEUXCZdnazYU44o60jt5qDIJfOGSxgWUuhn9e3UyH7UOO58tNMZ9iiNNoL6Ilb3FmSvBbueHnj55tGmnush7ZwufnaEbKWO9CxC6ku-TJ2RrsPHkyqLyXdXrXWeKAffA0A0DBf0BrxfI0wdmHDhfJCWwXjsYqDphdHGmDako1hnze7sx-BnEKrz1c2tIxjKe3qLZ93w5NfcDtkS2K03U-U"/>
+<div>
+<p class="font-bold">You (Scholar)</p>
+<p class="text-[10px] text-secondary uppercase font-bold tracking-tighter">Current Rank</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 font-bold text-primary">1,950</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> 14
+                                </span>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="h-1.5 w-24 bg-surface-container-highest rounded-full inline-block overflow-hidden">
+<div class="h-full bg-primary w-[45%]"></div>
+</div>
+</td>
+</tr>
+<!-- Others -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-4 font-medium text-stone-500">#25</td>
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="face of a young thoughtful student in a vintage collegiate sweater" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxg7PhIcXojD5I6E8gs-6yqzUDbKdBreuhRYFFurt0WyR9eAeKJdIwZblkOEIdaHUqMvM8XG4mGGpeFmWuLTlW4dAo_NdVLcW8HkKT0BFu5mesfTsQpN80Snlb7XC4RwoBPRao28sI8oYwCD4IgAKmeXkyXzm8kd9MOLwhO-CTLeZvwcgsg6Is3GSmbL38_ZyOybo6KrcTOY3wLLHpffUbJ9-UA7Ui9vO7poUV6vMceFImGiiqkZK42QVI_2jB_27CsBFkKO51JeU"/>
+<div>
+<p class="font-medium">Marcus Chen</p>
+<p class="text-[10px] text-stone-500">Junior Scholar</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 font-medium">1,890</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1 text-stone-400">
+<span class="material-symbols-outlined text-sm">local_fire_department</span> 7
+                                </span>
+</td>
+<td class="px-8 py-4 text-right">
+<div class="h-1.5 w-24 bg-surface-container-highest rounded-full inline-block overflow-hidden">
+<div class="h-full bg-stone-500 w-[40%]"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-end pb-6 px-4 bg-[#151312]/80 backdrop-blur-xl shadow-[0_-8px_20px_rgba(0,0,0,0.5)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-stone-400 p-2" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-widest mt-1">Shelves</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 p-2" href="#">
+<span class="material-symbols-outlined">search_spark</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-widest mt-1">Seeker</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ffb77d] to-[#d97707] text-[#151312] rounded-full p-3 w-14 h-14 -translate-y-4 shadow-[0_4px_15px_rgba(255,183,125,0.3)] scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 p-2" href="#">
+<span class="material-symbols-outlined">person_2</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

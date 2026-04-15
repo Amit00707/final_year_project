@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Midnight Scholar - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1d1b1a",
+                        "on-background": "#e8e1df",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-variant": "#373433",
+                        "on-tertiary-fixed-variant": "#4a4643",
+                        "tertiary": "#ccc5c1",
+                        "error-container": "#93000a",
+                        "outline-variant": "#554336",
+                        "surface-container": "#221f1e",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-tertiary": "#33302d",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e8e1df",
+                        "on-tertiary-container": "#2c2926",
+                        "surface-container-high": "#2c2928",
+                        "on-tertiary-fixed": "#1e1b19",
+                        "background": "#151312",
+                        "surface": "#151312",
+                        "on-secondary-fixed": "#25005a",
+                        "on-secondary-container": "#c9aeff",
+                        "secondary-container": "#6001d1",
+                        "primary-container": "#d97707",
+                        "on-primary": "#4d2600",
+                        "on-surface-variant": "#dbc2b0",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "secondary": "#d2bbff",
+                        "on-surface": "#e8e1df",
+                        "tertiary-container": "#95908c",
+                        "on-primary-container": "#432100",
+                        "inverse-on-surface": "#33302e",
+                        "primary-fixed": "#ffdcc3",
+                        "inverse-primary": "#904d00",
+                        "primary-fixed-dim": "#ffb77d",
+                        "outline": "#a38c7c",
+                        "on-error": "#690005",
+                        "primary": "#ffb77d",
+                        "surface-tint": "#ffb77d",
+                        "tertiary-fixed": "#e8e1dd",
+                        "surface-container-highest": "#373433",
+                        "tertiary-fixed-dim": "#ccc5c1",
+                        "surface-dim": "#151312",
+                        "surface-container-lowest": "#100e0d",
+                        "secondary-fixed": "#eaddff",
+                        "surface-bright": "#3c3837",
+                        "on-secondary": "#3f008e",
+                        "secondary-fixed-dim": "#d2bbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>body {
+    background-color: #0C0A09;
+    font-family: "Inter", sans-serif
+    }
+.neumorphic-card {
+    background: #1C1917;
+    box-shadow: 12px 12px 24px #080706, -4px -4px 12px rgba(255, 255, 255, 0.02)
+    }
+.neumorphic-inset {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.02)
+    }
+.neumorphic-pill {
+    background: #1C1917;
+    box-shadow: 4px 4px 8px #080706, -2px -2px 6px rgba(255, 255, 255, 0.01)
+    }
+.bg-atmospheric {
+    background-image: linear-gradient(rgba(12, 10, 9, 0.8), rgba(12, 10, 9, 0.95)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuC-KQniEAJEsUbk37ZN5mUSxF5utrxeUI_1RK0dB16IdWw3XnWB7TIBQRlVXvXmJjdju2SpgVenPMFVmDcpJ_oxHDDMHrN4WcIYYlY2cB5DXHFWf2szJdDvnoV4tonnNRW7dUom_JX6MBTx9vqtudvodBfA455S_AqYniuArgc9HtcuCW2Eo-8_6uziD7OP2GCJFVS8wCYbxKbLTQm3xEazre-ZPetpgQYIroN1zRxRPuOjVkf3ozc-s4UoHF2rW2ujlBYYN3WXLUw);
+    background-size: cover;
+    background-position: center
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex items-center justify-center p-4 bg-atmospheric">
+<div class="w-full max-w-[440px] flex flex-col items-center">
+<!-- Step Progress -->
+<div class="flex gap-2 mb-8">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(255,183,125,0.6)]"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+</div>
+<!-- Branding -->
+<div class="mb-10 text-center">
+<div class="flex items-center justify-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<h1 class="font-headline italic text-2xl font-semibold text-primary tracking-tight">The Midnight Scholar</h1>
+</div>
+<!-- Signup Card -->
+<div class="neumorphic-card w-full rounded-2xl p-8 border border-white/5">
+<header class="text-center mb-8">
+<h2 class="font-headline italic text-[28px] text-on-surface leading-tight mb-2">Begin Your Journey</h2>
+<p class="text-[13px] text-tertiary-container tracking-wide font-body">Create your scholar account</p>
+</header>
+<form class="space-y-6">
+<!-- Role Toggle -->
+<div class="neumorphic-pill flex p-1 rounded-full w-full mb-6">
+<button class="flex-1 py-2 text-xs font-semibold rounded-full bg-primary text-on-primary shadow-lg transition-all duration-300" type="button">
+                        Student
+                    </button>
+<button class="flex-1 py-2 text-xs font-medium rounded-full text-tertiary-container hover:text-on-surface transition-all" type="button">
+                        Teacher
+                    </button>
+</div>
+<!-- Social OAuth -->
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-center gap-3 w-full py-3 px-4 rounded-xl bg-surface-container-high border border-white/5 hover:bg-surface-variant transition-colors group" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M12 5.04c1.94 0 3.51.68 4.79 1.97l3.58-3.58C18.16 1.28 15.3 0 12 0 7.31 0 3.32 2.69 1.39 6.6l4.15 3.22c1.01-3.04 3.85-5.28 6.46-5.78z" fill="#EA4335"></path>
+<path d="M5.54 9.82C5.19 10.89 5 12.02 5 13.18s.19 2.29.54 3.36L1.39 19.76C.51 17.82 0 15.65 0 13.18c0-2.47.51-4.64 1.39-6.58l4.15 3.22z" fill="#FBBC05"></path>
+<path d="M12 24c3.24 0 5.97-1.07 7.96-2.91l-3.86-3c-1.12.75-2.55 1.19-4.1 1.19-3.21 0-5.94-2.17-6.91-5.11l-4.15 3.22C3.32 21.31 7.31 24 12 24z" fill="#4285F4"></path>
+<path d="M19.96 21.09c.81-.59 1.54-1.34 2.14-2.22l-3.86-3c-.45.66-1.06 1.19-1.78 1.54l3.5 3.68z" fill="#34A853"></path>
+</svg>
+<span class="text-sm font-medium text-on-surface">Continue with Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 w-full py-3 px-4 rounded-xl bg-surface-container-high border border-white/5 hover:bg-surface-variant transition-colors" type="button">
+<svg class="w-5 h-5 fill-on-surface" viewbox="0 0 384 512">
+<path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+</svg>
+<span class="text-sm font-medium text-on-surface">Continue with Apple</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-white/5"></div>
+<span class="flex-shrink mx-4 text-xs font-medium text-tertiary-fixed-dim uppercase tracking-widest">or</span>
+<div class="flex-grow border-t border-white/5"></div>
+</div>
+<!-- Inputs -->
+<div class="space-y-4">
+<div class="group">
+<label class="block text-[11px] font-semibold text-tertiary uppercase tracking-wider mb-1.5 ml-1">Full Name</label>
+<input class="w-full bg-[#0C0A09] border-[#44403C] border-[0.5px] rounded-lg py-3 px-4 text-on-surface font-body text-sm placeholder:text-surface-variant focus:border-primary focus:ring-1 focus:ring-primary/40 focus:outline-none neumorphic-inset transition-all" placeholder="Julian Thorne" type="text"/>
+</div>
+<div class="group">
+<label class="block text-[11px] font-semibold text-tertiary uppercase tracking-wider mb-1.5 ml-1">Email Address</label>
+<input class="w-full bg-[#0C0A09] border-[#44403C] border-[0.5px] rounded-lg py-3 px-4 text-on-surface font-body text-sm placeholder:text-surface-variant focus:border-primary focus:ring-1 focus:ring-primary/40 focus:outline-none neumorphic-inset transition-all" placeholder="scholar@midnight.edu" type="email"/>
+</div>
+<div class="group relative">
+<label class="block text-[11px] font-semibold text-tertiary uppercase tracking-wider mb-1.5 ml-1">Password</label>
+<input class="w-full bg-[#0C0A09] border-[#44403C] border-[0.5px] rounded-lg py-3 px-4 text-on-surface font-body text-sm placeholder:text-surface-variant focus:border-primary focus:ring-1 focus:ring-primary/40 focus:outline-none neumorphic-inset transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 bottom-2.5 text-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+<div class="group">
+<label class="block text-[11px] font-semibold text-tertiary uppercase tracking-wider mb-1.5 ml-1">Confirm Password</label>
+<input class="w-full bg-[#0C0A09] border-[#44403C] border-[0.5px] rounded-lg py-3 px-4 text-on-surface font-body text-sm placeholder:text-surface-variant focus:border-primary focus:ring-1 focus:ring-primary/40 focus:outline-none neumorphic-inset transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-3 pt-2">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant bg-surface-container-lowest text-primary-container focus:ring-primary-container/30" id="terms" type="checkbox"/>
+<label class="text-[12px] text-tertiary leading-snug" for="terms">
+                        I agree to the <a class="text-primary hover:underline underline-offset-4" href="#">Terms of Service</a> and <a class="text-primary hover:underline underline-offset-4" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container font-bold py-4 rounded-xl text-sm tracking-wide shadow-xl shadow-primary-container/20 transition-all duration-300 active:scale-[0.98]" type="submit">
+                    Create Account
+                </button>
+</form>
+<footer class="mt-8 text-center">
+<p class="text-sm text-tertiary-container font-body">
+                    Already have an account? 
+                    <a class="text-primary font-semibold hover:underline underline-offset-4 ml-1" href="#">Sign in</a>
+</p>
+</footer>
+</div>
+<!-- Subtle Visual Flourish -->
+<div class="mt-12 opacity-30 flex items-center gap-4 text-tertiary text-xs tracking-[0.2em] uppercase">
+<div class="h-px w-8 bg-current"></div>
+            Archive • Intelligence • Focus
+            <div class="h-px w-8 bg-current"></div>
+</div>
+</div>
+<!-- Hidden decorative elements for atmospheric depth -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[120px]"></div>
+</div>
+</body></html>

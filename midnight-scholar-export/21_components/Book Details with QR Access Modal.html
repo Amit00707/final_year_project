@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Architect of Forgotten Dreams | The Midnight Scholar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#432100",
+                        "on-error": "#690005",
+                        "surface-variant": "#383432",
+                        "outline": "#a38c7c",
+                        "secondary-fixed": "#eaddff",
+                        "surface-container-lowest": "#100e0c",
+                        "surface-container": "#221f1d",
+                        "background": "#161311",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#ffdcc3",
+                        "tertiary": "#eac33e",
+                        "on-primary-fixed": "#2f1500",
+                        "on-tertiary-container": "#4e3e00",
+                        "surface-container-high": "#2d2927",
+                        "on-background": "#e9e1dd",
+                        "surface-bright": "#3c3836",
+                        "surface-tint": "#ffb77d",
+                        "on-primary": "#4d2600",
+                        "tertiary-fixed": "#ffe086",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-surface-variant": "#dbc2b0",
+                        "tertiary-container": "#cda722",
+                        "on-secondary-fixed": "#25005a",
+                        "surface-container-low": "#1e1b19",
+                        "inverse-on-surface": "#33302d",
+                        "secondary-container": "#6001d1",
+                        "outline-variant": "#554336",
+                        "tertiary-fixed-dim": "#eac33e",
+                        "surface-dim": "#161311",
+                        "primary-container": "#d97707",
+                        "primary": "#ffb77d",
+                        "on-secondary-container": "#c9aeff",
+                        "surface": "#161311",
+                        "inverse-primary": "#904d00",
+                        "on-secondary": "#3f008e",
+                        "on-surface": "#e9e1dd",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#383432",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-tertiary": "#3c2f00",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#d2bbff",
+                        "inverse-surface": "#e9e1dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .qr-pattern {
+            background-image: 
+                radial-gradient(circle at 2px 2px, black 1px, transparent 0);
+            background-size: 8px 8px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased">
+<!-- Header (Shared Component) -->
+<header class="bg-stone-950/70 backdrop-blur-md fixed top-0 w-full z-50 transition-tonal shadow-none">
+<div class="flex justify-between items-center px-12 h-24 max-w-full mx-auto">
+<div class="text-2xl font-headline italic text-amber-500 dark:text-amber-400">The Midnight Scholar</div>
+<nav class="hidden md:flex items-center space-x-10">
+<a class="text-xs font-medium uppercase tracking-widest text-stone-400 hover:text-stone-200 transition-colors duration-300" href="#">The Archive</a>
+<a class="text-xs font-medium uppercase tracking-widest text-stone-400 hover:text-stone-200 transition-colors duration-300" href="#">Curated Collections</a>
+<a class="text-xs font-medium uppercase tracking-widest text-amber-500 dark:text-amber-400 border-b-2 border-amber-500/20 pb-1" href="#">Scholar's Desk</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-amber-500 cursor-pointer hover:opacity-80 transition-all active:scale-95">menu_book</span>
+<span class="material-symbols-outlined text-amber-500 cursor-pointer hover:opacity-80 transition-all active:scale-95">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-12 max-w-7xl mx-auto">
+<!-- Book Details Canvas -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<!-- Left: Book Cover -->
+<div class="md:col-span-5 lg:col-span-4">
+<div class="aspect-[2/3] bg-surface-container-low rounded-lg shadow-2xl overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Dark moody book cover with gold intricate clockwork patterns and a mystical atmosphere, atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZUjHOR_KBdjWv7v46EYL6GgiNlZsw4zwdR-_0x_Xj2ok9T1mmqNjvAPMTCRuDey3lR0T_XmMmujy0HUhOas_oesdNGewiDwgDaK2KoIp0yaIj6aTG4IBBKrg8Z6jyudn6egWx9TxzMdMCf0nPZE0Z2BlVhR87TwjRKFi2QaDL0c-Ak2huheqWZGO_WoxsDRc8y2TCCON_uc1YBpAZ6YOVf0z9wgs6MfhuLQAj1lfPdS4OVGF33TJxvRypy6O_Tfu_6HmoTapWtY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 to-transparent"></div>
+</div>
+</div>
+<!-- Right: Metadata & Content -->
+<div class="md:col-span-7 lg:col-span-8 space-y-8">
+<div class="space-y-4">
+<span class="text-xs font-medium uppercase tracking-[0.2em] text-amber-500/80">Archival Entry No. 842</span>
+<h1 class="text-5xl md:text-6xl font-headline italic leading-tight text-on-surface">The Architect of Forgotten Dreams</h1>
+<p class="text-xl font-headline italic text-outline">Dr. Alistair Thorne</p>
+</div>
+<div class="flex items-center gap-8 py-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-stone-500">Review Score</span>
+<span class="text-2xl font-headline italic text-amber-500">4.9 / 5.0</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-stone-500">Published</span>
+<span class="text-lg font-medium text-on-surface">Autumn 1924</span>
+</div>
+</div>
+<div class="space-y-6 max-w-2xl">
+<p class="text-stone-300 leading-relaxed text-lg">
+                        In the silent corridors of the mind, memories are more than just echoes—they are structures built with the precision of a master builder. Dr. Thorne explores the intersection of subconscious architecture and the physics of the ethereal, weaving a narrative that challenges the very nature of what we consider "lost."
+                    </p>
+<p class="text-stone-400 leading-relaxed italic">
+                        "A seminal work for those who walk the line between waking life and the library of the soul." — The Athenaeum Review
+                    </p>
+</div>
+<!-- CTA ROW -->
+<div class="flex flex-wrap items-center gap-4 pt-8">
+<button class="px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-lg transition-transform active:scale-95 flex items-center gap-2">
+                        Read Now
+                    </button>
+<button class="px-8 py-3 bg-surface-variant/20 backdrop-blur-md border-[0.5px] border-outline-variant/40 text-on-surface font-medium rounded-lg hover:bg-surface-variant/40 transition-all">
+                        Add to Library
+                    </button>
+<button class="px-6 py-3 text-stone-400 font-medium hover:text-amber-500 underline decoration-amber-500/30 underline-offset-8 transition-all">
+                        Preview
+                    </button>
+<button class="ml-auto p-3 text-stone-400 hover:text-on-surface border-[0.5px] border-stone-700/50 rounded-lg flex items-center gap-2 transition-all hover:bg-stone-800/30">
+<span class="material-symbols-outlined text-sm">qr_code</span>
+<span class="text-[10px] uppercase tracking-widest">Share via QR</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- QR MODAL OVERLAY -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-stone-950/40 backdrop-blur-md">
+<div class="relative w-full max-w-[420px] bg-[#1C1917]/92 backdrop-blur-[20px] border-[0.5px] border-white/10 rounded-[16px] p-8 shadow-2xl flex flex-col items-center animate-in fade-in zoom-in duration-300">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 text-stone-500 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Heading -->
+<h3 class="text-2xl font-headline italic text-on-surface mb-2">Scan to Access This Book</h3>
+<p class="text-[13px] font-body text-stone-400 mb-8 text-center">Anyone with this QR code can open this book directly</p>
+<!-- QR Area -->
+<div class="flex flex-col items-center mb-8">
+<div class="p-1 bg-gradient-to-b from-primary/30 to-transparent rounded-[14px]">
+<div class="w-[200px] h-[200px] bg-white rounded-xl p-4 flex flex-col justify-between items-center relative overflow-hidden">
+<!-- QR Pattern Mockup -->
+<div class="w-full h-full relative border-[4px] border-black">
+<div class="absolute top-0 left-0 w-8 h-8 border-[4px] border-black"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-[4px] border-black"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-[4px] border-black"></div>
+<div class="w-full h-full qr-pattern opacity-90"></div>
+</div>
+</div>
+</div>
+<span class="mt-3 font-headline italic text-[11px] text-amber-500 tracking-wider">The Midnight Scholar</span>
+</div>
+<!-- Book Context -->
+<div class="flex items-center gap-4 w-full p-3 bg-white/5 rounded-lg border-[0.5px] border-white/10 mb-6">
+<img class="w-[40px] h-[60px] object-cover rounded-sm shadow-md" data-alt="Small thumbnail of the book cover showing dark clockwork patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUddfb3EK3JOX3vhOaNzLZZ3k45fQcDCr-s5X5twhzg1RzgGlmcIjCZEb9XYCcKrpSSwxoHQ44XIiZm7jiYAk3H3FcCtfolvtN8KvAV6a6eNLwC56SekRDUccu8porrQnfUYCLEw44tHEaO1Ltcogi04pJ852qBDxRiX4SpLKoMy1oWSK9D2AhtrsnUf53xasJrb0ABypMwg-Y8RKX_yLpV5Xi-qifgeQ5jbA4T0PMXtLATGohYIcpFjMiw5ZR9OOqzp6QhRvhplo"/>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-medium text-on-surface truncate">The Architect of Forgotten Dreams</span>
+<span class="text-[11px] text-stone-500 truncate italic">Dr. Alistair Thorne</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-[0.5px] bg-white/10 mb-6"></div>
+<!-- Copy Link Section -->
+<div class="w-full space-y-4">
+<div class="flex gap-2">
+<div class="flex-1 bg-stone-950/50 px-3 py-2 border-[0.5px] border-white/5 rounded font-mono text-[11px] text-stone-500 flex items-center overflow-hidden">
+                        https://scholar.archive/b/architect-thorne-842
+                    </div>
+<button class="px-4 py-2 bg-primary text-on-primary font-bold text-xs rounded hover:opacity-90 transition-all">Copy Link</button>
+</div>
+<a class="flex items-center justify-center gap-2 text-secondary hover:text-white transition-colors text-xs font-medium py-2" href="#">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">school</span>
+                    Generate Class QR →
+                </a>
+</div>
+<!-- Footer -->
+<footer class="mt-8 text-[11px] text-stone-600 tracking-tight">
+                QR codes expire after 30 days
+            </footer>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="bg-stone-950 w-full py-16 mt-20 border-t border-stone-800/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 max-w-full mx-auto">
+<div class="font-sans text-[10px] tracking-widest uppercase text-stone-500 order-2 md:order-1">
+                © 2024 The Midnight Scholar Archival Society. All thoughts curated.
+            </div>
+<div class="flex flex-wrap justify-center gap-8 order-1 md:order-2">
+<a class="font-sans text-[10px] tracking-widest uppercase text-stone-600 hover:text-stone-300 underline transition-all" href="#">Terms of Curation</a>
+<a class="font-sans text-[10px] tracking-widest uppercase text-stone-600 hover:text-stone-300 underline transition-all" href="#">Privacy Sanctuary</a>
+<a class="font-sans text-[10px] tracking-widest uppercase text-stone-600 hover:text-stone-300 underline transition-all" href="#">Librarian Contact</a>
+<a class="font-sans text-[10px] tracking-widest uppercase text-stone-600 hover:text-stone-300 underline transition-all" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</body></html>

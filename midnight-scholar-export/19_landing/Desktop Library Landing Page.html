@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nocturne AI | The Digital Alchemist Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#002c48",
+                        "secondary-fixed": "#eaddff",
+                        "primary": "#ffb77d",
+                        "on-surface": "#e8e1df",
+                        "on-primary-container": "#432100",
+                        "background": "#151312",
+                        "primary-fixed-dim": "#ffb77d",
+                        "tertiary-container": "#0297e8",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container-highest": "#373433",
+                        "surface-bright": "#3c3837",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-background": "#e8e1df",
+                        "surface-container-low": "#1d1b1a",
+                        "surface-container": "#221f1e",
+                        "on-surface-variant": "#dbc2b0",
+                        "surface-container-lowest": "#100e0d",
+                        "primary-container": "#d97707",
+                        "surface-variant": "#373433",
+                        "on-secondary-container": "#c9aeff",
+                        "outline-variant": "#554336",
+                        "on-primary": "#4d2600",
+                        "surface": "#151312",
+                        "surface-dim": "#151312",
+                        "on-secondary-fixed": "#25005a",
+                        "surface-tint": "#ffb77d",
+                        "surface-container-high": "#2c2928",
+                        "inverse-surface": "#e8e1df",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed": "#cee5ff",
+                        "secondary-container": "#6001d1",
+                        "inverse-on-surface": "#33302e",
+                        "secondary": "#d2bbff",
+                        "on-tertiary": "#003353",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "tertiary": "#96ccff",
+                        "inverse-primary": "#904d00",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-secondary": "#3f008e",
+                        "primary-fixed": "#ffdcc3",
+                        "outline": "#a38c7c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(21, 19, 18, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 70% 30%, rgba(217, 119, 7, 0.1) 0%, rgba(21, 19, 18, 0) 60%);
+        }
+        .neumorphic-card {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 183, 125, 0.05);
+            border-left: 1px solid rgba(255, 183, 125, 0.05);
+        }
+        .book-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-[#373433]/10">
+<div class="flex justify-between items-center px-12 py-4 max-w-[1440px] mx-auto">
+<div class="font-headline text-2xl font-medium italic text-[#ffb77d]">Nocturne AI</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-headline tracking-tight leading-relaxed text-[#ffb77d] border-b-2 border-[#ffb77d] pb-1" href="#">Archives</a>
+<a class="font-headline tracking-tight leading-relaxed text-[#dbc2b0] hover:text-[#ffb77d] transition-colors" href="#">Library</a>
+<a class="font-headline tracking-tight leading-relaxed text-[#dbc2b0] hover:text-[#ffb77d] transition-colors" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:bg-[#2c2928] hover:scale-[1.02] transition-all duration-300 active:scale-95 cursor-pointer px-6 py-2 rounded-full bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold">
+                    Start Free
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] pt-32 pb-20 flex items-center overflow-hidden hero-glow">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block mb-6 px-4 py-1 rounded-full bg-surface-container-high border border-outline-variant/20 text-primary font-label text-[10px] uppercase tracking-[0.2em]">The Digital Alchemist</span>
+<h1 class="font-headline text-6xl md:text-7xl leading-[1.1] text-on-surface mb-8">
+                    Read, Learn, and <span class="italic text-primary">Master</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-lg mb-10 leading-relaxed">
+                    Transform your digital library into an active intellectual companion. Nocturne AI synthesizes deep insights, tracks your cognitive growth, and turns information into wisdom.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/10">
+                        Begin Your Journey
+                    </button>
+<button class="px-8 py-4 bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-lg font-medium hover:bg-surface-container-highest transition-all">
+                        Explore Catalog
+                    </button>
+</div>
+</div>
+<div class="relative grid grid-cols-3 gap-4 rotate-[-12deg] scale-110 opacity-80 lg:opacity-100">
+<div class="space-y-4 pt-12">
+<div class="h-64 rounded-lg overflow-hidden bg-surface-container-low shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="minimalist aesthetic book cover with elegant typography on dark textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ubZUmELIyxNgW-Q-SNXgu7xMlRvkzL9N9CMLw2t-jGrPUmM6I5E71xdtSjkj5oaXZWQuMBQPx-3kQWwK_FaYlwhWsVV1z-dvTE7fz6q-3OJ774TtDX1PcWj4HwRFjdtkG213Vm4ucWVFlSDPUGFJwPF1E-RROj7re-UX4ef9o6e4QRcCnbjmU1SVJCI9cT5rXOO4Bvkd8RNAYk6MBmiQtgQtVKhQOFcEdQIkM7qfM-spFN7dWJSNuvsqD0Ulb08yvCs04y5Uq7M"/>
+</div>
+<div class="h-48 rounded-lg overflow-hidden bg-surface-container-low shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="classic vintage hardcover book in a dimly lit library setting with soft amber warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJroqNIruU5Rc2ZRJb9TKZmaE5ckxgElkS87lTHdjLCp_TeslEHDNQY6rFvwaJ6I9lo2XQFxpjooRVVwFiq0KAlJMsRUoXCaRmXLpJMwUqf5YUtl_hXfdvRCT8GFcXqXht3VNEjlJ7hKKXGbDcPQ2JCIO7sqHnc0u_ysTiT4zor52_9rIHE7nKdGzGVbLRnuCRx9LHAPUO_sF-NIcDJYZv293aTpom-mgp5dsD0ZaQgoz-LP3P2rBexzY1UByjP9FkTIhQb-m-mzw"/>
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-48 rounded-lg overflow-hidden bg-surface-container-low shadow-2xl border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="contemporary abstract book design with vibrant colors and bold geometric shapes in an editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFCPhLOt58xHSO6XR9fgURmgyaw5RrVxKBWO8rQCe9dJjV8yPYiKQRsV1wNSltOfOM7hfARRQKKGfOmYnuiIfAOexx8822pbYzcx7b8-F6nD95QHRqMo2kYd6q_nulHfSAVG5Y_eJfDSnMPRsRsSrhCPezOkxN6qSWkwDeGavgq3ExkXMNsrveScKQJmpjgVKePp7JixzJ29VC-W10cQB04JTLt2JxDAG-qgDg66YKK-WMCSKY3ubqU649p1CUaTR1JDEgdjt716w"/>
+</div>
+<div class="h-64 rounded-lg overflow-hidden bg-surface-container-low shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="multiple stacked old books on a rustic wooden table with soft focus morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOMqBVhkwS-8yQWYDIISKIiBsi40ZI5ZV18EaUfW87TObGDDox1Cbc1epwjA03heVopYSzbPm2wSTTZf5U7vy2UbDu_zZYYSOKevXFQRP-yyNkriVd-QbKpFEqsMrwZghN8t0rUASp6FujCKAE_r7XNyDNJkCmU829FhDt7gwTxpfMx-7j_Ui0TF5y0OPPxVxId7zTLsXdcKhNThoB-DrakMU0rWSu4M8nId7oEqdU6_J90KVUUfyurY9nkr57wV5ccxEaZhuRyd8"/>
+</div>
+</div>
+<div class="space-y-4 pt-20">
+<div class="h-64 rounded-lg overflow-hidden bg-surface-container-low shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="surreal digital art book cover featuring a portal to stars and cosmic violet clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyRqdGFH8L9i0lkJ7v4F6FNBXbp8IGwRc60FXzY0YJQThmtCOzhcrIk8xKuvCCNA_A2irxNoioAUgI2Dx9MR775w8_nG7MbOmdPfXqS8IFTZJTuFG9XKNxjcLvgt3qx3SFSmSQ8NRXhWMOilOtjukACh4yMryfRMC4ecb92yCtV4WlOO7UI3kEaL1nPE5j1UwmHB54kSlaS3lP_TYLBxHl0J5AJ5PUXs13EGdf6Uk6YdgLdL75agMtGR1OaPxLW7XU2pZF-pbE0I0"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Stats Bar -->
+<section class="bg-surface-container-lowest py-10 border-y border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<div class="text-3xl font-headline text-primary mb-1">50k+</div>
+<div class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Books Digitized</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20 hidden md:block"></div>
+<div class="text-center md:text-left">
+<div class="text-3xl font-headline text-primary mb-1">10k+</div>
+<div class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Active Readers</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20 hidden md:block"></div>
+<div class="text-center md:text-left">
+<div class="text-3xl font-headline text-primary mb-1">2.4M</div>
+<div class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">AI Summaries Generated</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20 hidden md:block"></div>
+<div class="text-center md:text-left">
+<div class="text-3xl font-headline text-primary mb-1">99.9%</div>
+<div class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Knowledge Retention</div>
+</div>
+</div>
+</section>
+<!-- Featured Books Row -->
+<section class="py-24 bg-background">
+<div class="max-w-[1440px] mx-auto px-12 mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-headline text-4xl mb-2">Curated for Your Mind</h2>
+<p class="text-on-surface-variant">Recommended reads based on your active learning paths.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto book-scroll pb-10">
+<div class="flex gap-8 px-12 min-w-max">
+<!-- Book Card -->
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="high contrast photo of a single vintage book leaning against a dark wall with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCefZ0ICTJvZshIKwc8Yt-ojO8ULtbyZGvtsf8z7hCzvQ1QD7pdXDuTltpG803ep02j7jnnwJ4lHJs-l-tgJPysbVWop6SysfUtiXzXQ0b3pn4z2nRR-9h-SRIxAJYi8skUuvetHUNhmNZDzCNoJEooQ--MGEm7Izjtr2iW5KFZTKzEkCIhqFtpUtbIS59gSKYf0lHnIkrVui5Nu7Cvm9vNYbptIJEclmDoKcWAt5a3otwkj0Tyn3sfTDSiANR9a-nEmyyl_-6SJDU"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">The Alchemist's Shadow</h3>
+<p class="text-on-surface-variant text-sm">Elena Valerius</p>
+</div>
+<!-- Repeat for other cards -->
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="minimal book cover design with a single golden circle on a deep midnight blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtUa0rWUGapIWmQ9mj4asg867DdFK1oAAbaiqXJLB-iqWtx0K4oFyP_HTtiF2G-2e6kC5Febgaoi06NAXcnwRpfXzCS07X7__Wu19V0bm2KMlNRAXe8maNoMT6J4z1Mjb7D9Nfy5CMDx_u5ikDeWTgq6NN4nQ88YY3Woh0-nEgRo6SZ2wty_Jxsf8QYKJ4ILf3bNot55XGVcXtq2L-64dp0wczjiNG2_rCZ8rzKfV8Dla1OHHd6TKkpXEAsLRXnHck8UF5P2EDD90"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">Neural Frontiers</h3>
+<p class="text-on-surface-variant text-sm">Dr. Aris Thorne</p>
+</div>
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="collection of children's science books with playful colors and celestial illustrations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE7w7XtLtTOFKqCOzr_KMumydcNGsMg_PMkLPJm2a5zeBYTVbbTD-daQJWXULJccZ_yC4kYfceQyGtvqESxtnRqqZmW9XqhxABZz4hWfHAINFZMWXlcaCHC6oCwvfHX1LeymxUM9lUdf6jza2GU-xtNUEQg9PEIO16y6zayWu7mS2Uln-VWeV1BYuX9RT318wig9fKSGRKpsPHe249lYF8PMbjNnK6Ik1JIP3ULk7sqwtXNbBOUIA1jlexR7q_RPOFfzjGjVdJ08U"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">Cosmic Echoes</h3>
+<p class="text-on-surface-variant text-sm">S. J. Marlo</p>
+</div>
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="dark dramatic book cover with metallic copper embossing and leather texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBX0pZNIDgpJj9fHl-axXn8VF6kgTj-q3Nm3N6YE-ZUBITjOcQAL9B9VNbufa6auNQVSL7DBqpEOebMUN-alrKEo-h4qZwMlMJmxJA2X_bcGa3pwVSUOLXQ83vxdixhRfgsTXDMhLwW2nyLbCduMYC86A0u8R6h9bb099_6l81W-TNp8z4WdxMUufttcmBDMmI6l5sW-1ViXSyqQAUn9Y2JcZP7RieU1JebuspiFFdEoftuoYADDmkvHfV2JFn1L_wfTNZBM8ctyE"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">Iron &amp; Ink</h3>
+<p class="text-on-surface-variant text-sm">Marcus Aurel</p>
+</div>
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="modern architecture book with clean lines and monochrome photography on the cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8UOj4KpyfIIg0BwBXtRi-fqegQxfu12TlhZjX_1ZbXM2wLu3aV4XHh4t1hZ58pTW9ry7Vb3rXaft4FpbnWPoA9VsyGJm_a8jCy6MzFaI8R1ji7DOKQULA-I_9Lzc94hTLRr_h_n82OM9uXGgKBId9pl3ZZU1VNbgc1cKQ1aQcCGU7G0XQZlQ1XPzy1HoPnZOKIrK56FEsiOASzOsZ6TyisNpqf6Oo7fPbI6_VJDLW5zKQLlgPy9b3_z0cgCV_9MhoUkgQswQIXIw"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">Structured Silence</h3>
+<p class="text-on-surface-variant text-sm">L. K. Wright</p>
+</div>
+<div class="w-64 group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden mb-4 shadow-xl group-hover:scale-[1.02] transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="philosophical book cover with an illustration of an eye and intricate mandala patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw5a5gI1EAdCOlQYHdBMOUMuK4bPBAHuBQfr-i5K2rfoU83FBE1nP5HnLXLgi6Q7RHkbCqZvNqmf0e5gM0hA3nM100b5wrcaRY8VmM0gm5MoKBais6NfqVCkjmz4-r2zk8nOwE4cU-DYJ1o30Hr10cV6EJq-1DohtVq4mzKUWxx-fmAqVIC0HTF23FlgBLVA7aCHUmZ4NBn_D5LlbrXP1UcHmhLlYXr_4ONKRcgkdOWRx2slPUwADWudVfK0lcKsrKrKO1RvQ6asc"/>
+</div>
+<h3 class="font-semibold text-lg text-on-surface group-hover:text-primary transition-colors">The Observer</h3>
+<p class="text-on-surface-variant text-sm">Julian West</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-24 px-12 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-20">
+<h2 class="font-headline text-5xl mb-6">Cognitive Superpowers</h2>
+<p class="text-on-surface-variant">We don't just host books; we augment how you process the human knowledge collective.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="neumorphic-card p-10 bg-surface-container-high rounded-xl group hover:bg-surface-container-highest transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-secondary-container/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_20px_rgba(96,1,209,0.3)] transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">AI Learning</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Contextual AI that summarizes chapters, explains complex concepts, and cross-references themes across your entire library in real-time.
+                    </p>
+<div class="mt-8 h-1 w-0 bg-secondary group-hover:w-full transition-all duration-700"></div>
+</div>
+<!-- Card 2 -->
+<div class="neumorphic-card p-10 bg-surface-container-high rounded-xl group hover:bg-surface-container-highest transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_20px_rgba(255,183,125,0.3)] transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Reading Streaks</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Gamified intellectual growth. Track your daily rituals with elegant visualizations that celebrate consistent knowledge acquisition.
+                    </p>
+<div class="mt-8 h-1 w-0 bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+<!-- Card 3 -->
+<div class="neumorphic-card p-10 bg-surface-container-high rounded-xl group hover:bg-surface-container-highest transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_20px_rgba(255,183,125,0.3)] transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Smart Analytics</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Deep-dive into your reading habits. Understand your vocabulary growth, topical focus, and average retention rates per genre.
+                    </p>
+<div class="mt-8 h-1 w-0 bg-primary group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#100e0d] w-full rounded-t-3xl pt-20 pb-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-20 max-w-[1440px] mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="font-headline text-xl font-medium text-[#ffb77d] mb-6">Nocturne AI</div>
+<p class="text-[#dbc2b0]/60 text-sm leading-relaxed max-w-xs">
+                    Crafting the future of intellectual exploration through elegant design and empathetic intelligence.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label text-xs uppercase tracking-widest text-[#ffb77d] mb-6">Company</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">About Us</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Careers</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Blog</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Resources</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-label text-xs uppercase tracking-widest text-[#ffb77d] mb-6">Resources</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Documentation</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">API Reference</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Community</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Legal</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-label text-xs uppercase tracking-widest text-[#ffb77d] mb-6">Legal</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Privacy Policy</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Terms of Service</a>
+<a class="text-[#dbc2b0]/60 hover:text-[#ffb77d] transition-colors duration-200 text-sm" href="#">Cookie Policy</a>
+</nav>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/5 text-center px-20 max-w-[1440px] mx-auto">
+<p class="font-body text-sm tracking-wide text-[#dbc2b0]/40">
+                © 2024 The Digital Alchemist. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

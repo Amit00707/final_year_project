@@ -1,0 +1,133 @@
+# 🎨 Google Stitch — Complete Feature Guide
+
+**Google Stitch** is an AI-powered UI design platform (currently in BETA) that turns text prompts, screenshots, or URLs into beautiful, functional website and app designs — with exportable code.
+
+You already have **Stitch connected** through this AI assistant via the **StitchMCP** integration. This means you can design websites directly from this chat!
+
+---
+
+## ✅ Stitch Skills Available RIGHT NOW (via this AI)
+
+These are the Stitch "skills" you can use directly in this conversation:
+
+| Skill | What it Does | How to Ask |
+|---|---|---|
+| **Generate Screen** | Create a new UI screen from a text description | *"Create a landing page for a fitness app"* |
+| **Edit Screens** | Modify existing screens with instructions | *"Make the buttons more rounded and change color to blue"* |
+| **Create Design System** | Set up colors, fonts, shapes, branding | *"Create a dark mode design system with purple accents"* |
+| **Update Design System** | Change the overall visual theme | *"Switch to a light mode with green primary color"* |
+| **Apply Design System** | Apply a theme to your screens | *"Apply my design system to all screens"* |
+| **Generate Variants** | Create multiple design variations | *"Generate 3 variants of this homepage"* |
+| **List/Create Projects** | Manage your Stitch projects | *"Create a new project called 'My Portfolio'"* |
+| **List Screens** | See all screens in a project | *"Show me all screens in my project"* |
+
+---
+
+## 🌟 Your Current Stitch Account
+
+You already have **1 active project**:
+
+- **Project**: "Yes, I can understand and communicate in Hinglish!"
+- **Project ID**: `17187238459308125451`
+- **Type**: TEXT_TO_UI_PRO
+- **Device**: Desktop
+- **Theme**: Dark Mode (Deep Blue + Teal AI accents)
+- **Screens**: 30+ screens already created!
+- **Design Style**: "The Intelligent Curator" — Editorial dark blue glassmorphism
+
+---
+
+## 🎯 What You Can Build with Stitch
+
+### Website Types
+- 🏠 **Landing Pages** — Product launches, portfolios, agencies
+- 📊 **Dashboards** — Analytics, SaaS admin panels, CRMs
+- 🛍️ **E-Commerce** — Product pages, checkout flows
+- 📱 **Mobile Apps** — iOS/Android style UIs
+- 📰 **Content Sites** — Blogs, news, documentation
+
+### Design Features
+- **AI Text-to-UI** — Describe what you want, get a full design
+- **Image-to-UI** — Upload a screenshot or sketch → editable UI
+- **URL-to-UI** — Provide a website URL → extract and redesign it
+- **Conversational Editing** — Refine designs by chatting
+- **Multi-Screen Flows** — Generate complete app user journeys
+- **Responsive Layouts** — Desktop, tablet, and mobile views
+
+### Export Options
+- **HTML + CSS** — Clean, production-ready code
+- **React Components** — Modern component-based code
+- **Figma Sync** — Export directly to Figma for team collaboration
+
+---
+
+## 🚀 How to Design a Website RIGHT NOW
+
+Just tell me what you want! Here are some example prompts:
+
+### Quick Start Examples
+
+```
+"Create a new Stitch project for an e-commerce jewelry store 
+with a luxury dark theme, gold accents, and modern typography"
+```
+
+```
+"Generate a landing page for a fitness app with 
+hero section, features, testimonials, and pricing"
+```
+
+```
+"Design a SaaS dashboard for project management with 
+dark mode, charts, sidebar navigation, and team collaboration features"
+```
+
+---
+
+## 🎨 Design System Configuration
+
+When creating a design system, you can customize:
+
+| Property | Options |
+|---|---|
+| **Color Mode** | Light / Dark |
+| **Primary Color** | Any hex color (e.g., `#6366F1`) |
+| **Font Family** | Inter, Roboto, Manrope, Outfit, etc. |
+| **Corner Roundness** | Sharp → Pill-shaped |
+| **Color Palette** | Vibrant, Fidelity, Expressive, etc. |
+| **Design Instructions** | Free-form markdown instructions |
+
+---
+
+## 📋 Templates Available on Stitch (stitch.withgoogle.com)
+
+| Template | Type | Description |
+|---|---|---|
+| **Logistics Pro** | Dashboard | Map + fleet management |
+| **Sleep Quality** | Mobile App | Health data visualizations |
+| **SaaS Dashboard** | Desktop | Analytics & admin |
+| **Health App** | Mobile | Fitness tracking |
+
+---
+
+## 💡 Pro Tips
+
+> [!TIP]
+> **Be specific in your prompts!** Instead of "make a website", say "Create a dark-mode SaaS landing page for a project management tool with a purple gradient hero, feature cards, pricing table with 3 tiers, and a CTA footer."
+
+> [!NOTE]
+> **Multiple Websites**: You can create unlimited projects in Stitch. Each project is independent with its own screens and design system.
+
+> [!IMPORTANT]
+> **Export to Code**: Once you're happy with a design, I can help you export it as actual HTML/CSS/React code and save it to your local project folder (`c:\Users\Amit Kumar\Desktop\FP`).
+
+---
+
+## 🗺️ Getting Started — Choose Your Path
+
+1. **Create a brand new website** → Tell me the type of site and style
+2. **Continue your existing project** → I can show you its current screens
+3. **Create a new design system** → Set up your brand colors & fonts first
+4. **Generate variants** → Get multiple design options to choose from
+
+**What would you like to design first?**

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdcc3",
+                    "primary-container": "#d97707",
+                    "on-tertiary": "#472a00",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "outline-variant": "#554336",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "tertiary": "#ffb95f",
+                    "on-secondary": "#3f008e",
+                    "surface-container-lowest": "#100e0d",
+                    "surface-bright": "#3c3837",
+                    "surface-container": "#221f1e",
+                    "on-surface": "#e8e1df",
+                    "on-primary-container": "#432100",
+                    "inverse-surface": "#e8e1df",
+                    "surface-tint": "#ffb77d",
+                    "surface-container-low": "#1d1b1a",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "tertiary-container": "#ca8100",
+                    "surface-container-high": "#2c2928",
+                    "secondary-fixed": "#eaddff",
+                    "secondary": "#d2bbff",
+                    "inverse-on-surface": "#33302e",
+                    "on-surface-variant": "#dbc2b0",
+                    "on-primary": "#4d2600",
+                    "surface-variant": "#373433",
+                    "on-secondary-container": "#c9aeff",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#2f1500",
+                    "secondary-container": "#6001d1",
+                    "on-tertiary-container": "#3e2400",
+                    "on-background": "#e8e1df",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-secondary-fixed": "#25005a",
+                    "background": "#151312",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "inverse-primary": "#904d00",
+                    "surface-container-highest": "#373433",
+                    "primary": "#ffb77d",
+                    "surface-dim": "#151312",
+                    "outline": "#a38c7c",
+                    "surface": "#151312",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-tertiary-fixed": "#2a1700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(21, 19, 18, 0.6);
+            backdrop-filter: blur(24px);
+            box-shadow: 0 0 20px 0 rgba(217, 119, 6, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .neumorphic-card {
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4), -4px -4px 15px rgba(85, 67, 54, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- Top App Bar (Shared Component Implementation) -->
+<header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-xl shadow-2xl shadow-black/40 flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-12">
+<span class="font-serif text-2xl font-bold text-amber-200 tracking-tighter italic">The Midnight Scholar</span>
+<nav class="hidden md:flex items-center gap-8 font-sans tracking-tight">
+<a class="text-stone-400 font-sans hover:text-stone-200 transition-colors duration-300" href="#">Library</a>
+<a class="text-stone-400 font-sans hover:text-stone-200 transition-colors duration-300" href="#">Scholar AI</a>
+<a class="text-stone-400 font-sans hover:text-stone-200 transition-colors duration-300" href="#">Collections</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 hover:bg-stone-800/50 transition-colors duration-300 rounded-full text-amber-200 border-b border-amber-200/40 pb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-stone-800/50 transition-colors duration-300 rounded-full text-stone-400">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-2 hover:bg-stone-800/50 transition-colors duration-300 rounded-full text-stone-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Sidebar (Shared Component Implementation) -->
+<aside class="fixed left-0 h-full w-64 z-40 bg-stone-950/80 backdrop-blur-lg flex flex-col h-screen pt-24 pb-8">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a scholarly man with glasses and a thoughtful expression in a dimly lit library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1NO2Lq0V-WvEvJBP4DE7Feh0Cs-moixcoeFQnKTJIjR3q3weLOEEMSF2dpCd4dNdROeiUaeP0VXEvLlq03GO15p_veXottVvFCL5DaNZVs8eu0-9e41tuDKO8tOlAGzuSaeOtPkDWc3YXtwoyNUYkRko4GjH0G57RmD63Oy-rNrDzS2uwC0dLFTWdWBjSfB2KXsGh7nYAw8eMNUvROyPOexrIAPVncUw09n-COXBNkdVPB5KTfzX9-8BORa_NJPBB0JG5ufaACU0"/>
+</div>
+<div>
+<p class="font-serif text-amber-200 text-sm font-bold">The Collector</p>
+<p class="font-sans text-xs text-stone-500 font-light tracking-wide uppercase">Archivist Level IV</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2 px-4">
+<a class="flex items-center gap-3 px-4 py-3 bg-stone-800/40 text-amber-200 font-medium rounded-r-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">book_2</span>
+<span class="font-sans text-sm font-light">Shelves</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-900/50 rounded-r-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-sans text-sm font-light">AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-900/50 rounded-r-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-sans text-sm font-light">Annotated</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-900/50 rounded-r-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-sans text-sm font-light">Social</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-900/50 rounded-r-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-sans text-sm font-light">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-container rounded-full font-sans text-sm font-medium shadow-lg shadow-primary/20">
+                Ask Scholar AI
+            </button>
+<div class="pt-4 border-t border-white/5 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 hover:text-stone-300 font-sans text-sm font-light" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+                    Help
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 hover:text-stone-300 font-sans text-sm font-light" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Archive
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content (Dashboard Base Layer) -->
+<main class="ml-64 pt-24 px-12 pb-12">
+<header class="mb-12">
+<h1 class="font-headline text-5xl italic text-on-surface mb-2 tracking-tight">Your Sanctuary</h1>
+<p class="text-on-surface-variant font-body">Evening, Arthur. You have 3 pending insights to review.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Featured Reading -->
+<div class="col-span-8 bg-surface-container-low rounded-xl p-8 neumorphic-card flex gap-8 items-center overflow-hidden group">
+<div class="w-48 h-72 rounded-lg shadow-2xl overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="vintage leather-bound book cover with ornate gold filigree detailing on a dark wooden study desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChKfqDxwhLilfkUZVIK76oQLIhBkvJecxDb_ES8BMv6OIU8RBA7G1OYej8usuwVvdAlMZyJQDQtRXWXAc-JC2vrDL6M9FNA_3f2zre4ICQFxlKVOMyXNw-QZ1bpgqchmCLgcds_7OPnNCXZ54296M8zMUqcu7v6E4ccppZXfdmfxSUFF5UQfTVPzrMp3THGUC9s57AmacgYDhzyw77vQwSphnhCIbSQojtRImIAlnf8s9DcPiV5AZxBl3fPZr0a5kRVH_RsYffYQA"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-secondary-container/30 text-secondary-fixed-dim text-xs rounded-full border border-secondary/20">AI Recommended</span>
+<span class="text-stone-500 text-xs font-label">Chapter 12: The Void</span>
+</div>
+<h2 class="font-headline text-3xl text-on-surface mb-4">Meditations on First Philosophy</h2>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 italic">"But what then am I? A thing which thinks. What is a thing which thinks? It is a thing which doubts, understands, conceives, affirms, denies..."</p>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-primary text-on-primary font-medium rounded-full text-sm">Resume Reading</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-on-surface transition-colors font-sans text-sm underline underline-offset-8">View Insights</button>
+</div>
+</div>
+</div>
+<!-- Shelf Stats -->
+<div class="col-span-4 bg-surface-container-low rounded-xl p-8 neumorphic-card flex flex-col justify-between">
+<h3 class="font-headline text-xl text-on-surface mb-6">Archive Progress</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs text-on-surface-variant mb-2 font-label">
+<span>Digital Storage</span>
+<span>90%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[90%] bg-primary shadow-[0_0_8px_rgba(255,183,125,0.5)]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs text-on-surface-variant mb-2 font-label">
+<span>Reading Goal</span>
+<span>14/20 Books</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[70%] bg-secondary shadow-[0_0_8px_rgba(210,187,255,0.5)]"></div>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full py-2 bg-surface-container-high hover:bg-surface-bright transition-colors rounded-xl text-sm font-medium text-primary">Upgrade Sanctuary</button>
+</div>
+<!-- Library Grid (Asymmetric) -->
+<div class="col-span-12 mt-8">
+<h3 class="font-headline text-2xl mb-8">Recently Cataloged</h3>
+<div class="flex gap-12 overflow-x-auto pb-12 no-scrollbar">
+<div class="flex-shrink-0 w-40 h-60 rounded-lg bg-surface-container overflow-hidden neumorphic-card transform rotate-[-2deg] hover:rotate-0 transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="simple minimal book cover with a deep blue background and white typography for a literary classic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN0JtvzAKcmCKUg18qW2lkd5k2rHO9XrlHz5ugtLJ6q2rrM1IMFSann8w9kY8T2argJc-126c4nKL61SY7SYWGTKToOwg76uG_R8GJjYeCtwxzuOrWw-3hdlvUmzWYeKNng4PUV7N7--RwBUBefwL9ZTaO69c4vp6Gu79I292Aq0SAyfdfy1Iqmv-KdE1GZuBQSWcZ5pEvgy617Z-Cfbc-ATchOZG4Cwkim8VsoU2nausOtz1fx8eo0FV8adwclS3yOhg0fyRZeSY"/>
+</div>
+<div class="flex-shrink-0 w-40 h-60 rounded-lg bg-surface-container overflow-hidden neumorphic-card transform translate-y-4 rotate-[1deg] hover:translate-y-0 transition-all duration-300 relative">
+<div class="absolute top-2 right-2 w-3 h-3 bg-secondary rounded-full blur-[2px]"></div>
+<img class="w-full h-full object-cover" data-alt="modern abstract book cover with orange and purple geometric shapes and bold modern font" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMv3CmcsKVBIMyiprgtQmN4YpPaZTtfs9WHqiBJSHU-yvcV6SaYlFPolsgKgV2H7Xbf4ERfQJroT-QyJywnuN9bWFAreQ5R9zuAd4mPfzq0hJ_Wl4toc5QYIzfX-AE8QycK1a02I861_AyoP41M73wRsxCJIO1D2VIei9I8APLoPxhccE5QFjZ4kBhZ-UwxLwL0ZZjmU_Xqs5O7qUjTaAF1wBGStSBYFfr7dpMbeSbdozYN7emxAcp-62Wvmh2x_5VgfjaDqLvqyQ"/>
+</div>
+<div class="flex-shrink-0 w-40 h-60 rounded-lg bg-surface-container overflow-hidden neumorphic-card transform rotate-[-1deg] hover:rotate-0 transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="stack of diverse books with textured covers and spines visible in soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzUd7C4MASipQae5p4pOU2KuaQq1ZYGi-lzrKiHXcyXqdvVw8RImNH2pvxzBSmTg_5XuBno28G68BRA5ro9UyBdZnnz1Bcpfp6hUZjAOlFYzbSY7cjSd7I1dhMxeVofUzJ9CFMGEVaZ6ogs7n5Z09EnFjKrYsOIW5InSXscs9IfM7fep2a7ukvAKIk8iHlTs1IrD8YqqU_ZjZwQRVIHX9H-nn3GvLTmpnS8D5ANgWePgVDMYrFZA0hWmvraeXmUkhxU2UYoG8iNY0"/>
+</div>
+<div class="flex-shrink-0 w-40 h-60 rounded-lg bg-surface-container overflow-hidden neumorphic-card transform translate-y-2 rotate-[3deg] hover:translate-y-0 transition-all duration-300">
+<img class="w-full h-full object-cover" data-alt="ancient thick book cover with silver engravings on dark navy velvet texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzyq5Z7b77Bj-ZGJevgD_0GlE8XJsjHD_DU0rSwdwlI5OdLh48sPOmklfRaF7vCfNMm_8fF8ZP4hs2pAtG_WF84OLOdZRuyFre7l7voxhP9cKXnD-LOs_jLv9Dl316SzcKJYmN8jPJ-8IIoBi6A88GuB1Lo0CxnJCtQbxBzPjFb2ZsmCZViDCvwou7MwhDp_ET6r-MrYPCYtScz0TRFvPB-DBQLZboh7TOFBnRjI2c6C56TpPa5DqzlEqDWpLijZHf5p0gJ1FQSAI"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay & Notification Dropdown (Main Focus) -->
+<div class="fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm pointer-events-none"></div>
+<div class="fixed top-20 right-8 w-[360px] z-[70] pointer-events-auto">
+<div class="glass-panel rounded-2xl overflow-hidden border border-white/5 animate-in fade-in slide-in-from-top-4 duration-300">
+<!-- Dropdown Header -->
+<div class="px-6 py-5 flex items-center justify-between">
+<h2 class="font-headline text-xl text-primary tracking-tight italic">Notifications</h2>
+<button class="text-xs font-label text-stone-500 hover:text-primary transition-colors">Mark all read</button>
+</div>
+<!-- Notification Items -->
+<div class="pb-4">
+<!-- System Alert -->
+<div class="px-6 py-4 hover:bg-stone-800/30 transition-colors duration-300 cursor-pointer flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<p class="font-body text-sm font-semibold text-on-surface leading-tight">Storage Almost Full</p>
+<p class="font-body text-xs text-on-surface-variant mt-1">Your digital sanctuary is at 90% capacity.</p>
+<span class="text-[10px] text-stone-500 font-label mt-2 block">2 hours ago</span>
+</div>
+</div>
+<!-- AI Insight (Violet/Purple) -->
+<div class="px-6 py-4 hover:bg-stone-800/30 transition-colors duration-300 cursor-pointer flex gap-4 relative group">
+<div class="absolute inset-y-0 left-0 w-1 bg-secondary shadow-[2px_0_10px_rgba(210,187,255,0.3)]"></div>
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(210,187,255,0.2)]">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<p class="font-body text-sm font-semibold text-secondary leading-tight">New AI Curator Insight</p>
+<p class="font-body text-xs text-on-surface-variant mt-1">Fresh analysis generated for your recent reading of <span class="italic">Meditations</span>.</p>
+<span class="text-[10px] text-stone-500 font-label mt-2 block uppercase tracking-wider">High Priority</span>
+</div>
+</div>
+<!-- Social/Community -->
+<div class="px-6 py-4 hover:bg-stone-800/30 transition-colors duration-300 cursor-pointer flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="portrait of a woman with a warm smile and soft light against a blurred architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokDCDI1wY6ofavdKJtx1HqwEUgQlhmS1NcapOmZsZrweB_hZShSkZYxYCi18DGwybLNgbJ7fxYnA_HeorCfLIizcFALk2L0nRHNdAQKqDWh2lvjG0RNbNXHvuP-xMv6nPipBI5L91fRvw1H_dM0RoLNxuUGQkvY2NzAOCyceLXkzbP5d7jDk-TcuXaeptW1c8eGtbNQ4aizro4VZbsWgceDGXa6Z81k0eiLnx0hyOdtElVyfZTvBbW50fAjkg5pHDn3w20Xia5a0"/>
+</div>
+<div>
+<p class="font-body text-sm text-on-surface leading-tight">
+<span class="font-bold">Sarah Thorne</span> liked your note on Chapter 4 of <span class="italic font-medium">The Alchemist</span>
+</p>
+<span class="text-[10px] text-stone-500 font-label mt-2 block">Yesterday</span>
+</div>
+</div>
+<!-- Another AI insight for texture -->
+<div class="px-6 py-4 hover:bg-stone-800/30 transition-colors duration-300 cursor-pointer flex gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">psychology</span>
+</div>
+<div>
+<p class="font-body text-sm font-semibold text-on-surface leading-tight">Pattern Recognized</p>
+<p class="font-body text-xs text-on-surface-variant mt-1">You tend to highlight existential themes in the morning hours.</p>
+<span class="text-[10px] text-stone-500 font-label mt-2 block">Oct 24</span>
+</div>
+</div>
+</div>
+<!-- Dropdown Footer -->
+<div class="bg-surface-container-low/50 py-3 text-center border-t border-white/5">
+<button class="text-xs font-label text-stone-400 hover:text-primary transition-colors flex items-center justify-center w-full gap-2">
+                    View all notifications
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#3c3837",
+            "inverse-primary": "#904d00",
+            "primary-container": "#d97707",
+            "on-secondary-fixed-variant": "#673d17",
+            "surface-dim": "#151312",
+            "outline": "#a38c7c",
+            "on-tertiary-container": "#002c48",
+            "on-tertiary-fixed-variant": "#004a75",
+            "surface": "#151312",
+            "secondary-fixed-dim": "#f7ba8a",
+            "outline-variant": "#554336",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#001d32",
+            "secondary": "#f7ba8a",
+            "surface-container-low": "#1d1b1a",
+            "on-primary": "#4d2600",
+            "inverse-on-surface": "#33302e",
+            "on-secondary-fixed": "#2f1500",
+            "surface-variant": "#373433",
+            "primary-fixed-dim": "#ffb77d",
+            "tertiary-fixed-dim": "#96ccff",
+            "on-surface-variant": "#dbc2b0",
+            "on-tertiary": "#003353",
+            "tertiary-container": "#0297e8",
+            "surface-container-high": "#2c2928",
+            "error-container": "#93000a",
+            "primary": "#ffb77d",
+            "on-primary-container": "#432100",
+            "on-background": "#e8e1df",
+            "on-error": "#690005",
+            "on-secondary": "#4c2703",
+            "inverse-surface": "#e8e1df",
+            "on-secondary-container": "#e4a97a",
+            "on-error-container": "#ffdad6",
+            "surface-container-lowest": "#100e0d",
+            "surface-container-highest": "#373433",
+            "secondary-container": "#673d17",
+            "on-primary-fixed-variant": "#6e3900",
+            "tertiary-fixed": "#cee5ff",
+            "tertiary": "#96ccff",
+            "primary-fixed": "#ffdcc3",
+            "on-primary-fixed": "#2f1500",
+            "surface-tint": "#ffb77d",
+            "secondary-fixed": "#ffdcc3",
+            "on-surface": "#e8e1df",
+            "background": "#151312",
+            "surface-container": "#221f1e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Newsreader"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #151312;
+      color: #e8e1df;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-ai {
+      background: rgba(2, 151, 232, 0.05);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(150, 204, 255, 0.1);
+    }
+    .sidebar-anchor {
+      transition: all 0.3s ease;
+    }
+    .sidebar-anchor:hover {
+      padding-left: 0.5rem;
+      color: #ffb77d;
+    }
+    .reading-content p {
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: #e8e1df;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-[#151312] w-full top-0 z-40 fixed">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl italic text-[#ffb77d] tracking-tight">
+        The Scholarly Sanctuary
+      </div>
+<nav class="hidden md:flex items-center gap-8 font-serif text-[#e8e1df] tracking-tight">
+<a class="text-[#e8e1df]/70 hover:text-[#ffb77d] transition-colors duration-300 cursor-pointer active:opacity-80" href="#">Archive</a>
+<a class="text-[#e8e1df]/70 hover:text-[#ffb77d] transition-colors duration-300 cursor-pointer active:opacity-80" href="#">Indices</a>
+<a class="text-[#e8e1df]/70 hover:text-[#ffb77d] transition-colors duration-300 cursor-pointer active:opacity-80" href="#">Scholars</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-high transition-all" placeholder="Search the archive..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#ffb77d]">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80">menu_book</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80">auto_stories</span>
+</div>
+</div>
+</div>
+<div class="h-16 bg-gradient-to-b from-[#151312] to-transparent w-full"></div>
+</header>
+<main class="pt-32 pb-40 max-w-screen-2xl mx-auto px-8 grid grid-cols-12 gap-12">
+<!-- Sidebar Navigation -->
+<aside class="col-span-3 hidden lg:block">
+<div class="sticky top-40 space-y-8">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-4">Table of Contents</p>
+<nav class="flex flex-col gap-4 font-body text-sm">
+<a class="sidebar-anchor text-on-surface-variant flex items-center gap-3" href="#definitions">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+              1. Definitions
+            </a>
+<a class="sidebar-anchor text-on-surface-variant flex items-center gap-3" href="#collection">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+              2. Data Collection
+            </a>
+<a class="sidebar-anchor text-primary font-bold flex items-center gap-3" href="#ai-usage">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              3. AI Usage policies
+            </a>
+<a class="sidebar-anchor text-on-surface-variant flex items-center gap-3" href="#rights">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+              4. User Rights
+            </a>
+<a class="sidebar-anchor text-on-surface-variant flex items-center gap-3" href="#security">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+              5. Security Protocols
+            </a>
+</nav>
+</div>
+<div class="p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+<p class="font-headline italic text-primary mb-2">Sanctuary Note</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Our privacy framework is designed to protect your intellectual journey as fiercely as a locked library vault.
+          </p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<article class="col-span-12 lg:col-span-8 lg:col-start-5 max-w-3xl">
+<header class="mb-20">
+<h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-on-surface tracking-tighter mb-8 leading-none">
+          Privacy Policy
+        </h1>
+<div class="flex items-center gap-6 text-outline font-label text-sm uppercase tracking-widest">
+<span>Effective: May 24, 2024</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>Version 4.2</span>
+</div>
+</header>
+<section class="reading-content mb-24" id="definitions">
+<h2 class="font-headline text-3xl text-primary mb-8 italic">1. Definitions</h2>
+<p class="text-lg">
+          In this digital sanctuary, "Service" refers to the curated reading platform provided by The Scholarly Sanctuary. "User Content" encompasses the annotations, highlights, and personal reflections you entrust to our archives. We treat these artifacts not as data points, but as extensions of your intellectual property.
+        </p>
+<p class="text-lg">
+          "Personal Information" includes any identifier that could bridge the gap between your digital persona and your physical identity. Our commitment is to maintain an impenetrable veil between these two worlds, ensuring your scholarly pursuits remain private.
+        </p>
+</section>
+<section class="reading-content mb-24" id="collection">
+<h2 class="font-headline text-3xl text-primary mb-8 italic">2. Data Collection</h2>
+<p class="text-lg">
+          We collect only the essential vellum required to maintain your experience. This includes session duration to optimize typography rendering and library organization preferences. Unlike commercial repositories, we do not harvest your reading speed or behavioral patterns for advertising syndication.
+        </p>
+<div class="relative w-full aspect-video rounded-2xl overflow-hidden my-12 bg-surface-container shadow-2xl group">
+<img alt="Library Sanctuary" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="dramatic interior of a gothic library with towering dark wooden shelves and warm golden light filtering through dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVhxHk4w9pgjofTnx-VH9B4NoUzIMKEgRakEl5CvGKjO1l_pcfR6ofHb56xJ8x08JAG7WKAr82l-yDX3ZdwdvL8X3NX5jU-UBxhzALJHpooyp2TNqJqbgmbFgSNJcL586cl0Z5OlqcP_L4XJdVq72Flp53on185vdV0otGzzwrNIFk_mwbt_xG5ZtFMQNRKJEPTJxh0yitoMYDKOuQ2OxLxs7SrjXPsZgCKFo6_U_udPElxPxs-DtBpQZsp2BLtjz2-tevg53wQRs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<p class="text-lg">
+          Your interactions with rare digital manuscripts are logged locally whenever possible. Syncing to our central archive is an opt-in ritual, reserved for those who wish to access their collection across multiple devices without sacrificing sovereignty.
+        </p>
+</section>
+<!-- AI Usage Policy Section - Featured with Glassmorphism -->
+<section class="glass-ai p-8 md:p-12 rounded-[2rem] mb-24 relative overflow-hidden" id="ai-usage">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-8xl text-tertiary">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-tertiary-container/20 border border-tertiary/30 mb-6">
+<span class="material-symbols-outlined text-sm text-tertiary" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">AI Intelligence Shield</span>
+</div>
+<h2 class="font-headline text-4xl text-on-surface mb-8">3. AI Usage &amp; Intelligence Policies</h2>
+<div class="space-y-6 font-body text-on-surface-variant leading-relaxed">
+<p>
+              The AI Librarians within this Sanctuary are designed for <span class="text-tertiary">Syntactic Enlightenment</span>, not data mining. Unlike traditional models, our intelligence layer operates on a "Zero-Retention" protocol for all personal inquiries.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+<div class="p-6 rounded-xl bg-surface-container-highest/40 border border-white/5">
+<h4 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">lock_reset</span>
+                  Local Inference
+                </h4>
+<p class="text-sm">Semantic analysis of your notes occurs on-device where hardware permits, minimizing network transit.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-highest/40 border border-white/5">
+<h4 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">visibility_off</span>
+                  Non-Training Mandate
+                </h4>
+<p class="text-sm">Your unique reading insights are never used to train global models. Your wisdom remains yours.</p>
+</div>
+</div>
+<p>
+              When you request a "Deep Index" of a text, the AI processes the document in an ephemeral sandbox. Once the summary or insight is delivered, the sandbox is incinerated, leaving no digital residue of your specific query path.
+            </p>
+</div>
+</div>
+</section>
+<section class="reading-content mb-24" id="rights">
+<h2 class="font-headline text-3xl text-primary mb-8 italic">4. Your Sovereignty</h2>
+<p class="text-lg">
+          You hold the key to your data vault. At any moment, you may export your entire reading history in an open-standard format. Furthermore, the "Right to be Forgotten" in our sanctuary is absolute. Upon clicking the deletion ritual, every byte associated with your account is scrubbed from our primary and backup vellum stores within 72 hours.
+        </p>
+</section>
+</article>
+</main>
+<!-- Shared Component: Footer (Sticky Neumorphic Action Bar) -->
+<footer class="fixed bottom-0 w-full z-50 flex justify-center items-center pb-8">
+<div class="bg-[#221f1e]/80 backdrop-blur-xl py-6 px-12 rounded-full shadow-[0px_-20px_40px_rgba(0,0,0,0.4)] flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-center border border-white/5 max-w-4xl w-[90%] md:w-auto">
+<div class="hidden md:block">
+<p class="font-sans text-[10px] tracking-wide uppercase text-[#e8e1df]/60">
+          © 2024 The Scholarly Sanctuary. All rights reserved.
+        </p>
+</div>
+<div class="flex gap-6 justify-center items-center">
+<button class="text-[#e8e1df] border border-[#373433] px-8 py-3 rounded-full hover:bg-[#373433] font-sans text-sm tracking-wide uppercase hover:scale-105 transition-transform duration-200 cursor-pointer active:opacity-80">
+          Decline
+        </button>
+<button class="bg-[#d97707] text-[#151312] px-10 py-3 rounded-full font-bold font-sans text-sm tracking-wide uppercase hover:scale-105 transition-transform duration-200 shadow-[0_10px_20px_rgba(217,119,7,0.2)] cursor-pointer active:opacity-80">
+          I Accept
+        </button>
+</div>
+</div>
+</footer>
+</body></html>

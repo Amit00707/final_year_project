@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verify Your Email | The Midnight Scholar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#dbc2b0",
+                        "primary-container": "#d97707",
+                        "surface-container-highest": "#373433",
+                        "error-container": "#93000a",
+                        "primary": "#ffb77d",
+                        "surface-bright": "#3c3837",
+                        "surface-container": "#221f1e",
+                        "inverse-primary": "#904d00",
+                        "on-secondary-fixed-variant": "#4a4643",
+                        "primary-fixed-dim": "#ffb77d",
+                        "surface-dim": "#151312",
+                        "tertiary": "#d2bbff",
+                        "outline-variant": "#554336",
+                        "on-secondary-fixed": "#1e1b19",
+                        "surface-container-lowest": "#100e0d",
+                        "secondary-container": "#4a4643",
+                        "background": "#0C0A09",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "on-primary": "#4d2600",
+                        "tertiary-container": "#a476ff",
+                        "surface-container-low": "#1d1b1a",
+                        "primary-fixed": "#ffdcc3",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "surface-variant": "#373433",
+                        "secondary": "#ccc5c2",
+                        "on-tertiary-fixed": "#25005a",
+                        "surface-tint": "#ffb77d",
+                        "on-tertiary-container": "#36007d",
+                        "on-secondary-container": "#bab4b0",
+                        "on-primary-container": "#432100",
+                        "on-secondary": "#33302d",
+                        "secondary-fixed": "#e9e1dd",
+                        "tertiary-fixed-dim": "#d2bbff",
+                        "secondary-fixed-dim": "#ccc5c2",
+                        "on-background": "#e8e1df",
+                        "surface-container-high": "#2c2928",
+                        "on-tertiary-fixed-variant": "#5a00c6",
+                        "surface": "#1C1917",
+                        "on-surface": "#e8e1df",
+                        "tertiary-fixed": "#eaddff",
+                        "outline": "#a38c7c",
+                        "on-tertiary": "#3f008e",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#2f1500",
+                        "inverse-surface": "#e8e1df",
+                        "inverse-on-surface": "#33302e"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neumorphic-card {
+            box-shadow: 10px 10px 20px #080706, -10px -10px 20px #1a1715;
+        }
+        .neumorphic-inset {
+            box-shadow: inset 4px 4px 8px #0d0c0b, inset -4px -4px 8px #2b2623;
+        }
+        .glow-amber {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+        }
+        .pulse-amber {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(217, 119, 6, 0.6)); }
+            50% { filter: drop-shadow(0 0 12px rgba(217, 119, 6, 0.9)); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col items-center px-6 py-12">
+<!-- Top AppBar Navigation Shell Supressed for Transactional Focus -->
+<header class="mb-12">
+<h1 class="text-2xl font-headline italic tracking-widest text-primary-container text-center uppercase">
+            The Midnight Scholar
+        </h1>
+</header>
+<!-- Main Content Card -->
+<main class="w-full max-w-[440px] neumorphic-card bg-surface rounded-xl p-8 flex flex-col items-center">
+<!-- Illustration -->
+<div class="mb-8 relative flex items-center justify-center">
+<div class="w-24 h-16 border-2 border-primary-container/40 rounded-lg relative overflow-hidden flex items-center justify-center">
+<svg fill="none" height="40" viewbox="0 0 60 40" width="60" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 4L30 22L58 4" stroke="#d97707" stroke-linecap="round" stroke-width="2"></path>
+<rect height="36" rx="2" stroke="#d97707" stroke-width="2" width="56" x="2" y="2"></rect>
+</svg>
+<div class="absolute w-3 h-3 bg-primary-container rounded-full pulse-amber glow-amber z-10"></div>
+</div>
+</div>
+<!-- Heading -->
+<h2 class="text-3xl font-headline italic text-amber-500 mb-4 text-center">
+            Verify Your Email
+        </h2>
+<!-- Subtext -->
+<p class="text-on-surface-variant text-center mb-8 px-4 leading-relaxed">
+            We sent a 6-digit verification code to <span class="text-primary-container font-bold">scholar@library.ai</span>
+</p>
+<!-- OTP Input Group -->
+<div class="flex gap-2 mb-8 w-full justify-center">
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" type="text" value="7"/>
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" type="text" value="2"/>
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" placeholder="•" type="text"/>
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" placeholder="•" type="text"/>
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" placeholder="•" type="text"/>
+<input class="w-12 h-14 bg-surface-container-lowest neumorphic-inset border-none rounded-lg text-center text-2xl font-body font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" maxlength="1" placeholder="•" type="text"/>
+</div>
+<!-- Timer -->
+<div class="mb-10 text-center">
+<span class="font-mono text-amber-500/80 tracking-tighter flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                Code expires in 04:47
+            </span>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary-container font-semibold py-4 rounded-lg glow-amber hover:opacity-90 transition-all mb-6 flex items-center justify-center gap-2">
+            Verify &amp; Continue
+        </button>
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/10 mb-6"></div>
+<!-- Ghost Button (Disabled) -->
+<button class="text-on-surface/40 font-medium py-2 px-6 rounded-lg mb-4 cursor-not-allowed text-sm uppercase tracking-widest">
+            Resend Code
+        </button>
+<!-- Small Link -->
+<a class="text-secondary/60 text-sm hover:text-primary transition-colors flex items-center gap-1 mb-2" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+            Wrong email? Go back
+        </a>
+</main>
+<!-- Below the Card: Progress -->
+<div class="mt-12 flex flex-col items-center">
+<div class="flex gap-4 mb-3">
+<div class="w-2.5 h-2.5 bg-primary-container rounded-full"></div>
+<div class="w-2.5 h-2.5 bg-primary-container rounded-full glow-amber"></div>
+<div class="w-2.5 h-2.5 border border-outline-variant rounded-full"></div>
+</div>
+<p class="text-secondary/40 text-[11px] uppercase tracking-widest font-label font-medium">
+            Step 2 of 3 — Verify your account
+        </p>
+</div>
+<!-- Footer -->
+<footer class="mt-auto pt-16 pb-6 w-full text-center">
+<p class="text-secondary/20 text-[10px] uppercase tracking-[0.2em]">
+            For your security, this code expires in 5 minutes.
+        </p>
+</footer>
+</body></html>

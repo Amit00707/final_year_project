@@ -1,0 +1,23 @@
+- [x] Create Stitch Project
+- [x] Create & Apply Design System
+- [x] Generate Landing Page
+- [x] Generate Dashboard Page
+- [x] Generate Auth Pages
+- [x] Generate Reader Page
+- [x] Generate Book Details Page (Desktop Web)
+- [x] Generate My Library Page (Desktop Web)
+- [x] Generate Profile Page (Desktop Web)
+- [x] Generate Gamification Page
+- [x] Generate Teacher Dashboard
+- [x] Generate Smart Search Page
+- [x] Generate Admin Dashboard
+- [x] Generate Onboarding Flow
+- [x] Generate Settings Page
+- [ ] Generate Remaining Auth (Signup, Forgot Password, Verification)
+- [/] Generate Book Listing Page
+- [/] Generate Social Pages (Discussion Chat)
+- [/] Generate Reading Plan Page
+- [/] Generate Author Profile Page
+- [ ] Generate Notifications Dropdown View
+- [ ] Generate Error Pages (404, 500, Offline)
+- [ ] Generate Legal Pages (Privacy Policy, terms)

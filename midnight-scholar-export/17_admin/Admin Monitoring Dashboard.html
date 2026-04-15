@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Midnight Scholar | System Monitoring</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#6e3900",
+                      "surface-bright": "#3c3837",
+                      "tertiary-container": "#ca8100",
+                      "secondary": "#d2bbff",
+                      "on-error-container": "#ffdad6",
+                      "on-surface": "#e8e1df",
+                      "on-background": "#e8e1df",
+                      "outline": "#a38c7c",
+                      "inverse-primary": "#904d00",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "tertiary": "#ffb95f",
+                      "surface": "#151312",
+                      "surface-container-lowest": "#100e0d",
+                      "primary-container": "#d97707",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#33302e",
+                      "secondary-fixed": "#eaddff",
+                      "surface-container": "#221f1e",
+                      "primary-fixed": "#ffdcc3",
+                      "surface-container-low": "#1d1b1a",
+                      "surface-container-high": "#2c2928",
+                      "inverse-surface": "#e8e1df",
+                      "background": "#151312",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-secondary-container": "#c9aeff",
+                      "surface-container-highest": "#373433",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "on-surface-variant": "#dbc2b0",
+                      "on-primary-fixed": "#2f1500",
+                      "on-secondary": "#3f008e",
+                      "surface-tint": "#ffb77d",
+                      "on-primary": "#4d2600",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "outline-variant": "#554336",
+                      "on-secondary-fixed": "#25005a",
+                      "surface-variant": "#373433",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "on-tertiary": "#472a00",
+                      "error-container": "#93000a",
+                      "surface-dim": "#151312",
+                      "on-tertiary-container": "#3e2400",
+                      "on-error": "#690005",
+                      "secondary-container": "#6001d1",
+                      "primary-fixed-dim": "#ffb77d",
+                      "on-primary-container": "#432100",
+                      "on-tertiary-fixed": "#2a1700",
+                      "primary": "#ffb77d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Lora", "serif"],
+                      "body": ["Inter", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neumorphic-card {
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4), -4px -4px 15px rgba(85, 67, 54, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #151312;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #373433;
+            border-radius: 10px;
+        }
+        body {
+            background-color: #151312;
+        }
+      </style>
+</head>
+<body class="font-body text-on-surface custom-scrollbar">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-md shadow-xl shadow-black/20 flex justify-between items-center px-8 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-serif italic text-amber-500">The Midnight Scholar</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-sm font-medium Inter text-amber-500 border-b-2 border-amber-600 pb-1 font-bold" href="#">Dashboard</a>
+<a class="text-sm font-medium Inter text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 hover:text-amber-400 transition-all duration-300" href="#">Users</a>
+<a class="text-sm font-medium Inter text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 hover:text-amber-400 transition-all duration-300" href="#">Library</a>
+<a class="text-sm font-medium Inter text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 hover:text-amber-400 transition-all duration-300" href="#">Reports</a>
+<a class="text-sm font-medium Inter text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 hover:text-amber-400 transition-all duration-300" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-stone-900/40 px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-stone-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-32 text-stone-300 placeholder-stone-500" placeholder="Search archives..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-stone-400 hover:text-amber-400 transition-colors">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:text-white transition-colors">auto_awesome</button>
+<button class="material-symbols-outlined text-stone-400 hover:text-amber-400 transition-colors">account_circle</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-20 px-8 max-w-[1600px] mx-auto">
+<header class="mb-12">
+<h1 class="font-headline text-4xl font-bold text-stone-100 tracking-tight mb-2">System Oversight</h1>
+<p class="text-stone-400 font-medium">Monitoring the pulse of the digital sanctuary.</p>
+</header>
+<!-- 1. Analytics Overview: Neumorphic Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div class="neumorphic-card bg-surface-container-low p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-amber-500 bg-amber-500/10 p-2 rounded-lg">group</span>
+<span class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded">+12%</span>
+</div>
+<h3 class="text-stone-400 text-sm font-medium mb-1">Total Users</h3>
+<p class="text-3xl font-headline font-bold text-stone-100">12.4k</p>
+<div class="mt-4 h-1 w-full bg-stone-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 w-3/4"></div>
+</div>
+</div>
+<div class="neumorphic-card bg-surface-container-low p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-amber-500 bg-amber-500/10 p-2 rounded-lg">bolt</span>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded">Steady</span>
+</div>
+<h3 class="text-stone-400 text-sm font-medium mb-1">Active Today</h3>
+<p class="text-3xl font-headline font-bold text-stone-100">1.2k</p>
+<div class="mt-4 flex gap-1 items-end h-8">
+<div class="w-full bg-stone-700 h-1/2 rounded-t-sm"></div>
+<div class="w-full bg-stone-700 h-2/3 rounded-t-sm"></div>
+<div class="w-full bg-amber-600 h-full rounded-t-sm"></div>
+<div class="w-full bg-stone-700 h-4/5 rounded-t-sm"></div>
+<div class="w-full bg-stone-700 h-1/2 rounded-t-sm"></div>
+</div>
+</div>
+<div class="neumorphic-card bg-surface-container-low p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">auto_stories</span>
+<span class="text-xs font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded">AI Pick</span>
+</div>
+<h3 class="text-stone-400 text-sm font-medium mb-1">Most Read Books</h3>
+<p class="text-3xl font-headline font-bold text-stone-100">450</p>
+<p class="text-xs text-stone-500 mt-4 italic">Trending: "The Alchemist's Shadow"</p>
+</div>
+<div class="neumorphic-card bg-surface-container-low p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-amber-500 bg-amber-500/10 p-2 rounded-lg">schedule</span>
+<span class="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded">+4m</span>
+</div>
+<h3 class="text-stone-400 text-sm font-medium mb-1">Avg Reading Time</h3>
+<p class="text-3xl font-headline font-bold text-stone-100">42m</p>
+<div class="mt-4 h-1 w-full bg-stone-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 w-1/2"></div>
+</div>
+</div>
+</section>
+<!-- 2. Charts & Insights Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Line Chart Mockup -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 neumorphic-card">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-xl font-bold text-stone-200">Daily Reading Trends</h3>
+<div class="flex gap-4 text-xs font-medium text-stone-500">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-600"></span> Current Week</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-stone-700"></span> Previous Week</span>
+</div>
+</div>
+<div class="relative h-64 w-full flex items-end justify-between gap-4">
+<!-- Simple SVG Line Graph Visualization -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,75 20,60 T40,40 T60,50 T80,20 T100,10" fill="none" stroke="#d97706" stroke-width="2"></path>
+<path d="M0,85 Q10,80 20,70 T40,65 T60,75 T80,50 T100,45" fill="none" stroke="#373433" stroke-dasharray="4" stroke-width="1.5"></path>
+</svg>
+<!-- Labels -->
+<div class="absolute bottom-0 left-0 w-full flex justify-between text-[10px] text-stone-600 translate-y-6">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+</div>
+<!-- Donut Chart Mockup -->
+<div class="bg-surface-container-low rounded-xl p-8 neumorphic-card flex flex-col items-center justify-center relative">
+<h3 class="font-headline text-xl font-bold text-stone-200 mb-8 self-start">User Base Split</h3>
+<div class="relative w-48 h-48">
+<!-- Simulated Donut Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#373433" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#d97706" stroke-dasharray="65 100" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-headline font-bold text-stone-100">35%</span>
+<span class="text-[10px] uppercase tracking-widest text-stone-500 font-bold">Premium</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4 w-full">
+<div class="text-center">
+<p class="text-xs text-stone-500 mb-1">Free Scholars</p>
+<p class="font-bold text-stone-200">8,060</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-stone-500 mb-1">Premium</p>
+<p class="font-bold text-amber-500">4,340</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. & 4. Table and System Panel -->
+<div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
+<!-- Recent Scholars Table -->
+<div class="xl:col-span-3 bg-surface-container-low rounded-xl p-8 neumorphic-card overflow-x-auto">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-xl font-bold text-stone-200">Recent Scholars &amp; Acquisitions</h3>
+<button class="text-xs font-bold text-amber-500 bg-amber-500/10 px-4 py-2 rounded-full hover:bg-amber-500 hover:text-on-primary transition-all">Export Report</button>
+</div>
+<table class="w-full text-left">
+<thead>
+<tr class="text-xs font-bold text-stone-500 border-b border-stone-800/20">
+<th class="pb-4 px-2">SCHOLAR ID</th>
+<th class="pb-4 px-2">NAME / TITLE</th>
+<th class="pb-4 px-2">TIER</th>
+<th class="pb-4 px-2">STATUS</th>
+<th class="pb-4 px-2 text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="text-sm text-stone-300">
+<tr class="group hover:bg-stone-800/20 transition-colors">
+<td class="py-4 px-2 font-mono text-xs text-stone-500">#SCH-9021</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a focused young man wearing glasses in a dim vintage library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiYEz5xPUvDdyFl8eidge0ZSFUJF0WimyM3i2O0k5vSuLnF1SeP5xVkEDqBVmajkosos0yi5gOKdIsBbyrXQGZyiO6P8d08MDwEbUTMP89bgPapV05gHPZP1Cov_D4JJ4oSVtmXd8GgaWuIvLb4znDEaFraeY7TI3oZKTA5jPvX2EYloGtTHa5ldsUumkPgNIkhR7M7yeH2g1Q_YwSVWT_ZPR0Xr7u2nEVmZl7G1D-zY0Bb6jhUOtpqtD91HcKJO4QLQ3wCYkzQ9c"/>
+</div>
+<div>
+<p class="font-medium">Julian Thorne</p>
+<p class="text-[10px] text-stone-500">julian.t@scholars.net</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary/10 text-secondary border border-secondary/20">PREMIUM</span>
+</td>
+<td class="py-4 px-2">
+<span class="flex items-center gap-1.5 text-xs text-emerald-500">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    Active
+                                </span>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="material-symbols-outlined text-stone-600 hover:text-amber-500 transition-colors">settings_input_component</button>
+</td>
+</tr>
+<tr class="group hover:bg-stone-800/20 transition-colors">
+<td class="py-4 px-2 font-mono text-xs text-stone-500">#BK-4421</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-10 rounded bg-stone-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up of a vintage leather book cover with gold embossed lettering on a dark wooden shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz2TH2N479-D9IbNv5q8OX4ClBSDAfleZAvoxURYvooq2ztEjloQE8Aykp2O7XwaS1K8WTeRkRusGj36rQBNUkAoYXFuIXyW18wvGIAhSdUqdDOhZISYOZJaMiduvaYmlMrvr7GhgVOg7XCt058l7nCf6iAV86CFfvY2aMq7H-KU7jrcBJhki2tQbU92HYfqQw3IwShZq50NkQg3hhBInVshb_WEQYUUoGwIhFXrYOS4tvI0lUqbLKaitIbUlHUD3tcNWb63fbQWc"/>
+</div>
+<div>
+<p class="font-medium italic">Veil of Echoes</p>
+<p class="text-[10px] text-stone-500">A. K. Sterling • Fantasy</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-stone-800 text-stone-400">FREE</span>
+</td>
+<td class="py-4 px-2">
+<span class="flex items-center gap-1.5 text-xs text-stone-500">
+<span class="w-1.5 h-1.5 rounded-full bg-stone-500"></span>
+                                    Archived
+                                </span>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="material-symbols-outlined text-stone-600 hover:text-amber-500 transition-colors">settings_input_component</button>
+</td>
+</tr>
+<tr class="group hover:bg-stone-800/20 transition-colors">
+<td class="py-4 px-2 font-mono text-xs text-stone-500">#SCH-8842</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="smiling woman in a library with soft evening light coming through stained glass windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWEmTPCnj6juJBGJo7orJhAXWEK2-dlg-Qepc7MmyTkBQMjSudOHiybN8QfFnxDVwbcMMFENnOzt15aWDNHZGAf3x2Vnpo6k8avUkGH4V-Bofa0gaYUNxHBODZDwB-tm_UaMVQWv8khpG7m2R6jQrOnFfDfC7sgOcDKfDXBZivvt_XKgAifmKx4Cx0Sd0fL3tFDpHTNK3gtPTf0Z1coVS8dRIseGsF9SG5JKTRgdtBqi09IJfkxB8T9mq-Bt_uT-4eWtG4ZKbsmAs"/>
+</div>
+<div>
+<p class="font-medium">Elena Vance</p>
+<p class="text-[10px] text-stone-500">evance@archives.edu</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary/10 text-secondary border border-secondary/20">PREMIUM</span>
+</td>
+<td class="py-4 px-2">
+<span class="flex items-center gap-1.5 text-xs text-emerald-500">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    Active
+                                </span>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="material-symbols-outlined text-stone-600 hover:text-amber-500 transition-colors">settings_input_component</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- System Monitoring Panel -->
+<div class="flex flex-col gap-8">
+<div class="bg-surface-container-low rounded-xl p-6 neumorphic-card">
+<div class="flex justify-between items-start mb-4">
+<h4 class="text-xs font-bold tracking-widest text-stone-500 uppercase">System Health</h4>
+<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 uppercase tracking-tighter">Operational</span>
+</div>
+<div class="flex items-end gap-2 mb-2">
+<span class="text-2xl font-headline font-bold text-stone-100">120ms</span>
+<span class="text-[10px] text-stone-500 pb-1">Avg Latency</span>
+</div>
+<div class="h-10 w-full flex items-end gap-1">
+<div class="flex-1 bg-stone-800 h-1/2 rounded-t-sm"></div>
+<div class="flex-1 bg-amber-500/60 h-2/3 rounded-t-sm"></div>
+<div class="flex-1 bg-amber-600 h-full rounded-t-sm"></div>
+<div class="flex-1 bg-amber-500/60 h-1/2 rounded-t-sm"></div>
+<div class="flex-1 bg-stone-800 h-1/3 rounded-t-sm"></div>
+<div class="flex-1 bg-amber-600 h-3/4 rounded-t-sm"></div>
+<div class="flex-1 bg-amber-500/60 h-4/5 rounded-t-sm"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 neumorphic-card">
+<h4 class="text-xs font-bold tracking-widest text-stone-500 uppercase mb-4">Cache Efficiency</h4>
+<div class="flex justify-between items-center">
+<div class="w-16 h-16 relative">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#373433" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="16" stroke="#d97706" stroke-dasharray="94 100" stroke-width="4"></circle>
+</svg>
+</div>
+<div class="text-right">
+<p class="text-2xl font-headline font-bold text-stone-100">94.2%</p>
+<p class="text-[10px] text-stone-500 uppercase font-bold tracking-tight">Redis Hit Rate</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 neumorphic-card flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">memory</span>
+<div>
+<p class="text-xs font-bold text-stone-200">AI Tokens</p>
+<p class="text-[10px] text-stone-500">3.2M processed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-stone-600 hover:text-stone-300 cursor-pointer">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="fixed bottom-0 w-full bg-stone-950 flex justify-between items-center px-8 py-3 border-t border-stone-800/20 z-50">
+<p class="text-xs font-mono tracking-tighter Inter text-stone-500">© 2024 The Midnight Scholar | System Status: <span class="text-emerald-500">All Systems Operational</span></p>
+<div class="flex gap-6">
+<a class="text-xs font-mono tracking-tighter Inter text-stone-500 hover:text-amber-400 opacity-80 hover:opacity-100 transition-all" href="#">Support</a>
+<a class="text-xs font-mono tracking-tighter Inter text-stone-500 hover:text-amber-400 opacity-80 hover:opacity-100 transition-all" href="#">API Docs</a>
+<a class="text-xs font-mono tracking-tighter Inter text-stone-500 hover:text-amber-400 opacity-80 hover:opacity-100 transition-all" href="#">Privacy</a>
+</div>
+</footer>
+</body></html>

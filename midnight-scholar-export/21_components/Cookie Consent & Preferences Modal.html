@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#ffb95f",
+                        "on-secondary": "#3f008e",
+                        "on-primary-container": "#432100",
+                        "on-secondary-fixed": "#25005a",
+                        "primary-fixed": "#ffdcc3",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "outline-variant": "#554336",
+                        "secondary-container": "#6001d1",
+                        "on-tertiary-container": "#3e2400",
+                        "on-secondary-container": "#c9aeff",
+                        "surface-container-low": "#1d1b1a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-primary": "#4d2600",
+                        "inverse-primary": "#904d00",
+                        "surface-container-highest": "#373433",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "primary": "#ffb77d",
+                        "inverse-surface": "#e8e1df",
+                        "surface-bright": "#3c3837",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#d97707",
+                        "error-container": "#93000a",
+                        "on-background": "#e8e1df",
+                        "error": "#ffb4ab",
+                        "secondary": "#d2bbff",
+                        "surface-container": "#221f1e",
+                        "tertiary-container": "#ca8100",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface": "#151312",
+                        "on-primary-fixed": "#2f1500",
+                        "inverse-on-surface": "#33302e",
+                        "surface-dim": "#151312",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-error-container": "#ffdad6",
+                        "background": "#151312",
+                        "outline": "#a38c7c",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-fixed": "#eaddff",
+                        "surface-tint": "#ffb77d",
+                        "surface-container-high": "#2c2928",
+                        "on-tertiary": "#472a00",
+                        "surface-container-lowest": "#100e0d",
+                        "surface-variant": "#373433",
+                        "on-surface-variant": "#dbc2b0",
+                        "on-surface": "#e8e1df",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-banner-glass {
+            background: rgba(28, 25, 23, 0.92);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full bg-[#151312]/60 backdrop-blur-md z-50 flex justify-between items-center px-12 py-4 w-full">
+<div class="text-2xl font-serif italic text-amber-500 font-headline">The Midnight Scholar</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-neutral-400 font-medium hover:text-amber-300 transition-colors duration-300" href="#">Library</a>
+<a class="text-neutral-400 font-medium hover:text-amber-300 transition-colors duration-300" href="#">Scholar AI</a>
+<a class="text-neutral-400 font-medium hover:text-amber-300 transition-colors duration-300" href="#">Collections</a>
+<a class="text-neutral-400 font-medium hover:text-amber-300 transition-colors duration-300" href="#">Archives</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-500 cursor-pointer hover:scale-95 transition-transform">account_circle</span>
+</div>
+</header>
+<main class="pt-24 pb-48 px-6 max-w-7xl mx-auto space-y-32">
+<!-- State 1: Website Banner Background Context -->
+<section class="relative min-h-[400px] flex items-center justify-center rounded-xl overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Atmospheric dark library with soft lighting" class="w-full h-full object-cover opacity-40 grayscale" data-alt="atmospheric library interior with rows of old books in soft warm light shadows and moody dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GGdL8Av5wgahesGL6S5gm2U3K3nd6hJi40JiScs21AUABS9GHURtpR4fQqT4NW9Ag-zNsmnBJ6Qi4y7M984GD4f4OIe0dqYhGmCxcwKPWe0yyPkPvtvrKGwI6YwwzzwZ4cS8n9w_ZaVePHk5ZrA94wNBlcsVVbckuet0cOUMRTIPYwUFHAMB7o2pSci7dP2tBSu_WYAahZN6pxkH0Fkjyh6QzfHlNqaHNeplz3MQyVbsyqz-K0l-4Br7hdD53Ir8lEWgUXiL61Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+</div>
+<div class="relative z-10 text-center max-w-2xl px-8">
+<h1 class="text-5xl font-headline italic tracking-tight mb-6">Curating wisdom for the midnight hours.</h1>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">A sanctuary for the digital collector, where every word is intentional and every insight is amplified by AI.</p>
+</div>
+<!-- THE BANNER (COMPONENT) -->
+<div class="fixed bottom-0 left-0 w-full bg-banner-glass backdrop-blur-[16px] border-t border-white/10 z-[60] flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-5 gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield">shield</span>
+<p class="text-[13px] text-[#A8A29E] leading-snug max-w-xl">
+                        We use cookies to enhance your reading experience and personalize AI recommendations. 
+                        <a class="text-primary hover:underline ml-1" href="#">Learn more</a>
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-5 py-2.5 text-xs font-medium text-on-surface-variant hover:text-primary transition-colors">Manage Preferences</button>
+<button class="px-5 py-2.5 text-xs font-medium text-on-surface-variant hover:text-primary transition-colors">Reject Non-Essential</button>
+<button class="px-8 py-2.5 bg-primary-container text-on-primary-container rounded-full text-xs font-bold hover:scale-95 transition-transform">Accept All</button>
+</div>
+</div>
+</section>
+<!-- State 2: Preferences Modal -->
+<section class="flex flex-col items-center gap-12">
+<div class="text-center">
+<span class="text-xs tracking-[0.2em] uppercase text-primary/60 font-medium">Design Review</span>
+<h2 class="text-3xl font-headline italic mt-2">Consent Preference State</h2>
+</div>
+<!-- THE MODAL (COMPONENT) -->
+<div class="w-full max-w-[480px] bg-surface-container-low/80 backdrop-blur-2xl rounded-2xl p-8 border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="mb-10 text-center">
+<h3 class="text-2xl font-headline italic text-amber-100 mb-2">Cookie Preferences</h3>
+<div class="h-0.5 w-12 bg-primary/30 mx-auto"></div>
+</div>
+<div class="space-y-8">
+<!-- Row 1 -->
+<div class="flex justify-between items-start gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-semibold text-on-surface">Essential Cookies</span>
+<span class="text-xs text-on-surface-variant">Required for login and security</span>
+</div>
+<div class="relative inline-flex h-5 w-10 flex-shrink-0 cursor-not-allowed rounded-full border-2 border-transparent bg-outline-variant/30 transition-colors duration-200">
+<span class="translate-x-5 pointer-events-none inline-block h-4 w-4 transform rounded-full bg-surface-container-highest shadow ring-0 transition duration-200"></span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex justify-between items-start gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-semibold text-on-surface">Analytics Cookies</span>
+<span class="text-xs text-on-surface-variant">Help us improve the platform</span>
+</div>
+<button class="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary/20 transition-colors duration-200 ease-in-out focus:outline-none" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-4 w-4 transform rounded-full bg-primary shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Row 3 -->
+<div class="flex justify-between items-start gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-semibold text-on-surface">Personalization Cookies</span>
+<span class="text-xs text-on-surface-variant flex items-center gap-1.5">
+                                Power AI recommendations 
+                                <span class="material-symbols-outlined text-[10px] text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</span>
+</div>
+<button class="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary/20 transition-colors duration-200 ease-in-out focus:outline-none" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-4 w-4 transform rounded-full bg-primary shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<div class="mt-12 flex flex-col gap-4 items-center">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full text-sm font-bold shadow-lg hover:scale-[0.98] transition-transform">Save Preferences</button>
+<button class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors py-2">Cancel</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Anchor -->
+<footer class="bg-[#100e0d] w-full py-8 flex flex-col items-center justify-center gap-4 w-full border-t border-white/5">
+<p class="font-sans Inter text-xs uppercase tracking-widest text-neutral-500">© 2024 The Midnight Scholar. Curated for the inquisitive mind.</p>
+<div class="flex gap-6">
+<a class="font-sans Inter text-xs uppercase tracking-widest text-neutral-500 hover:text-amber-200 underline decoration-amber-500/20 transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans Inter text-xs uppercase tracking-widest text-neutral-500 hover:text-amber-200 underline decoration-amber-500/20 transition-colors" href="#">Terms of Service</a>
+<a class="font-sans Inter text-xs uppercase tracking-widest text-neutral-500 hover:text-amber-200 underline decoration-amber-500/20 transition-colors" href="#">Cookie Preferences</a>
+<a class="font-sans Inter text-xs uppercase tracking-widest text-neutral-500 hover:text-amber-200 underline decoration-amber-500/20 transition-colors" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

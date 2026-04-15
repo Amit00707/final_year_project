@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300..800;1,300..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb77d",
+                        "tertiary-container": "#ca8100",
+                        "secondary-container": "#6001d1",
+                        "background": "#151312",
+                        "on-primary": "#4d2600",
+                        "surface-variant": "#373433",
+                        "primary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#c9aeff",
+                        "outline-variant": "#554336",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary": "#d2bbff",
+                        "on-background": "#e8e1df",
+                        "tertiary": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary": "#ffb77d",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#25005a",
+                        "surface-container-lowest": "#100e0d",
+                        "inverse-surface": "#e8e1df",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#dbc2b0",
+                        "surface-container-highest": "#373433",
+                        "surface-container-low": "#1d1b1a",
+                        "on-primary-fixed": "#2f1500",
+                        "surface": "#151312",
+                        "inverse-primary": "#904d00",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container-high": "#2c2928",
+                        "tertiary-fixed": "#ffddb8",
+                        "error-container": "#93000a",
+                        "primary-container": "#d97707",
+                        "on-secondary": "#3f008e",
+                        "on-primary-container": "#432100",
+                        "surface-container": "#221f1e",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#eaddff",
+                        "inverse-on-surface": "#33302e",
+                        "outline": "#a38c7c",
+                        "on-tertiary": "#472a00",
+                        "on-surface": "#e8e1df",
+                        "surface-dim": "#151312",
+                        "surface-bright": "#3c3837",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-tertiary-container": "#3e2400",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary-fixed-variant": "#5a00c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "Lora", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(21, 19, 18, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .neumorphic-card {
+            background: #221f1e;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -4px -4px 15px rgba(85,67,54,0.05);
+        }
+        .amber-gradient {
+            background: linear-gradient(135deg, #ffb77d 0%, #d97707 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#151312]/60 backdrop-blur-md flex flex-col py-8 px-4 border-r border-white/5 z-50">
+<div class="mb-10 px-2">
+<span class="text-2xl font-serif italic text-[#ffb77d]">The Scholar</span>
+<p class="text-[10px] uppercase tracking-[0.2em] text-outline mt-1 font-body">Midnight Member</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-normal hover:text-[#ffb77d]/80 hover:bg-[#373433]/50 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-['Newsreader'] tracking-tight">Account</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-normal hover:text-[#ffb77d]/80 hover:bg-[#373433]/50 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Newsreader'] tracking-tight">Reading Preferences</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-normal hover:text-[#ffb77d]/80 hover:bg-[#373433]/50 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Newsreader'] tracking-tight">Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-400 font-normal hover:text-[#ffb77d]/80 hover:bg-[#373433]/50 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="privacy_tip">privacy_tip</span>
+<span class="font-['Newsreader'] tracking-tight">Privacy</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#ffb77d] font-bold bg-[#373433]/30 rounded-lg translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+<span class="font-['Newsreader'] tracking-tight">Subscription</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-white/5 space-y-2">
+<button class="w-full amber-gradient text-on-primary font-bold py-3 px-4 rounded-full text-sm mb-4 transition-transform active:scale-95 shadow-lg">
+                Upgrade to Sage
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-400 hover:text-[#ffb77d]/80 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+<span class="text-sm font-['Newsreader']">Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-400 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+<span class="text-sm font-['Newsreader']">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-[#151312]/60 backdrop-blur-md flex items-center justify-between px-8 z-40">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-serif text-[#ffb77d] tracking-tight">Midnight Scholar</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/30 rounded-full py-1.5 px-10 text-xs text-on-surface-variant w-64 transition-all" placeholder="Search archive..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-400 hover:text-[#d2bbff] cursor-pointer transition-colors" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-[#ffb77d] cursor-pointer transition-colors" data-icon="settings">settings</span>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="Scholar's Portrait" class="w-full h-full object-cover" data-alt="close-up portrait of a thoughtful man in a library with warm golden light illuminating his face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIg51dneNmtJ71Khq00q7iCfw4VT5cmxWhdE_DhFPVwZGeuvDN5lRJb8SIaeYy2fk7gh-KXJ-IxemwniD1J3HVowTf8iuCJdSE64GMw-swHu7VQkKjQCtkkC3mHa5q8vEWZ1b3LxCbTvwyUKm62Q6QZIrEVbQi3zSjNE5H4RcbK_a_sViDbMP-ynIdzNZnT_potfkiUDgXdNYgau6hajPR95aaQrSsY_hHlz32cqJWXAnSWJpAaMI8nPCOx4z3S8NSZlWTYrf0-jU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-24 pb-12 px-12 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<div class="mb-12">
+<h2 class="text-4xl font-headline text-on-surface mb-2">Subscription &amp; Membership</h2>
+<p class="text-on-surface-variant max-w-2xl">Refine your intellectual pursuit with curated access to the world's most profound digital archives and AI-enhanced insights.</p>
+</div>
+<!-- Pricing Tiers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Free Scholar -->
+<div class="neumorphic-card rounded-xl p-8 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+<span class="text-sm uppercase tracking-widest text-outline mb-4">Free Scholar</span>
+<div class="mb-6">
+<span class="text-5xl font-headline text-on-surface">$0</span>
+<span class="text-outline">/mo</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-8 px-4">Ideal for occasional readers seeking focused serenity.</p>
+<ul class="w-full text-left space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+<span>Limited Archive Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+<span>Standard Reading View</span>
+</li>
+</ul>
+<button class="mt-auto w-full py-3 rounded-full border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">Current Plan</button>
+</div>
+<!-- Pro Librarian (Highlighted) -->
+<div class="neumorphic-card rounded-xl p-8 flex flex-col items-center text-center relative border border-primary transition-transform hover:-translate-y-1 duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary px-4 py-1 rounded-full shadow-lg">
+<span class="text-[10px] font-bold text-on-primary uppercase tracking-tighter">Most Popular</span>
+</div>
+<span class="text-sm uppercase tracking-widest text-primary mb-4">Pro Librarian</span>
+<div class="mb-6">
+<span class="text-5xl font-headline text-on-surface">$19</span>
+<span class="text-outline">/mo</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-8 px-4">For the dedicated collector requiring deep synthesis and AI-assisted discovery.</p>
+<ul class="w-full text-left space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+<span>Unlimited Global Archive</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-medium text-secondary">AI-Powered Annotations</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-medium text-secondary">Deep Contextual Insights</span>
+</li>
+</ul>
+<button class="mt-auto w-full amber-gradient py-3 rounded-full text-on-primary font-bold shadow-lg shadow-primary/10 transition-transform active:scale-95">Upgrade Now</button>
+</div>
+<!-- Institutional Archive -->
+<div class="neumorphic-card rounded-xl p-8 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
+<span class="text-sm uppercase tracking-widest text-outline mb-4">Institutional Archive</span>
+<div class="mb-6">
+<span class="text-5xl font-headline text-on-surface">$89</span>
+<span class="text-outline">/mo</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-8 px-4">A complete solution for research teams and large-scale synthesis.</p>
+<ul class="w-full text-left space-y-4 mb-10 text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+<span>5 Multi-user Licenses</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+<span>API Access for Research</span>
+</li>
+</ul>
+<button class="mt-auto w-full py-3 rounded-full border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">Contact Sales</button>
+</div>
+</div>
+<!-- Feature Comparison Table -->
+<div class="neumorphic-card rounded-xl p-10 mb-16 overflow-hidden">
+<h3 class="text-2xl font-headline text-on-surface mb-8">Detailed Feature Breakdown</h3>
+<div class="space-y-6">
+<div class="grid grid-cols-4 items-center py-4 border-b border-white/5">
+<span class="text-sm text-on-surface-variant">Deep Reading Mode</span>
+<div class="text-center"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></div>
+<div class="text-center"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></div>
+<div class="text-center"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></div>
+</div>
+<div class="grid grid-cols-4 items-center py-4 border-b border-white/5">
+<div class="flex items-center gap-2">
+<span class="text-sm text-on-surface-variant">AI Deep Dive Synthesis</span>
+<span class="material-symbols-outlined text-[12px] text-secondary" data-icon="bolt">bolt</span>
+</div>
+<div class="text-center text-outline text-xs">—</div>
+<div class="text-center"><span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span></div>
+<div class="text-center"><span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span></div>
+</div>
+<div class="grid grid-cols-4 items-center py-4 border-b border-white/5">
+<div class="flex items-center gap-2">
+<span class="text-sm text-on-surface-variant">Automated Citations</span>
+<span class="material-symbols-outlined text-[12px] text-secondary" data-icon="bolt">bolt</span>
+</div>
+<div class="text-center text-outline text-xs">—</div>
+<div class="text-center"><span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span></div>
+<div class="text-center"><span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span></div>
+</div>
+<div class="grid grid-cols-4 items-center py-4">
+<span class="text-sm text-on-surface-variant">Offline Archive Export</span>
+<div class="text-center text-outline text-xs">—</div>
+<div class="text-center text-outline text-xs">—</div>
+<div class="text-center"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></div>
+</div>
+</div>
+</div>
+<!-- Locked Feature Preview -->
+<section class="relative rounded-2xl overflow-hidden h-[400px] group">
+<div class="absolute inset-0 bg-surface-container-high/40 backdrop-blur-md z-10 flex flex-col items-center justify-center text-center p-8">
+<span class="material-symbols-outlined text-5xl text-primary mb-6" data-icon="lock_open">lock_open</span>
+<h3 class="text-3xl font-headline text-on-surface mb-4">Unlock AI Deep Dive</h3>
+<p class="text-on-surface-variant max-w-md mb-8">Access our most powerful synthesis engine that connects thousands of texts to reveal hidden intellectual patterns.</p>
+<button class="amber-gradient px-10 py-3 rounded-full text-on-primary font-bold shadow-xl transition-all hover:scale-105 active:scale-95">Unlock Full Access</button>
+</div>
+<div class="absolute inset-0 z-0">
+<div class="grid grid-cols-4 gap-4 p-4 opacity-30 grayscale blur-[2px]">
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+<div class="h-40 neumorphic-card rounded-lg"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

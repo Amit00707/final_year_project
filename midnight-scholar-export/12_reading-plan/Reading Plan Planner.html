@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Midnight Scholar - Reading Syllabus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;600;800&amp;family=Inter:wght@300;400;600;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#eaddff",
+                    "inverse-primary": "#904d00",
+                    "surface": "#151312",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-primary": "#4d2600",
+                    "surface-container-low": "#1d1b1a",
+                    "on-error": "#690005",
+                    "secondary": "#d2bbff",
+                    "on-background": "#e8e1df",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#ffb77d",
+                    "outline-variant": "#554336",
+                    "outline": "#a38c7c",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#33302e",
+                    "tertiary": "#ffb95f",
+                    "primary-container": "#d97707",
+                    "tertiary-container": "#ca8100",
+                    "surface-container-highest": "#373433",
+                    "surface-dim": "#151312",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "primary-fixed": "#ffdcc3",
+                    "surface-container": "#221f1e",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-tertiary": "#472a00",
+                    "secondary-container": "#6001d1",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-secondary": "#3f008e",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#c9aeff",
+                    "on-primary-fixed": "#2f1500",
+                    "on-primary-container": "#432100",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-high": "#2c2928",
+                    "on-tertiary-container": "#3e2400",
+                    "inverse-surface": "#e8e1df",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-secondary-fixed": "#25005a",
+                    "surface-variant": "#373433",
+                    "on-surface-variant": "#dbc2b0",
+                    "primary": "#ffb77d",
+                    "on-surface": "#e8e1df",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#100e0d",
+                    "surface-bright": "#3c3837",
+                    "background": "#151312"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"],
+                    "serif": ["Lora", "serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #151312;
+            color: #e8e1df;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-header {
+            background: rgba(21, 19, 18, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .neumorphic-card {
+            background: #1d1b1a;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -4px -4px 15px rgba(85, 67, 54, 0.05);
+        }
+        .amber-gradient-bar {
+            background: linear-gradient(135deg, #ffb77d 0%, #d97707 100%);
+        }
+        .ai-violet-glow {
+            box-shadow: 0 0 10px rgba(210, 187, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="flex bg-background">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#100e0d] flex flex-col py-8 shadow-[4px_0_15px_rgba(0,0,0,0.4)] z-50">
+<div class="px-6 mb-10">
+<h1 class="font-serif text-2xl text-[#ffb77d]">The Sanctuary</h1>
+<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-stone-500 mt-1">AI-Curated Wisdom</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-stone-500 py-3 px-6 flex items-center gap-4 hover:bg-[#151312] hover:text-[#ffb77d] transition-all duration-300 ease-in-out font-['Inter'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Library
+            </a>
+<a class="text-[#ffb77d] bg-[#373433] rounded-r-full py-3 px-6 flex items-center gap-4 transition-all duration-300 ease-in-out font-['Inter'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">menu_book</span> Syllabus
+            </a>
+<a class="text-stone-500 py-3 px-6 flex items-center gap-4 hover:bg-[#151312] hover:text-[#ffb77d] transition-all duration-300 ease-in-out font-['Inter'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">timeline</span> Timeline
+            </a>
+<a class="text-stone-500 py-3 px-6 flex items-center gap-4 hover:bg-[#151312] hover:text-[#ffb77d] transition-all duration-300 ease-in-out font-['Inter'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">flare</span> Insights
+            </a>
+<a class="text-stone-500 py-3 px-6 flex items-center gap-4 hover:bg-[#151312] hover:text-[#ffb77d] transition-all duration-300 ease-in-out font-['Inter'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-gradient-to-br from-[#ffb77d] to-[#d97707] text-[#4d2600] font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-transform hover:scale-95 active:scale-90">
+<span class="material-symbols-outlined">add</span> New Plan
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-64 z-40 bg-[#151312]/60 backdrop-blur-md flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-8">
+<h2 class="text-2xl font-serif text-[#ffb77d] tracking-tight">Your Reading Syllabus</h2>
+<div class="hidden lg:flex gap-6">
+<a class="text-[#ffb77d] border-b-2 border-[#ffb77d] font-['Inter'] text-sm py-1" href="#">Active Plan</a>
+<a class="text-stone-400 hover:text-[#ffb77d] transition-colors font-['Inter'] text-sm py-1" href="#">History</a>
+<a class="text-stone-400 hover:text-[#ffb77d] transition-colors font-['Inter'] text-sm py-1" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#ffb77d] cursor-pointer">auto_awesome</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Scholar Profile" class="w-full h-full object-cover" data-alt="portrait of a focused scholar with glasses in front of a blurred bookshelf, soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIRa3FZO5Msys_zrqoKoUTOCbba5GDggVM4VqkF0duMumalNEJXlFv8QmBBlRAoL_YbZ0ANQ4jZn6fqBHXKsyqWXWG8V-HGsBSQU1aMKbQirwITzvv8jtv33L2XaebWKLF9rLrFS5uPSO0g13gpsOaflNa7Qgp_Az9OsSGDanhr5-JBW4V6SjXSQEVRmCEP5VPr0kWqjvWzRQZwclTfxW4ckfvbxNYppeLBe6qI2z067appipOhtZYaCdJHxylCeLHHGBn7Furl00"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas Container -->
+<section class="mt-24 px-12 space-y-12 max-w-7xl mx-auto">
+<!-- Hero Introduction -->
+<div class="space-y-4 max-w-2xl">
+<h3 class="text-4xl font-serif text-on-surface italic">The Pursuit of Epistemic Depth</h3>
+<p class="text-stone-400 font-body leading-relaxed">Your intellectual journey for November is calibrated for heavy theoretical synthesis. Three seminal works, layered chronologically to optimize retention and cross-referencing.</p>
+</div>
+<!-- Visual Timeline (Gantt-Style) -->
+<div class="surface-container-low p-8 rounded-2xl space-y-8">
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+<h4 class="font-serif text-xl">Chronological Trajectory</h4>
+<div class="flex gap-4 text-xs font-label uppercase tracking-widest text-stone-500">
+<span>Nov 01</span>
+<span>Nov 30</span>
+</div>
+</div>
+<div class="relative h-64 grid grid-cols-1 gap-6 pt-4">
+<!-- Grid Lines Background -->
+<div class="absolute inset-0 flex justify-between pointer-events-none opacity-5">
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+</div>
+<!-- Book 1 Bar -->
+<div class="group relative">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-sm font-label text-stone-400">01. Meditations on First Philosophy</span>
+<span class="text-[10px] bg-secondary-container/30 text-secondary px-2 py-0.5 rounded-full border border-secondary/20 ai-violet-glow">AI Optimized</span>
+</div>
+<div class="h-6 w-[35%] amber-gradient-bar rounded-full relative shadow-lg group-hover:scale-[1.02] transition-transform">
+<div class="absolute -right-2 -top-1 w-3 h-3 rounded-full bg-secondary ai-violet-glow border-2 border-surface"></div>
+</div>
+</div>
+<!-- Book 2 Bar -->
+<div class="group relative">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-sm font-label text-stone-400">02. The Phenomenology of Spirit</span>
+</div>
+<div class="h-6 w-[50%] ml-[25%] bg-[#373433] rounded-full relative overflow-hidden group-hover:bg-[#4a4645] transition-colors border border-outline-variant/20">
+<div class="absolute inset-0 w-[40%] amber-gradient-bar"></div>
+<div class="absolute right-4 top-1 text-[10px] text-stone-500">Scheduled for Nov 08</div>
+</div>
+</div>
+<!-- Book 3 Bar -->
+<div class="group relative">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-sm font-label text-stone-400">03. Being and Time</span>
+</div>
+<div class="h-6 w-[40%] ml-[60%] bg-[#373433] rounded-full relative border border-outline-variant/20">
+<div class="absolute left-4 top-1 text-[10px] text-stone-500 italic">Advanced Synthesis Phase</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekly Goal Breakdown (Vertical Cards) -->
+<div class="grid grid-cols-4 gap-8">
+<!-- Week 1 -->
+<div class="neumorphic-card rounded-2xl p-6 flex flex-col gap-6 border border-white/5">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-secondary text-[10px] font-bold uppercase tracking-tighter">Week 01</span>
+<h5 class="font-serif text-lg leading-tight mt-1">Foundation &amp; Method</h5>
+</div>
+<span class="material-symbols-outlined text-stone-600">calendar_today</span>
+</div>
+<div class="space-y-4">
+<div class="group cursor-pointer">
+<p class="text-xs text-stone-500 mb-1">Meditation I - II</p>
+<div class="flex justify-between items-center bg-surface-container p-3 rounded-xl group-hover:bg-surface-bright transition-colors">
+<span class="text-sm font-label">Chapter 1-4</span>
+<span class="text-[10px] text-secondary font-bold">14m AI Read</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<p class="text-xs text-stone-500 mb-1">Methodological Doubt</p>
+<div class="flex justify-between items-center bg-surface-container p-3 rounded-xl group-hover:bg-surface-bright transition-colors">
+<span class="text-sm font-label">Summary Synthesis</span>
+<span class="text-[10px] text-secondary font-bold">8m AI Read</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] text-stone-400">85%</span>
+</div>
+</div>
+</div>
+<!-- Week 2 -->
+<div class="neumorphic-card rounded-2xl p-6 flex flex-col gap-6 border border-white/5 opacity-80">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-stone-500 text-[10px] font-bold uppercase tracking-tighter">Week 02</span>
+<h5 class="font-serif text-lg leading-tight mt-1">Dialectical Motion</h5>
+</div>
+<span class="material-symbols-outlined text-stone-600">lock_open</span>
+</div>
+<div class="space-y-4">
+<div class="group cursor-pointer">
+<p class="text-xs text-stone-500 mb-1">Sense-Certainty</p>
+<div class="flex justify-between items-center bg-surface-container p-3 rounded-xl group-hover:bg-surface-bright transition-colors">
+<span class="text-sm font-label">Introduction</span>
+<span class="text-[10px] text-secondary font-bold">22m AI Read</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<p class="text-xs text-stone-500 mb-1">Perception &amp; Truth</p>
+<div class="flex justify-between items-center bg-surface-container p-3 rounded-xl group-hover:bg-surface-bright transition-colors">
+<span class="text-sm font-label">Core Theses</span>
+<span class="text-[10px] text-secondary font-bold">12m AI Read</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[0%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] text-stone-400">Pending</span>
+</div>
+</div>
+</div>
+<!-- Week 3 -->
+<div class="neumorphic-card rounded-2xl p-6 flex flex-col gap-6 border border-white/5 opacity-60">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-stone-500 text-[10px] font-bold uppercase tracking-tighter">Week 03</span>
+<h5 class="font-serif text-lg leading-tight mt-1">Ontological Turn</h5>
+</div>
+<span class="material-symbols-outlined text-stone-600">lock</span>
+</div>
+<div class="space-y-4">
+<div class="h-10 bg-surface-container rounded-xl w-full animate-pulse opacity-20"></div>
+<div class="h-10 bg-surface-container rounded-xl w-full animate-pulse opacity-20"></div>
+</div>
+<div class="mt-auto flex justify-center">
+<span class="text-[10px] text-stone-600 font-label uppercase tracking-widest italic">Forecasted 18hrs Reading</span>
+</div>
+</div>
+<!-- Week 4 -->
+<div class="neumorphic-card rounded-2xl p-6 flex flex-col gap-6 border border-white/5 opacity-40">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-stone-500 text-[10px] font-bold uppercase tracking-tighter">Week 04</span>
+<h5 class="font-serif text-lg leading-tight mt-1">Final Synthesis</h5>
+</div>
+<span class="material-symbols-outlined text-stone-600">lock</span>
+</div>
+<div class="space-y-4">
+<div class="h-10 bg-surface-container rounded-xl w-full animate-pulse opacity-20"></div>
+<div class="h-10 bg-surface-container rounded-xl w-full animate-pulse opacity-20"></div>
+</div>
+<div class="mt-auto flex justify-center">
+<span class="text-[10px] text-stone-600 font-label uppercase tracking-widest italic">Thesis Preparation</span>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="pt-8 flex flex-col items-center gap-6">
+<p class="text-stone-500 font-label text-sm italic">Need to recalibrate for a faster pace or new focus?</p>
+<button class="px-10 py-5 bg-gradient-to-br from-[#ffb77d] to-[#d97707] text-[#4d2600] font-bold text-lg rounded-full flex items-center gap-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,119,7,0.3)] hover:-translate-y-1">
+<span class="material-symbols-outlined">psychology</span>
+                    Generate New AI Syllabus
+                </button>
+</div>
+</section>
+</main>
+<!-- Contextual AI Assistant Mini-Bubble (Visual Polish) -->
+<div class="fixed bottom-10 right-10 z-50">
+<div class="bg-secondary-container/40 backdrop-blur-xl border border-secondary/30 p-4 rounded-2xl ai-violet-glow flex items-center gap-4 cursor-pointer hover:bg-secondary-container/60 transition-colors">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flare</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary">Scholar AI</p>
+<p class="text-[10px] text-on-secondary-container">"Meditations III" is recommended next.</p>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#ffb77d",
+                    "primary-container": "#d97707",
+                    "tertiary-container": "#ca8100",
+                    "surface-variant": "#373433",
+                    "tertiary": "#ffb95f",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#3f008e",
+                    "on-primary": "#4d2600",
+                    "on-secondary-fixed": "#25005a",
+                    "secondary-fixed": "#eaddff",
+                    "inverse-primary": "#904d00",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-container-low": "#1d1b1a",
+                    "surface-container": "#221f1e",
+                    "outline-variant": "#554336",
+                    "on-primary-fixed": "#2f1500",
+                    "secondary": "#d2bbff",
+                    "inverse-on-surface": "#33302e",
+                    "surface-container-lowest": "#100e0d",
+                    "surface-container-high": "#2c2928",
+                    "surface": "#151312",
+                    "surface-container-highest": "#373433",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "error-container": "#93000a",
+                    "on-surface": "#e8e1df",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-fixed-dim": "#ffb77d",
+                    "secondary-container": "#6001d1",
+                    "on-background": "#e8e1df",
+                    "outline": "#a38c7c",
+                    "surface-dim": "#151312",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-secondary-container": "#c9aeff",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#432100",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "background": "#151312",
+                    "on-surface-variant": "#dbc2b0",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary": "#ffb77d",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#3e2400",
+                    "surface-bright": "#3c3837",
+                    "inverse-surface": "#e8e1df",
+                    "primary-fixed": "#ffdcc3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-card {
+            box-shadow: 8px 8px 24px #000000, -2px -2px 10px rgba(85, 67, 54, 0.1);
+        }
+        .amber-glow {
+            background: linear-gradient(135deg, #ffb77d 0%, #d97707 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-900/60 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex justify-between items-center px-6 py-4 max-w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-300" data-icon="menu">menu</span>
+<span class="font-headline text-2xl italic font-bold text-amber-200 tracking-tighter">The Midnight Scholar</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-amber-200 border-b border-amber-200 pb-1 font-label tracking-wide uppercase text-xs" href="#">Home</a>
+<a class="text-neutral-400 font-sans hover:text-amber-100 transition-colors duration-300 font-label tracking-wide uppercase text-xs" href="#">Library</a>
+<a class="text-neutral-400 font-sans hover:text-amber-100 transition-colors duration-300 font-label tracking-wide uppercase text-xs" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-300" data-icon="auto_awesome">auto_awesome</span>
+<button class="bg-primary text-on-primary font-bold px-5 py-2 rounded-full text-sm hover:scale-95 transition-transform duration-300">Enter Vault</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="grid grid-cols-4 md:grid-cols-6 gap-4 p-4 rotate-12 scale-110">
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Collection of classic leather bound book covers in a dark moody library setting with warm amber backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdlJXaYLn_m1vKHa6FP2ckCrd94yfD8GvW_4qlJKXvZIIrsZzeN0YKqOdY0BfM1R_hq7JpGaV0rbLliehnUzOYQBV2Tu_J8v6AlYFpZW6MCQ4zCMHqkYMzkY102etm4ENrqHHnWvZOmAK57jQ93Un3l9KwulyURtxqg_6N4tVoyc8L2mhG7RuhyD6gCgOLJlrbyFhg8oIHGRCDVGxbBQbfeyCfJM4fN9iU1Ai4EZaKycuhOQsBi0obLPXtbSbIky5Vr06EmO3O8SQ"/>
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Stack of vintage academic books on a dark wooden table with soft candle light glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8EvW5Hjm435ES3NjNpolilIxUuvtUiKMv5tjyCLpbgtxT4eLNxJ00Mq80edMVzk9JBRydT-Rz3tD_qqL1V7sAfLks1azhMYqSegotOlQs_e8VuWOsn4_BQ6KJRQXfHdxmLGuDbuaWX-POvp497zqx7LATrn82hLPOxQXX6F1Tz9K3k4fnN0Fp-TWW6vMRNfVmJA9jK_W2r6d9bH0IbMLAQnsgVvDSnMj6OGa3dBV8QzTnQgZI4YGTh6uPWcLrpNl9SSEOdjh-qLw"/>
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Abstract close up of old yellowed book pages showing textures and serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCegC11jesbteAwXaIMcYJisLhrKIFaqw4L8-AMQ85_ohb9ZQKTfD5ebM5gPVuVV_gIZtOqrE2rhFJI3S3hZjDjAH5bWIi0rpx__vUKeg5BHQb5S87DS4DIR_3qC3o_AXfBK-7NVG0vuX1r4jRqywG8oNd5LFKsGIaklxMTfuY7voJNvg_B7VQY8AKdT7UHwhD3Ojm8TK6sWnKo76yup4vnLSvkYQFSKjW_9D8vsXe3w5b7QqMsIQ0U5THO_Y7ydzLjWpCQjMQZGrA"/>
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Library interior with tall shelves and a warm golden light filtering through dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ZzB0fgNXBsIzknwPu7fW9FBV0o4RydHcSFJcQVbuKfLjNMhujMs4kvIl1CF-h7Q45NJIjeCxtR989iB6Xn3q6swrsmCJ1QskwzBpDVwFCpNcvjCH8lrm-VkMJsgLwyzJC7p6fduO1R9wmhhLzwAJ4-xmwPDEf77Al3kgWd7-Kys72Fabht_pkpWKdJzur8ew3FbBEJGdtFsLv0UWPonewQ0YdmoC7esogFZPVDUNMPSU30f1FIBSs4T3hXlMfTS9BzBsaagY4BE"/>
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Artistic composition of open books scattered on a velvet cloth with dark amber tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtILrYHLUrKthBBcZwJjH2QsopqYFFom24B2Yp32LkzkK8ID_apw31_TzS4WxJMTIU61rBDqTFUGQMxT97xdd7D3pJ6L26sgKfJ0gnGRheqUlHFHC5VRrqQkwBc1x0MXq5VSpbcb1_9ImdzPN1uq7dIgRI-8CiAJBHC8kdWjCUkbB15HW3ulgt7PmAUZXf8t2e_-Mst9YddDYhLDVVxkEURG12dFDFPrJL19UCReSMnkHFyzKuA06z6QLP_JnTGwmHvzJJoFVqMpY"/>
+<img class="w-full aspect-[2/3] object-cover rounded-lg" data-alt="Modern minimalist book cover with elegant gold leaf typography on deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUNUHrPejqEgzyBqVIxEin-fJDio46VVY1Jnj6Bt5VQaGE_icgKeUIMYy5PGzHhRWpLtpJruyVXNPAJLohMwXclirJOI2sz3hSsE4RFTxlfqQhyS-MclII_uslImEdpdviQfwC4yj4RS7KVrBY1iKAH3WIXWgYAVsb218TP1vt8QjRTRGR7qZBY8e4BXwm48VgbA4PnOwfX0NJieb-RUoYwGB00OoScUeBHMAV6Kh1OFjNiPQMCWhAsNndYK8NfMjVWwkmIN4p6Zs"/>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent z-10"></div>
+<div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
+<span class="text-secondary font-label tracking-widest uppercase text-xs mb-6 block">Powered by Deep Intelligence</span>
+<h1 class="font-headline text-6xl md:text-8xl italic font-bold text-on-surface mb-8 tracking-tighter leading-tight">
+                    Read, Learn, and <span class="text-primary-fixed-dim">Master</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Step into a sanctuary where every word is understood. The Midnight Scholar curates your journey through infinite wisdom with the soft glow of AI intuition.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="amber-glow text-on-primary font-bold px-10 py-5 rounded-full text-lg shadow-xl hover:scale-105 transition-all duration-300 active:scale-95">
+                        Start Reading Free
+                    </button>
+<button class="text-on-surface hover:text-primary transition-colors flex items-center gap-2 group">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-label uppercase text-xs tracking-widest underline underline-offset-8">The Experience</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="bg-surface-container py-12 px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div class="space-y-1">
+<p class="font-headline text-4xl text-primary-fixed-dim font-bold">50k+</p>
+<p class="text-neutral-500 font-label text-[10px] uppercase tracking-widest">Digital Volumes</p>
+</div>
+<div class="space-y-1">
+<p class="font-headline text-4xl text-primary-fixed-dim font-bold">10k+</p>
+<p class="text-neutral-500 font-label text-[10px] uppercase tracking-widest">Active Scholars</p>
+</div>
+<div class="space-y-1">
+<p class="font-headline text-4xl text-primary-fixed-dim font-bold">2.4M</p>
+<p class="text-neutral-500 font-label text-[10px] uppercase tracking-widest">Smart Summaries</p>
+</div>
+<div class="space-y-1">
+<p class="font-headline text-4xl text-primary-fixed-dim font-bold">150+</p>
+<p class="text-neutral-500 font-label text-[10px] uppercase tracking-widest">Literary Genres</p>
+</div>
+</div>
+</section>
+<!-- Featured Books Row -->
+<section class="py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline text-4xl italic text-on-surface">Curated for Your Mind</h2>
+<p class="text-on-surface-variant mt-2 font-body">Recommendations based on your unique cognitive pattern.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-2 border border-outline-variant rounded-full text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto px-6 md:px-24 hide-scrollbar pb-12">
+<!-- Book Card 1 -->
+<div class="flex-none w-64 group cursor-pointer">
+<div class="neo-card relative rounded-xl overflow-hidden aspect-[2/3] transition-transform duration-500 group-hover:-translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Cover of a philosophy book featuring a marble statue head and golden geometry on dark emerald background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiSjNmR0h8QE0U9I7nZcDPwrXKaqDDS5l97aOc-T0lkuwInEWmOrASA_bPRRIAEphnTJ-dKv8AsQYlrXt6vntBHf-hsiTzrPCfaxWmbdKaWuPdDiMjXwZ3fvpayQfLsyXt9W4_sKbVgSO2SYi9JuwEm_rNz-pDXaDSJPAsDPnpHAI0D0ALFxoFleOPXJAkLNCiQlWEavSNsCTgqBz2e2XH319YSJK9yl_jzXC6d6RwW2axlRaLA1qyc4s_zKB2GN6EYan3nwzsYvI"/>
+<div class="absolute top-4 right-4 bg-secondary-container/80 backdrop-blur-sm p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="font-headline text-xl text-on-surface">The Alchemist's Shadow</h3>
+<p class="text-on-surface-variant text-sm mt-1">Elias Thorne • Philosophy</p>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-none w-64 group cursor-pointer mt-8">
+<div class="neo-card relative rounded-xl overflow-hidden aspect-[2/3] transition-transform duration-500 group-hover:-translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Scientific book cover with detailed anatomical illustration of a brain illuminated with violet neural pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBus7AEwxM3mHiyvg2Uq0AAx1rLOShcXLhnho00kAHAoMsSP7bCS5hdAvRSSYb08X_OHQPQT7KgJp7UFZzv7yDDEf5-4dIE5uGbQwqclrlfp6m8IS2ZOII2MduPiwuFMvfGAk-pji3hqfl9Fgb6bAe7_XbUtqFiRjp5Pz9_9bEjtvcdY2KPW7905BsxWCqyVgY_ibsMQHW00WBDrwAWb5UQRI9eyH04jXtz9HViq4G_2hyctE_wanVhX4t_wm6wWiygI1g1ZIX1s_Q"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline text-xl text-on-surface">Neural Echoes</h3>
+<p class="text-on-surface-variant text-sm mt-1">Dr. Aris Vane • Science</p>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-none w-64 group cursor-pointer">
+<div class="neo-card relative rounded-xl overflow-hidden aspect-[2/3] transition-transform duration-500 group-hover:-translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Historical fiction book cover showing an ancient parchment map and an ornate compass in sepia tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIj4Iy9oMnTuKttsUCECm7Z8Hb-qCJ9_U2GrqaqaKhxtM7ThwfctQAYubHEzXeSItznY4CnhC2ItZocgSVYg9DXe_roiqRqLVW6WQ3LccY5n7ryMhLBijCvyiVGdg8ip-iGhrPuVdnwU5fVXIwSiWyohoKTWCrdS81Yp1bXbeh6ArUwM9GJEOAW9q127GgjoTBmAk9TxcsnpiKYA8LkAd4eCvfgRmI69vGH5Q-OI0KNbHIpsX2y6c8PVXSMmF6uhNsEayrbzH0Pkc"/>
+<div class="absolute top-4 right-4 bg-secondary-container/80 backdrop-blur-sm p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="font-headline text-xl text-on-surface">Empire of Silk</h3>
+<p class="text-on-surface-variant text-sm mt-1">S. J. Marrow • History</p>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="flex-none w-64 group cursor-pointer mt-12">
+<div class="neo-card relative rounded-xl overflow-hidden aspect-[2/3] transition-transform duration-500 group-hover:-translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Minimalist fiction cover featuring a single lone tree on a snowy landscape with thin gold line art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_tEZXSlIXQZeuCnUgBQR48HldQDp9pnFXxlLHUx1MvfPAG-L3J6pSKjqcQsRQLetlcQYsE3u8P92fWW4ROhtrADFCjFXifJfDlU2_8fSrVgtpafS6movjQK25OQcQM-_2UcUtRLnJ_rcABl13xh2g3D0_1qZlmapYsWyfgeqIvzu9WIDLDnTnE-OoRFTZMS0sKj1Ygml7MAV5J64ApWqhNENoNHW2b-sgyiWwz9X2hj1FZSVS16k7RbC_6bwglmUzVLlx89BLgPM"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline text-xl text-on-surface">The Silent Field</h3>
+<p class="text-on-surface-variant text-sm mt-1">Elena Ruiz • Fiction</p>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="flex-none w-64 group cursor-pointer">
+<div class="neo-card relative rounded-xl overflow-hidden aspect-[2/3] transition-transform duration-500 group-hover:-translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Classic literature book cover with ornate Victorian floral patterns in deep navy and silver foil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0fAPgGjjFT-Iw9EhhMWsRIgIQ8ymN7smiic38sTJQPg6kbsDFig56oUbcW8_1CAUffv0LXauD0X9pNmL-QOhOHFh1y-gfd33CK5H0cf5CyB02IE2RMjhMyOgCypOVQh9LAsRqQcUUc1tj238ab2ct1Ik39w9Bgd1s992l2ljbTc0VhekUmO8G-lrwS8F-eg5GG6nH-pskxX1sGQSfQ0Ed770yYJqwOHO3asAuTolR_AnKSHoi3fWlztyStHj6zemPoPV_4VdrYHM"/>
+<div class="absolute top-4 right-4 bg-secondary-container/80 backdrop-blur-sm p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="font-headline text-xl text-on-surface">Beyond the Gate</h3>
+<p class="text-on-surface-variant text-sm mt-1">C. Harrison • Classics</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-5xl italic mb-4">Elevate Your Literacy</h2>
+<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- AI Learning -->
+<div class="bg-surface-container-high p-10 rounded-2xl neo-card relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-12 translate-x-12 blur-3xl group-hover:bg-secondary/20 transition-all duration-700"></div>
+<div class="w-14 h-14 bg-secondary-container flex items-center justify-center rounded-xl mb-8 shadow-[0_0_15px_rgba(210,187,255,0.2)]">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-4">AI Learning</h3>
+<p class="text-on-surface-variant leading-relaxed">Context-aware annotations and instant concept breakdowns. Our AI identifies difficult passages and offers historical context as you read.</p>
+<a class="inline-block mt-8 text-secondary font-label text-xs uppercase tracking-widest hover:underline underline-offset-4" href="#">Learn More</a>
+</div>
+<!-- Reading Streaks -->
+<div class="bg-surface-container-high p-10 rounded-2xl neo-card relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-12 translate-x-12 blur-3xl group-hover:bg-primary/20 transition-all duration-700"></div>
+<div class="w-14 h-14 bg-primary-container flex items-center justify-center rounded-xl mb-8 shadow-[0_0_15px_rgba(255,183,125,0.2)]">
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-4">Reading Streaks</h3>
+<p class="text-on-surface-variant leading-relaxed">Gamified intellectual growth. Build lasting habits with streak milestones and unlock exclusive first editions from our archive.</p>
+<a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest hover:underline underline-offset-4" href="#">Habit Tracking</a>
+</div>
+<!-- Smart Analytics -->
+<div class="bg-surface-container-high p-10 rounded-2xl neo-card relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/10 rounded-full -translate-y-12 translate-x-12 blur-3xl group-hover:bg-tertiary/20 transition-all duration-700"></div>
+<div class="w-14 h-14 bg-tertiary-container flex items-center justify-center rounded-xl mb-8 shadow-[0_0_15px_rgba(255,185,95,0.2)]">
+<span class="material-symbols-outlined text-tertiary" data-icon="query_stats" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-4">Smart Analytics</h3>
+<p class="text-on-surface-variant leading-relaxed">Visualize your knowledge graph. See how different books in your library connect through shared themes, eras, and philosophies.</p>
+<a class="inline-block mt-8 text-tertiary font-label text-xs uppercase tracking-widest hover:underline underline-offset-4" href="#">View Insights</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-24 px-6">
+<div class="max-w-4xl mx-auto bg-surface-container rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[30rem] text-secondary absolute -bottom-40 -left-40" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl italic mb-6">Join the Scholars' Inner Circle</h2>
+<p class="text-on-surface-variant text-lg mb-10">Receive weekly curated reading lists and deep-dive AI summaries of the world's most influential texts.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary text-on-surface placeholder:text-neutral-600" placeholder="Enter your email address" type="email"/>
+<button class="bg-primary text-on-primary font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-neutral-800/20">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-amber-200 font-serif italic text-xl font-bold">The Midnight Scholar</span>
+<p class="font-sans text-[10px] text-neutral-500 uppercase tracking-widest">© 2024 The Midnight Scholar. Curated by Intelligence.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-[10px] text-neutral-500 uppercase tracking-widest hover:text-amber-200 underline underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Archives</a>
+<a class="font-sans text-[10px] text-neutral-500 uppercase tracking-widest hover:text-amber-200 underline underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Privacy</a>
+<a class="font-sans text-[10px] text-neutral-500 uppercase tracking-widest hover:text-amber-200 underline underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Language: English</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-neutral-500 hover:text-amber-200 cursor-pointer transition-colors" data-icon="book_5">book_5</span>
+<span class="material-symbols-outlined text-neutral-500 hover:text-amber-200 cursor-pointer transition-colors" data-icon="smart_toy">smart_toy</span>
+<span class="material-symbols-outlined text-neutral-500 hover:text-amber-200 cursor-pointer transition-colors" data-icon="history_edu">history_edu</span>
+</div>
+</footer>
+</body></html>

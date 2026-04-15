@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#151312",
+            "on-primary-fixed-variant": "#6e3900",
+            "error": "#ffb4ab",
+            "secondary-container": "#6001d1",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-container-low": "#1d1b1a",
+            "on-primary-fixed": "#2f1500",
+            "on-tertiary-fixed": "#2a1700",
+            "on-error": "#690005",
+            "secondary-fixed-dim": "#d2bbff",
+            "outline": "#a38c7c",
+            "surface-container-lowest": "#100e0d",
+            "on-surface": "#e8e1df",
+            "on-secondary-fixed-variant": "#5a00c6",
+            "surface-container": "#221f1e",
+            "on-primary": "#4d2600",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-background": "#e8e1df",
+            "tertiary-fixed": "#ffddb8",
+            "surface": "#151312",
+            "surface-bright": "#3c3837",
+            "primary-container": "#d97707",
+            "tertiary-container": "#ca8100",
+            "surface-container-highest": "#373433",
+            "secondary-fixed": "#eaddff",
+            "background": "#151312",
+            "on-tertiary-container": "#3e2400",
+            "tertiary": "#ffb95f",
+            "secondary": "#d2bbff",
+            "error-container": "#93000a",
+            "on-secondary-container": "#c9aeff",
+            "on-error-container": "#ffdad6",
+            "inverse-surface": "#e8e1df",
+            "on-secondary": "#3f008e",
+            "surface-container-high": "#2c2928",
+            "on-tertiary": "#472a00",
+            "outline-variant": "#554336",
+            "on-secondary-fixed": "#25005a",
+            "inverse-primary": "#904d00",
+            "inverse-on-surface": "#33302e",
+            "primary-fixed-dim": "#ffb77d",
+            "primary": "#ffb77d",
+            "surface-tint": "#ffb77d",
+            "on-primary-container": "#432100",
+            "surface-variant": "#373433",
+            "primary-fixed": "#ffdcc3",
+            "on-surface-variant": "#dbc2b0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"],
+            "serif": ["Lora", "serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .neumorphic-card {
+      background: #221f1e;
+      box-shadow: 8px 8px 24px #0a0909, -2px -2px 12px rgba(85, 67, 54, 0.08);
+    }
+    .glass-nav {
+      background: rgba(21, 19, 18, 0.6);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-amber-200">Midnight Scholar</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-amber-200 font-bold border-b-2 border-amber-200 pb-1 hover:text-amber-100 transition-colors duration-300" href="#">Library</a>
+<a class="text-stone-400 font-medium hover:text-amber-100 transition-colors duration-300" href="#">Sanctuary</a>
+<a class="text-stone-400 font-medium hover:text-amber-100 transition-colors duration-300" href="#">Curated</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group hidden lg:block">
+<input class="bg-surface-container-lowest border-none rounded-full px-6 py-2 w-64 text-sm focus:ring-1 focus:ring-primary placeholder-on-surface-variant/50" placeholder="Search the archives..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-4 text-amber-200">
+<button class="hover:text-amber-100 transition-transform active:scale-95"><span class="material-symbols-outlined">auto_awesome</span></button>
+<button class="hover:text-amber-100 transition-transform active:scale-95"><span class="material-symbols-outlined">bookmark</span></button>
+<button class="hover:text-amber-100 transition-transform active:scale-95"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Two-column Desktop Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-10 gap-16 items-start">
+<!-- Left Column: Book Cover (40%) -->
+<div class="lg:col-span-4 sticky top-32">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/10 blur-3xl rounded-xl -z-10 opacity-30"></div>
+<img alt="The Architect of Forgotten Dreams" class="w-full aspect-[2/3] object-cover rounded-xl shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.7)] transform transition-transform duration-500 group-hover:scale-[1.02]" data-alt="Luxurious dark book cover with gold intricate geometric patterns and ethereal architectural sketches in a moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCah94tQzZ2MEHcHToVdAqIngcUm8nW19l9CDmTKW78RNiYPgtGtbfHAZuBtwTZxoOh3MzcBnJJuZnzdJqjcnPLXqUHjh2uLe5fxDaMHoG7kPdK0zMPqjewvIfzdQZUvAm_LwSx_YDvMqVr0iacx-dXdrbCi5O7kms7A_6-yakgQ0ClNk6tx9RTyIibYAhXUEywCQ9xfGPFyT6s_wuZlvfFhtOfukgPgKz-ynAWl4CyqzrD0cu0OB1K4XZNZ4NMonVacUqLPBDp6JA"/>
+<div class="absolute bottom-6 right-6 bg-secondary-container/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-xs font-bold text-secondary-fixed uppercase tracking-widest">AI Analyzed</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Details (60%) -->
+<div class="lg:col-span-6 space-y-10">
+<div>
+<h1 class="font-serif text-5xl md:text-6xl text-on-surface leading-tight mb-4">The Architect of Forgotten Dreams</h1>
+<div class="flex flex-wrap items-center gap-6 text-on-surface-variant">
+<a class="text-primary hover:text-primary-fixed-dim transition-colors border-b border-primary/20 pb-0.5" href="#">Dr. Alistair Thorne</a>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.8</span>
+<span class="text-sm opacity-60">(1.2k reviews)</span>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">Philosophy</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">Architecture</span>
+</div>
+<span class="flex items-center gap-1.5 bg-error-container/20 text-error px-3 py-1 rounded-full text-xs font-bold border border-error/10">
+<span class="material-symbols-outlined text-sm">psychology</span>
+              Challenging
+            </span>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-lg leading-relaxed text-on-surface-variant font-body">
+            In this seminal work, Dr. Thorne explores the intersection of subconscious architecture and the ethics of memory preservation. "The Architect of Forgotten Dreams" challenges the very foundations of how we construct our internal realities...
+          </p>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+            READ MORE <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+<!-- Preview Section -->
+<div class="neumorphic-card rounded-2xl p-8 relative overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="bg-secondary-container text-secondary-fixed-dim px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                AI INSIGHT
+              </span>
+<span class="text-xs text-on-surface-variant italic">Section 4.2 Analysis</span>
+</div>
+</div>
+<div class="space-y-4 relative">
+<p class="text-secondary leading-relaxed italic">
+              "The use of recursive spatiality in Chapter 4 mirrors the Fibonacci sequence, suggesting that the 'forgotten' structures are not lost, but merely compressed into foundational layers of the psyche..."
+            </p>
+<div class="relative h-24 overflow-hidden select-none">
+<p class="text-on-surface/20 blur-sm">
+                The manifestation of these dreams requires a meticulous recalibration of spatial awareness. When the subject enters the third tier of the labyrinth, the walls cease to be boundaries and instead become conduits for historical data. This phenomenon, often referred to as Thorne's Paradox, posits that a room is never empty if it has once been perceived.
+              </p>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+</div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-surface-container/40 backdrop-blur-[2px] pt-12">
+<div class="bg-surface-container-highest p-6 rounded-2xl flex flex-col items-center gap-4 shadow-2xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-4xl">lock</span>
+<div class="text-center">
+<h4 class="font-serif text-xl mb-1">Member Preview Restricted</h4>
+<p class="text-sm text-on-surface-variant">Access the full 400-page manuscript and AI annotations.</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Unlock Chapter 4</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-6 pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-12 py-4 rounded-full text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform active:scale-95 flex items-center gap-3">
+<span class="material-symbols-outlined">menu_book</span>
+            Read Now
+          </button>
+<button class="flex items-center gap-3 text-on-surface font-semibold px-8 py-4 rounded-full hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">library_add</span>
+            Add to Library
+          </button>
+</div>
+</div>
+</div>
+<!-- Review Section -->
+<section class="mt-32 pt-20">
+<h2 class="font-serif text-4xl mb-12">Scholar Appraisals</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Rating Visualizer -->
+<div class="lg:col-span-4 space-y-8">
+<div class="neumorphic-card p-10 rounded-3xl text-center">
+<div class="text-7xl font-serif mb-2">4.8</div>
+<div class="flex justify-center gap-1 text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<div class="text-sm text-on-surface-variant uppercase tracking-widest font-bold">Aggregate Score</div>
+</div>
+<div class="space-y-4 px-2">
+<!-- Bars -->
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold w-4">5</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">85%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold w-4">4</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[10%] rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">10%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold w-4">3</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[3%] rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">3%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold w-4">2</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[1%] rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">1%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-bold w-4">1</span>
+<div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[1%] rounded-full"></div>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">1%</span>
+</div>
+</div>
+</div>
+<!-- Right: Review List -->
+<div class="lg:col-span-8 space-y-12">
+<!-- User Review 1 -->
+<div class="flex gap-8 group">
+<img alt="Julian Vane" class="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-primary/20" data-alt="Portrait of a sophisticated man with glasses in a dark tailored suit against a library background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGavYuLxfttqtpzfQ4kON8kqLSZPdTS-tFM4K_ndG59hIAMH-qreGe2nKsCgFka3tARS81EQlJB3GxDq8e3V4AawnwRa_4XkNk3hBAUNyf2huAj1KFVRRZwsoMLhEakmpgNY2YNhp_euciGi-S0-yifobpzxH--OEk5l0t22HyCW8Rm2-IWkWZ7A1xQNpAperQYDzudfNihPtaD0p8y7mui6WOjl1AdsCpzt5HI5Xw7A9k_wkQ_paQmLqaEG8OACTMRkIral0QL1g"/>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-serif text-xl">Julian Vane</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Oct 12, 2023</p>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                Thorne's analysis of spatial recursion has completely shifted my understanding of metropolitan design. The AI annotations provided in this edition were essential for navigating the more abstract chapters. A truly transformative read.
+              </p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span> Helpful (42)
+                </button>
+</div>
+</div>
+</div>
+<!-- User Review 2 -->
+<div class="flex gap-8 group">
+<img alt="Elena Rossi" class="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-primary/20" data-alt="Portrait of an elegant woman with a soft smile in warm indoor lighting with books in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNWJtUy9MaVCn2PakqMA6NoiohL6jWdX2PqcvTNBK4aayRNc5kEJKOIrkeKsNejM-izXVeRWhkeP0XHeic_lvZcsPJz9U-4JSS53YJLDwuFQ5vAOyWtj-Iiz2qK2k2s_5xMd418B5Ez2aATEl4hrMky80gL-Z7szO98JbO4fHhgYST8J0eluQRqMxjSx_w3S2IFXiDow4PFU5iSXSm0-gYRTUGlpU98mX_H4sFjTxwLyEcXRDKlk7Zp6R6MYaifhPtGLnHYQs9fw"/>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-serif text-xl">Elena Rossi</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Sept 28, 2023</p>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                Beautifully written, though at times unnecessarily dense. The 'Challenging' badge is well-deserved. I found the sections on Fibonacci sequences particularly enlightening when paired with the AI-generated visual aids.
+              </p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-1.5 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span> Helpful (18)
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer-like Tonal Shift -->
+<footer class="bg-surface-container-lowest py-16 px-8 mt-12">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-2xl font-serif italic text-amber-200/50">Midnight Scholar</div>
+<div class="flex gap-12 text-on-surface-variant text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Charter</a>
+<a class="hover:text-primary transition-colors" href="#">The Librarian's Code</a>
+<a class="hover:text-primary transition-colors" href="#">API Archives</a>
+</div>
+<p class="text-on-surface-variant/40 text-xs">© 2023 The Midnight Scholar Syndicate. Curated by Intelligence.</p>
+</div>
+</footer>
+</body></html>

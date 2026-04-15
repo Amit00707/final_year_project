@@ -1,0 +1,49 @@
+# Midnight Scholar: Development Execution Plan
+
+The design phase is complete. This plan transitions us into **Developer Mode** to begin executing the `FINAL ORGANIZE PROMPT` master checklist starting from Phase 1.
+
+## Proposed Changes
+
+### Phase 1: Project Setup (Architecture & Core)
+
+1. **Bootstrap Next.js Framework**
+   - Execute `npx create-next-app` in the workspace to scaffold `midnight-scholar`.
+   - Setup constraints: TypeScript, Tailwind CSS, App Router (`src/app`), and absolute imports.
+   
+2. **Install Core Engine Dependencies**
+   - State Management: `zustand`, `@tanstack/react-query`
+   - UI & Animation: `framer-motion`, `lucide-react` (icons)
+   - Feature Integrations: `pdfjs-dist` (PDF rendering), `recharts` (stats), `socket.io-client` (realtime chat), `next-auth`, `stripe`.
+
+3. **Establish Design System Tokens**
+   - Create `src/styles/tokens.css`.
+   - Inject the exact "Amber Nocturne" dark mode variables (e.g., `--color-base: #0C0A09`, `--color-primary-amber: #D97706`, `--color-ai-violet: #7C3AED`).
+
+4. **Tailwind & Typography Integration**
+   - Bind `tailwind.config.ts` colors and fonts (Newsreader, Inter) explicitly to the CSS tokens so the entire app maintains pixel-perfect design alignment.
+
+---
+
+### Phase 2: Base UI Components
+
+Once the application skeleton is running, build out the foundational component primitives to match the Stitch designs:
+
+#### [NEW] `src/components/ui/Button.tsx`
+With exact 8px border-radius constraints, Amber primary styling, and Ghost/Stone variants.
+
+#### [NEW] `src/components/ui/Card.tsx`
+Neumorphic wrapper component matching the `#1C1917` surface token with subtle warm box-shadowing and 12px radii.
+
+#### [NEW] `src/components/ui/Input.tsx`
+Inset neumorphic shadow styled inputs featuring the glowing Amber focus ring functionality.
+
+#### [NEW] `src/components/ui/Badge.tsx`
+Configured to handle AI-Violet tags and standard Neutral/Stone data chips.
+
+## Verification Plan
+
+- Run `npm run dev` to ensure the project compiles cleanly.
+- Verify that standard Tailwinds classes using our custom tokens (`bg-base`, `text-primary-amber`) render the exact right hex codes according to the design specification cheat sheet.
+
+> [!IMPORTANT]
+> Because I will be initiating the Next.js scaffold and executing terminal commands on your system, please review this plan and click **Approve** if you are ready for me to build everything!

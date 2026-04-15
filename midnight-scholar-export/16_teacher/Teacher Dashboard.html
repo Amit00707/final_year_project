@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teacher Dashboard - The Midnight Scholar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#c9aeff",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e8e1df",
+                    "on-secondary": "#3f008e",
+                    "surface-container-highest": "#373433",
+                    "secondary-container": "#6001d1",
+                    "surface-container-lowest": "#100e0d",
+                    "primary": "#ffb77d",
+                    "surface-container-high": "#2c2928",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#ca8100",
+                    "on-tertiary": "#472a00",
+                    "on-error": "#690005",
+                    "on-background": "#e8e1df",
+                    "on-primary-container": "#432100",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-container": "#221f1e",
+                    "background": "#151312",
+                    "surface-tint": "#ffb77d",
+                    "secondary-fixed": "#eaddff",
+                    "on-surface": "#e8e1df",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "primary-fixed": "#ffdcc3",
+                    "tertiary": "#ffb95f",
+                    "surface": "#151312",
+                    "outline-variant": "#554336",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "surface-bright": "#3c3837",
+                    "inverse-primary": "#904d00",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-dim": "#151312",
+                    "outline": "#a38c7c",
+                    "on-tertiary-container": "#3e2400",
+                    "primary-container": "#d97707",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-surface-variant": "#dbc2b0",
+                    "surface-variant": "#373433",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-secondary-fixed": "#25005a",
+                    "surface-container-low": "#1d1b1a",
+                    "on-primary": "#4d2600",
+                    "inverse-on-surface": "#33302e",
+                    "secondary": "#d2bbff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neumorphic-card {
+            background: #221f1e;
+            box-shadow: 8px 8px 16px #0c0a09, -4px -4px 12px rgba(85, 67, 54, 0.1);
+        }
+        .glass-nav {
+            background: rgba(21, 19, 18, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #151312; }
+        ::-webkit-scrollbar-thumb { background: #373433; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 h-20 glass-nav shadow-2xl shadow-black/50">
+<div class="text-2xl font-serif italic text-amber-200">The Midnight Scholar</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-amber-200 border-b-2 border-amber-500 pb-1 font-bold font-headline tracking-wide" href="#">Classes</a>
+<a class="text-stone-400 font-medium font-headline tracking-wide hover:text-amber-100 transition-colors duration-300" href="#">Students</a>
+<a class="text-stone-400 font-medium font-headline tracking-wide hover:text-amber-100 transition-colors duration-300" href="#">Assignments</a>
+<a class="text-stone-400 font-medium font-headline tracking-wide hover:text-amber-100 transition-colors duration-300" href="#">Reports</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-amber-300 cursor-pointer transition-transform duration-200 hover:scale-110" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined text-amber-300 cursor-pointer transition-transform duration-200 hover:scale-110" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-amber-300 cursor-pointer transition-transform duration-200 hover:scale-110" data-icon="settings">settings</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a scholarly professor with spectacles in a dimly lit library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgFA477tkcQI_zLI2mUleLcHk1PP58XjT1hCnbG3TnDDRuSjVNFnR4o23m27ssITmmCIkx1S_exTro8Q8Q4ammXshQyiBcqM7T72-ZLVTO2FECShKc_7w4QYLHNMxU3FIIuDKbz6UCBs0UFM7A0JSSnrtsTslJ5fCNhJRamSyiEK4Elv-QYJZCZ5TB65_Sy_H-Kua4uY-vIrI-JOxGxFarvMX-xaapPPMKV1xF63IsqA2MfXczUuMXFE27nHr075B2l3MQ8FXU5Cw"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col py-8 px-4 gap-6 bg-stone-900/80 backdrop-blur-lg pt-24 z-40 hidden xl:flex">
+<div class="px-4 mb-4">
+<h3 class="font-serif text-amber-200 text-lg">Faculty Wing</h3>
+<p class="font-inter text-[10px] uppercase tracking-widest text-stone-500">Curator Access</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-stone-800 text-amber-200 rounded-lg shadow-inner transition-all duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-inter text-sm uppercase tracking-widest">Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-800/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="tally_board">scoreboard</span>
+<span class="font-inter text-sm uppercase tracking-widest">Curriculum</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-800/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter text-sm uppercase tracking-widest">Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 hover:bg-stone-800/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-inter text-sm uppercase tracking-widest">Archive</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="mx-2 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-full text-xs uppercase tracking-tighter shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+                Generate Smart Report
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:text-stone-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-inter text-sm uppercase tracking-widest">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="xl:ml-64 pt-32 px-8 pb-12">
+<!-- Welcome Header -->
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h1 class="font-headline text-4xl font-bold text-on-surface mb-2">Scholar's Overview</h1>
+<p class="text-outline italic">Curating the academic journey for <span class="text-primary">Literature 301: Gothic Traditions</span></p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-full border border-outline-variant hover:bg-surface-container-high transition-colors text-sm font-medium">Assign Books</button>
+<button class="px-6 py-2.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm shadow-lg shadow-primary/20">Create Class</button>
+</div>
+</header>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div class="neumorphic-card p-6 rounded-xl flex flex-col gap-2 border-t border-white/5">
+<span class="text-stone-500 text-xs uppercase tracking-[0.2em]">Students Assigned</span>
+<div class="flex justify-between items-baseline">
+<span class="text-4xl font-headline font-bold text-amber-200">42</span>
+<span class="text-secondary text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span> 12%
+                    </span>
+</div>
+</div>
+<div class="neumorphic-card p-6 rounded-xl flex flex-col gap-2 border-t border-white/5">
+<span class="text-stone-500 text-xs uppercase tracking-[0.2em]">Avg. Progress</span>
+<div class="flex justify-between items-baseline">
+<span class="text-4xl font-headline font-bold text-amber-200">68%</span>
+<div class="w-16 h-1 bg-stone-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[68%]"></div>
+</div>
+</div>
+</div>
+<div class="neumorphic-card p-6 rounded-xl flex flex-col gap-2 border-t border-white/5">
+<span class="text-stone-500 text-xs uppercase tracking-[0.2em]">Avg. Quiz Score</span>
+<div class="flex justify-between items-baseline">
+<span class="text-4xl font-headline font-bold text-amber-200">84%</span>
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="neumorphic-card p-6 rounded-xl flex flex-col gap-2 border-t border-white/5">
+<span class="text-stone-500 text-xs uppercase tracking-[0.2em]">Active Today</span>
+<div class="flex justify-between items-baseline">
+<span class="text-4xl font-headline font-bold text-amber-200">29</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female student in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd8VcM2x05gg3DNDKLofzsPF_tGJqw7DRDGtIex09TPIuldnZqez4GRlHSrugboK_VZl8OtQYY5p6C7r8HR9RxfmgNruDa74wEAAlX_cQAq9ZvlNRWlwEyF5Yh6uYZOBH7FrYYbFgurG6jVEwyOTUn5iFGsyhsryJQW_1mu6Qhxd0RO72AUFNgJSZyG04JXoIkq_ryywxz_4PDtAecJS_ZbyB_2oc657Bc6ErgkkrWa8rZfPNNjaeNmyVCgSqtb-01R7I3hW5y7mg"/>
+</div>
+<div class="w-6 h-6 rounded-full border border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male student with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2TxuMWfCZq6JAr6JmC0a6QmUf4vl1zZ7JNU4Dt4IdC9cLu-zyLh1R4j3-JHvHb0Bz9r4fin8WQ1KF8CVQJmo9JfDa6fQ1Y8WWRAN7nEgoxyRRxhCUzK9LbIMm7N1uZp3CiaCOIoeiPyONKY6gqmnJZzFYYn3GiD1IuJx24Fd5JxLkwYJnd7U70fg7EBc-5KuxK8pax_20WQiHl63yWZ4etWXMmaM3Ll_7x1YG11xUinreNd3ILWg32AhSIuLlBnTITLnyDHbnJdw"/>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[8px] border border-background">+7</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main List: Students -->
+<section class="lg:col-span-2 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-inner">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-2xl font-semibold">Student Roster</h2>
+<div class="relative group">
+<input class="bg-surface-container-lowest border-none rounded-full py-2 px-10 text-sm w-64 focus:ring-1 focus:ring-primary/40 transition-all" placeholder="Search scholars..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 text-lg" data-icon="search">search</span>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Student Item -->
+<div class="flex items-center gap-6 p-4 rounded-xl hover:bg-surface-bright transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of a young man with a thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIUF2Z8jNfd5JsaPHmZjUmqw0Wdd4J7urAFTsZQyah0jEbUplTpmxHIB1DYnToarApcQe52K5Sfx5UsG-7Wgy7PqMKYQBohGaQtYJe660XiEwuaTYFbyA5ejK8EG_XyJFhKbZQ_ZNQi_O2mRe0VzP9qZUcJdbNzyczXwj3c7KXQpGHl4Tlc8_I8wNIjxdzkBQbM_2Er0Ynyqy4suXh95Z_foKp2hzEC339mrGznC1GZ2zA6tac7PW04IIKdXnhnw7hQsoTrsNPOS8"/>
+</div>
+<div class="flex-1">
+<h4 class="font-medium text-amber-100">Julian Thorne</h4>
+<p class="text-xs text-stone-500 italic">Last active: 12m ago</p>
+</div>
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] text-stone-400">Progress</span>
+<span class="text-[10px] text-primary">92%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[92%]"></div>
+</div>
+</div>
+<div class="text-right px-6">
+<p class="text-[10px] text-stone-500 uppercase tracking-widest">Quiz Avg</p>
+<p class="font-headline font-bold text-amber-200 text-lg">94</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-secondary"><span class="material-symbols-outlined text-lg" data-icon="mail">mail</span></button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-error"><span class="material-symbols-outlined text-lg" data-icon="person_remove">person_remove</span></button>
+</div>
+</div>
+<!-- Student Item -->
+<div class="flex items-center gap-6 p-4 rounded-xl hover:bg-surface-bright transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Woman with calm expression in library background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEInXXTiZ6nrumvM59rb_1bRyUHlwTxDJWpY9ir2WYutVjmcuUlognglA7lg2tq_pXYQHN2MnlUgFyCbMp1CQsopdzc3yj30QtdAtP43EEIlED5alZLrf2HUhq7RvA6O64DVasftXEKssnRXgJsNw_G0GM1ue7goHK_i0l08dp7bprCQM8VEUtbbYdqa9MHkvgckRoUqyD_OopEVNcQUCEJs0lBM6ktgJ7zfgOGtoXEyLbI99Awxchs8_6NrFjyHHSoV0kt24jmc0"/>
+<div class="absolute inset-0 bg-secondary/10 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(210,187,255,0.8)]"></div>
+</div>
+</div>
+<div class="flex-1">
+<h4 class="font-medium text-amber-100">Elara Vance</h4>
+<p class="text-xs text-stone-500 italic">Last active: 2h ago</p>
+</div>
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] text-stone-400">Progress</span>
+<span class="text-[10px] text-primary">45%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+<div class="text-right px-6">
+<p class="text-[10px] text-stone-500 uppercase tracking-widest">Quiz Avg</p>
+<p class="font-headline font-bold text-amber-200 text-lg">78</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-secondary"><span class="material-symbols-outlined text-lg" data-icon="mail">mail</span></button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-error"><span class="material-symbols-outlined text-lg" data-icon="person_remove">person_remove</span></button>
+</div>
+</div>
+<!-- Student Item -->
+<div class="flex items-center gap-6 p-4 rounded-xl hover:bg-surface-bright transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of young man with focused scholarly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi8qJlpyd7kj9mNPt0nmRtlUePd5p2AMyUPvUOUb1ujMTYK1CMHVW7bIuC8Eq4XGlBY-DLmNKpvsVyrSPYjCPCMW0SAm0vqiNPpVnbtjk0rigq7QE-1IscPdgtKgCkrPQl6psJSE0tkmyjcpPOjhZaVEm9IgeqFFDxe6bzRQBkfBjtN1d0sea4a1gz19O4Fb82iX0Id8U_SAKY_h9NYt0yf5BpCfWwkLHvJkKArXAYGtW6yN-AAEWAaaF_pdLFra8JrBwYbxO-uck"/>
+</div>
+<div class="flex-1">
+<h4 class="font-medium text-amber-100">Marcus Sterling</h4>
+<p class="text-xs text-stone-500 italic">Last active: 5h ago</p>
+</div>
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] text-stone-400">Progress</span>
+<span class="text-[10px] text-primary">71%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[71%]"></div>
+</div>
+</div>
+<div class="text-right px-6">
+<p class="text-[10px] text-stone-500 uppercase tracking-widest">Quiz Avg</p>
+<p class="font-headline font-bold text-amber-200 text-lg">82</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-secondary"><span class="material-symbols-outlined text-lg" data-icon="mail">mail</span></button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:text-error"><span class="material-symbols-outlined text-lg" data-icon="person_remove">person_remove</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Broadcast Section -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-white/5">
+<h2 class="font-headline text-2xl font-semibold mb-6">Broadcast to Class</h2>
+<div class="flex gap-4">
+<div class="flex-1 relative">
+<textarea class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-6 text-sm focus:ring-1 focus:ring-primary/40 transition-all resize-none" placeholder="Write a message to your students..." rows="1"></textarea>
+<div class="absolute right-4 bottom-3 flex gap-2">
+<button class="text-stone-500 hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="attachment">attachment</span></button>
+<button class="text-stone-500 hover:text-secondary"><span class="material-symbols-outlined text-lg" data-icon="smart_toy">smart_toy</span></button>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 rounded-xl font-bold hover:scale-[1.02] transition-transform">Send</button>
+</div>
+</div>
+</section>
+<!-- Side Cards: Insights & Quiz -->
+<aside class="flex flex-col gap-8">
+<!-- AI Insights Section -->
+<div class="bg-gradient-to-b from-surface-container-high to-surface-container-low rounded-xl p-8 shadow-xl relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h2 class="font-headline text-xl font-semibold text-secondary-fixed-dim">AI Pedagogical Insights</h2>
+</div>
+<p class="text-xs text-stone-400 mb-6 leading-relaxed">The AI has detected specific conceptual hurdles across the class average this week.</p>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-xl bg-secondary-container/10 border border-secondary/20 group hover:border-secondary/40 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-secondary">Metaphorical Analysis</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/20 text-[10px] text-secondary font-bold uppercase tracking-wider">High Alert</span>
+</div>
+<div class="w-full h-1.5 bg-secondary-container/20 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[35%]"></div>
+</div>
+<p class="text-[10px] text-stone-500 mt-2">Class proficiency dropped by 18% in the latest chapter.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/30 group hover:border-secondary/40 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-amber-100">Historical Context</span>
+<span class="px-2 py-0.5 rounded-full bg-stone-800 text-[10px] text-stone-500 font-bold uppercase tracking-wider">Moderate</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full w-[62%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/30 group hover:border-secondary/40 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-amber-100">Prose Structure</span>
+<span class="px-2 py-0.5 rounded-full bg-stone-800 text-[10px] text-stone-500 font-bold uppercase tracking-wider">Strong</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full w-[88%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 rounded-xl border border-secondary/30 text-secondary text-xs font-bold uppercase tracking-widest hover:bg-secondary/10 transition-colors">
+                        Auto-Generate Remedial Quiz
+                    </button>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-white/5">
+<h2 class="font-headline text-xl font-semibold mb-6">Recent Academic Events</h2>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<div class="w-1 bg-primary rounded-full"></div>
+<div>
+<p class="text-sm text-on-surface"><span class="font-bold">Julian Thorne</span> finished "The Castle of Otranto"</p>
+<p class="text-[10px] text-stone-500">4 minutes ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 bg-secondary rounded-full"></div>
+<div>
+<p class="text-sm text-on-surface"><span class="font-bold">AI Insight:</span> Group quiz results for "Gothic Motifs" are now ready</p>
+<p class="text-[10px] text-stone-500">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 bg-stone-700 rounded-full"></div>
+<div>
+<p class="text-sm text-on-surface">3 students flagged for inactive status (&gt;48h)</p>
+<p class="text-[10px] text-stone-500">Morning Daily Report</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Assignment Card -->
+<div class="neumorphic-card rounded-xl p-1 overflow-hidden group">
+<div class="h-32 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Dark dramatic image of an old book with worn pages in a candle-lit library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbNG_ecnm2APkK_OAoXcjtrfNB_qMmoaX45pyWsHvvjj2FjZIpGkrPsR9ELUth0fN_PPQyrrz628gV4-SKq8Dis4YDaz8vllmyTaKG1rm6CCqwxWGqbp7W8R1fLeAvbhYvWMRfgGrpHCxRnKXTrkJNWU6OX1IiOXLxiL-bKLBNJiElhYIvnoeo41PiY-TFCl6jP4kNvcX9qoIJSzw3Bu9pMblVslXyQudqwTt3-axlLLXq_vGwzTt-U8vNF1MfWB3320zAR6HtQwA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-lg text-amber-200">Current Reading</h3>
+<p class="text-xs text-stone-400 mb-4 italic">Frankenstein: The Modern Prometheus</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-stone-500">Due in 4 days</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold text-primary">Active</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>
