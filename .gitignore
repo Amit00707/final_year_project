@@ -1,0 +1,34 @@
+# Local environment and secrets
+.env
+.env.*
+*.pem
+
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+venv/
+.venv/
+
+# Python cache and tooling
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.pyc
+
+# Logs and editor/system files
+*.log
+.DS_Store
+.vscode/
+
+# Local generated or temporary folders
+final_year_project/
+midnight-scholar-export/
+implementation_plan.md.resolved
+stitch_guide.md.resolved
+task.md.resolved
+walkthrough.md.resolved
