@@ -1,0 +1,91 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/Button';
+
+export default function SignupPage() {
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Sending to FastAPI Registration:', formData);
+    window.location.href = '/verify';
+  };
+
+  return (
+    <div className="flex min-h-[80vh] items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="w-full max-w-md space-y-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 shadow-2xl"
+      >
+        <div className="text-center">
+          <h2 className="mt-6 text-3xl font-serif font-bold tracking-tight text-[var(--primary)]">
+            Create Your Account
+          </h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Join the library and unlock intelligent reading.
+          </p>
+        </div>
+
+        <form className="mt-8 space-y-6" onSubmit={handleRegister}>
+          <div className="space-y-4">
+            <input
+              name="name"
+              type="text"
+              required
+              className="relative block w-full rounded-lg border border-[var(--border)] bg-[#0C0A09] px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--primary)] focus:outline-none shadow-inner"
+              placeholder="Full Name"
+              onChange={(e) => setFormData({...formData, name: e.target.value})}
+            />
+            <input
+              name="email"
+              type="email"
+              required
+              className="relative block w-full rounded-lg border border-[var(--border)] bg-[#0C0A09] px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--primary)] focus:outline-none shadow-inner"
+              placeholder="Email address"
+              onChange={(e) => setFormData({...formData, email: e.target.value})}
+            />
+            <input
+              name="password"
+              type="password"
+              required
+              className="relative block w-full rounded-lg border border-[var(--border)] bg-[#0C0A09] px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--primary)] focus:outline-none shadow-inner"
+              placeholder="Password (8+ characters)"
+              onChange={(e) => setFormData({...formData, password: e.target.value})}
+            />
+          </div>
+
+          <Button type="submit" variant="primary" className="w-full">
+            Register Account
+          </Button>
+          
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-[var(--border)]" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="bg-[var(--surface)] px-2 text-[var(--muted)]">Or sign up with</span>
+              </div>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <Button variant="secondary" type="button">Google</Button>
+              <Button variant="secondary" type="button">Apple</Button>
+            </div>
+          </div>
+        </form>
+        
+        <p className="text-center text-sm text-[var(--muted)]">
+          Already a scholar?{' '}
+          <Link href="/login" className="font-medium text-[var(--primary)] hover:text-amber-500">
+            Sign in
+          </Link>
+        </p>
+      </motion.div>
+    </div>
+  );
+}
