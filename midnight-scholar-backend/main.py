@@ -59,9 +59,9 @@ async def ensure_tables_exist():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup: run DB migrations. Shutdown: cleanup."""
-    migrated = run_migrations()
-    if not migrated:
-        await ensure_tables_exist()
+    run_migrations()
+    # Always run create_all as a safe idempotent backstop for missing tables.
+    await ensure_tables_exist()
     yield
 
 
