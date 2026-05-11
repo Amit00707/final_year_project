@@ -53,71 +53,28 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS — Custom middleware to handle wildcard Vercel origins
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.requests import Request as StarletteRequest
-from starlette.responses import Response as StarletteResponse
-from starlette.responses import JSONResponse
-import re
+# CORS — Use built-in middleware with regex support for Vercel preview URLs.
+from fastapi.middleware.cors import CORSMiddleware
 
-class CORSMiddleware(BaseHTTPMiddleware):
-    """Handle CORS with support for Vercel wildcard subdomains."""
-    
-    def __init__(self, app):
-        super().__init__(app)
-        # Define allowed origin patterns
-        self.allowed_patterns = [
-            r"^http://localhost:\d+$",  # localhost:* 
-            r"^http://127\.0\.0\.1:\d+$",  # 127.0.0.1:*
-            r"^https://[a-zA-Z0-9\-]+\.vercel\.app$",  # *.vercel.app
-        ]
-        # Exact allowed origins from env
-        self.exact_origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
-    
-    def is_origin_allowed(self, origin: str) -> bool:
-        """Check if origin matches allowed patterns or exact list."""
-        if not origin:
-            return False
-        
-        # Check exact matches first
-        if origin in self.exact_origins:
-            return True
-        
-        # Check pattern matches
-        for pattern in self.allowed_patterns:
-            if re.match(pattern, origin):
-                return True
-        
-        return False
-    
-    async def dispatch(self, request: StarletteRequest, call_next):
-        origin = request.headers.get("origin", "")
-        is_allowed = self.is_origin_allowed(origin)
-        
-        # Handle preflight requests
-        if request.method == "OPTIONS":
-            response = StarletteResponse(status_code=200)
-            if is_allowed:
-                response.headers["Access-Control-Allow-Origin"] = origin
-                response.headers["Access-Control-Allow-Credentials"] = "true"
-                response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS, PATCH"
-                response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With, Accept"
-                response.headers["Access-Control-Max-Age"] = "86400"
-            return response
-        
-        # Handle actual requests; still return CORS headers on unhandled exceptions.
-        try:
-            response = await call_next(request)
-        except Exception:
-            response = JSONResponse(status_code=500, content={"detail": "Internal Server Error"})
-        if is_allowed:
-            response.headers["Access-Control-Allow-Origin"] = origin
-            response.headers["Access-Control-Allow-Credentials"] = "true"
-            response.headers["Access-Control-Expose-Headers"] = "*"
-        
-        return response
+explicit_origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+explicit_origins.extend(
+    [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000",
+    ]
+)
 
-app.add_middleware(CORSMiddleware)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=explicit_origins,
+    allow_origin_regex=r"https://[a-zA-Z0-9\-]+\.vercel\.app",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
 
 # Register all route modules
 app.include_router(auth_router, prefix="/api", tags=["Auth"])

@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
 from app.database.session import get_db
-from app.database.models.user import User
+from app.database.models.user import User, UserRole
 from app.core.security import hash_password, verify_password, create_access_token, create_refresh_token, decode_token
 from app.core.dependencies import get_current_user
 from app.schemas.auth import SignupRequest, LoginRequest, VerifyRequest, TokenResponse, RefreshRequest
@@ -28,7 +28,7 @@ async def signup(payload: SignupRequest, db: AsyncSession = Depends(get_db)):
         name=payload.name,
         email=payload.email,
         hashed_password=hash_password(payload.password),
-        role=payload.role,
+        role=UserRole(payload.role),
     )
     db.add(user)
     await db.flush()
