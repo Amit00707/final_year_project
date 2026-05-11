@@ -57,6 +57,7 @@ app = FastAPI(
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request as StarletteRequest
 from starlette.responses import Response as StarletteResponse
+from starlette.responses import JSONResponse
 import re
 
 class CORSMiddleware(BaseHTTPMiddleware):
@@ -104,8 +105,11 @@ class CORSMiddleware(BaseHTTPMiddleware):
                 response.headers["Access-Control-Max-Age"] = "86400"
             return response
         
-        # Handle actual requests
-        response = await call_next(request)
+        # Handle actual requests; still return CORS headers on unhandled exceptions.
+        try:
+            response = await call_next(request)
+        except Exception:
+            response = JSONResponse(status_code=500, content={"detail": "Internal Server Error"})
         if is_allowed:
             response.headers["Access-Control-Allow-Origin"] = origin
             response.headers["Access-Control-Allow-Credentials"] = "true"
