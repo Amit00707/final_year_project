@@ -1,17 +1,16 @@
 """
-Database Session — Async PostgreSQL Engine
-============================================
-Creates the async SQLAlchemy engine and provides session dependency.
+Database Session — Async PostgreSQL Engine (Lazy Init)
+=======================================================
+Engine is created lazily on first use — app starts even if DATABASE_URL
+is not yet configured correctly.
 """
 
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
+from fastapi import HTTPException, status
+import logging
 
-from app.core.config import settings
-
-engine = create_async_engine(settings.DATABASE_URL, echo=False, pool_size=20, max_overflow=10)
-
-async_session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+logger = logging.getLogger(__name__)
 
 
 class Base(DeclarativeBase):
@@ -19,9 +18,49 @@ class Base(DeclarativeBase):
     pass
 
 
+# Lazy globals — set on first use
+_engine = None
+_session_factory = None
+
+
+def _get_engine():
+    global _engine, _session_factory
+
+    if _engine is not None:
+        return _engine
+
+    from app.core.config import settings
+    db_url = settings.DATABASE_URL
+
+    # Auto-fix: postgresql:// → postgresql+asyncpg://
+    if db_url and db_url.startswith("postgresql://"):
+        db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+    # Validate URL
+    if not db_url or "get from" in db_url or len(db_url) < 20:
+        logger.error(f"DATABASE_URL is not set correctly: '{db_url[:40]}'")
+        raise RuntimeError(
+            "DATABASE_URL is not configured. "
+            "Please set it in Render → Environment Variables."
+        )
+
+    _engine = create_async_engine(db_url, echo=False, pool_size=5, max_overflow=5)
+    _session_factory = async_sessionmaker(_engine, class_=AsyncSession, expire_on_commit=False)
+    return _engine
+
+
 async def get_db():
     """FastAPI dependency that yields an async database session."""
-    async with async_session_factory() as session:
+    try:
+        _get_engine()  # ensure engine is initialized
+    except Exception as e:
+        logger.exception("Database engine initialization failed")
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Database is unavailable. Check DATABASE_URL and database connectivity.",
+        ) from e
+
+    async with _session_factory() as session:
         try:
             yield session
             await session.commit()
@@ -30,3 +69,9 @@ async def get_db():
             raise
         finally:
             await session.close()
+
+
+# Compatibility alias
+def get_session_factory():
+    _get_engine()
+    return _session_factory
