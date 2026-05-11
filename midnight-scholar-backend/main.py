@@ -5,7 +5,6 @@ Boots the API server, registers all route modules, and enables CORS.
 """
 
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 
@@ -22,19 +21,61 @@ from app.api.routes_notifications import router as notifications_router
 from app.api.routes_subscription import router as subscription_router
 
 
+from contextlib import asynccontextmanager
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def run_migrations():
+    """Run alembic migrations automatically on startup — no shell needed."""
+    try:
+        from alembic.config import Config
+        from alembic import command
+        alembic_cfg = Config("alembic.ini")
+        command.upgrade(alembic_cfg, "head")
+        logger.info("✅ Database migrations applied successfully.")
+    except Exception as e:
+        logger.warning(f"⚠️ Migration warning (non-fatal): {e}")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup: run DB migrations. Shutdown: cleanup."""
+    run_migrations()
+    yield
+
+
 app = FastAPI(
     title=settings.APP_NAME,
     description="AI-Powered E-Book Library Backend",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
-# CORS — Allow the Next.js frontend to communicate
+# CORS — Using FastAPI's built-in CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
+
+# Parse allowed origins from settings - allow all *.vercel.app and localhost
+allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+]
+
+# Add environment-configured origins
+env_origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+allowed_origins.extend(env_origins)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS.split(","),
+    allow_origins=allowed_origins + ["https://*.vercel.app"],  # Allow all Vercel deployments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=600,
 )
 
 # Register all route modules
