@@ -6,6 +6,7 @@
 
 from fastapi import APIRouter, Query, HTTPException, Depends
 from typing import Optional
+import httpx
 from app.services.open_library_service import (
     search_books,
     search_by_author,
