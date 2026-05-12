@@ -1,9 +1,12 @@
-# Midnight Scholar Backend — Dependencies
+# Midnight Scholar Backend — Production Dependencies
+
+# Core
 fastapi==0.115.0
 uvicorn[standard]==0.30.0
 python-dotenv==1.0.1
-pydantic==2.9.0
+pydantic==2.11.4
 pydantic-settings==2.5.0
+email-validator==2.2.0
 
 # Auth & Security
 python-jose[cryptography]==3.3.0
@@ -15,30 +18,20 @@ sqlalchemy[asyncio]==2.0.35
 asyncpg==0.30.0
 alembic==1.13.0
 
-# AI & NLP
-langchain==0.3.0
-langchain-openai==0.2.0
+# AI
 openai==1.50.0
-
-# PDF Processing
-pymupdf==1.24.0
-
-# Vector Store
-qdrant-client==1.11.0
-
-# Storage
-boto3==1.35.0
-
-# Background Tasks
-celery[redis]==5.4.0
-redis==5.1.0
-
-# WebSockets
-websockets==13.0
 
 # Rate Limiting
 slowapi==0.1.9
 
-# Utilities
+# HTTP Client
 httpx==0.27.0
+
+# Form Parsing
 python-multipart==0.0.12
+
+# WebSockets
+websockets==13.0
+
+# Redis
+redis==5.1.0

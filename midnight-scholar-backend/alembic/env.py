@@ -3,6 +3,10 @@ Alembic Environment — Async Migration Runner
 ===============================================
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+
 from logging.config import fileConfig
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
@@ -15,7 +19,13 @@ from app.database.session import Base
 from app.database.models import *  # noqa
 
 config = context.config
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+raw_url = settings.DATABASE_URL
+if raw_url.startswith("postgres://"):
+    raw_url = raw_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif raw_url.startswith("postgresql://") and not raw_url.startswith("postgresql+asyncpg://"):
+    raw_url = raw_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+config.set_main_option("sqlalchemy.url", raw_url.replace("%", "%%"))
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
