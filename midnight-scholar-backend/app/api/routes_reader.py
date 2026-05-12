@@ -16,9 +16,16 @@ from app.schemas.reader import ProgressUpdate, ProgressResponse, BookmarkCreate,
 router = APIRouter()
 
 
+@router.get("/progress", response_model=list[ProgressResponse])
+async def get_all_progress(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Get all reading progress for a user."""
+    result = await db.execute(select(ReadingProgress).where(ReadingProgress.user_id == user.id))
+    return result.scalars().all()
+
 @router.api_route("/progress", methods=["POST", "PATCH"], response_model=ProgressResponse)
 async def update_progress(payload: ProgressUpdate, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     """Update reading progress for a book."""
+
     result = await db.execute(
         select(ReadingProgress).where(ReadingProgress.user_id == user.id, ReadingProgress.book_id == payload.book_id)
     )
