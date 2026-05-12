@@ -18,7 +18,7 @@ from app.services.open_library_service import (
 from app.core.dependencies import get_current_user  # JWT auth dependency
 from app.schemas.book import RecommendationRequest
 
-router = APIRouter(prefix="/api/books", tags=["Books"])
+router = APIRouter(prefix="/books", tags=["Books"])
 
 
 # ============================================================
