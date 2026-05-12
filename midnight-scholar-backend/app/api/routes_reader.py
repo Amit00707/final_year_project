@@ -46,7 +46,32 @@ async def create_bookmark(payload: BookmarkCreate, user: User = Depends(get_curr
     """Create a bookmark on a specific page."""
     bookmark = Bookmark(user_id=user.id, book_id=payload.book_id, page_number=payload.page_number, label=payload.label)
     db.add(bookmark)
+    await db.commit()
     return {"message": "Bookmark created"}
+
+
+@router.get("/bookmarks/{book_id}")
+async def get_bookmarks(book_id: str, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Get all bookmarks for a specific book."""
+    from sqlalchemy import desc
+    result = await db.execute(
+        select(Bookmark)
+        .where(Bookmark.user_id == user.id, Bookmark.book_id == book_id)
+        .order_by(desc(Bookmark.created_at))
+    )
+    bookmarks = result.scalars().all()
+    return {"bookmarks": bookmarks}
+
+
+@router.delete("/bookmarks/{bookmark_id}")
+async def delete_bookmark(bookmark_id: int, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Delete a bookmark."""
+    result = await db.execute(select(Bookmark).where(Bookmark.id == bookmark_id, Bookmark.user_id == user.id))
+    bookmark = result.scalar_one_or_none()
+    if bookmark:
+        await db.delete(bookmark)
+        await db.commit()
+    return {"message": "Bookmark deleted"}
 
 
 @router.post("/highlights")
@@ -62,4 +87,29 @@ async def create_note(payload: NoteCreate, user: User = Depends(get_current_user
     """Create a note on a specific page."""
     note = Note(user_id=user.id, book_id=payload.book_id, page_number=payload.page_number, content=payload.content)
     db.add(note)
+    await db.commit()
     return {"message": "Note created"}
+
+
+@router.get("/notes/{book_id}")
+async def get_notes(book_id: str, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Get all notes for a specific book."""
+    from sqlalchemy import desc
+    result = await db.execute(
+        select(Note)
+        .where(Note.user_id == user.id, Note.book_id == book_id)
+        .order_by(desc(Note.created_at))
+    )
+    notes = result.scalars().all()
+    return {"notes": notes}
+
+
+@router.delete("/notes/{note_id}")
+async def delete_note(note_id: int, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Delete a note."""
+    result = await db.execute(select(Note).where(Note.id == note_id, Note.user_id == user.id))
+    note = result.scalar_one_or_none()
+    if note:
+        await db.delete(note)
+        await db.commit()
+    return {"message": "Note deleted"}
