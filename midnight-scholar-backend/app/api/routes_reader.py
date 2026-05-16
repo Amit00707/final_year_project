@@ -3,6 +3,7 @@ Reader Routes — /progress /bookmarks /highlights /notes
 =========================================================
 """
 
+from typing import Optional
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -12,6 +13,7 @@ from app.database.models.progress import ReadingProgress, Bookmark, Highlight, N
 from app.core.dependencies import get_current_user
 from app.database.models.user import User
 from app.schemas.reader import ProgressUpdate, ProgressResponse, BookmarkCreate, HighlightCreate, NoteCreate
+from app.services.gamification_engine import update_streak, update_daily_goal
 
 router = APIRouter()
 
@@ -21,6 +23,14 @@ async def get_all_progress(user: User = Depends(get_current_user), db: AsyncSess
     """Get all reading progress for a user."""
     result = await db.execute(select(ReadingProgress).where(ReadingProgress.user_id == user.id))
     return result.scalars().all()
+
+@router.get("/progress/{book_id}", response_model=Optional[ProgressResponse])
+async def get_book_progress(book_id: str, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Get reading progress for a specific book."""
+    result = await db.execute(
+        select(ReadingProgress).where(ReadingProgress.user_id == user.id, ReadingProgress.book_id == book_id)
+    )
+    return result.scalar_one_or_none()
 
 @router.api_route("/progress", methods=["POST", "PATCH"], response_model=ProgressResponse)
 async def update_progress(payload: ProgressUpdate, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
@@ -45,6 +55,10 @@ async def update_progress(payload: ProgressUpdate, user: User = Depends(get_curr
         db.add(progress)
 
     await db.flush()
+    await update_streak(db, user.id)
+    await update_daily_goal(db, user.id, "pages", 1)
+    await update_daily_goal(db, user.id, "minutes", payload.time_spent_minutes)
+    await db.commit()
     return progress
 
 
